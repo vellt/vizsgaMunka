@@ -10,7 +10,7 @@
         Height="800" 
         MinWidth="1280"
         Width="1280"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Window.Resources>
 
         
@@ -690,8 +690,7 @@
                                 HorizontalScrollBarVisibility="Disabled">
                                     <StackPanel
                                     x:Name="spRaktartTabla"
-                                    Orientation="Vertical"
-                                        >
+                                    Orientation="Vertical">
                                         <!--tartalom: raktarak-->
                                     </StackPanel>
                                 </ScrollViewer>
@@ -707,7 +706,7 @@
                                     VerticalContentAlignment="Stretch"
                                     HorizontalContentAlignment="Stretch"
                                     Click="BtnRaktarakraVonatkozoInterakciok"
-                                    ToolTip="raktár hozzáadása">
+                                    ToolTip="raktár hozzáadása" >
                                         <Grid
                                          Width="39"
                                         Height="39"
@@ -732,7 +731,7 @@
                                     </Button>
 
                                     <Button 
-                                        Click="BtnEsemenyek"
+                                        Click="BtnRaktarakraVonatkozoInterakciok"
                                         Grid.Column="5"
                                         Grid.Row="0"
                                         Width="39"
@@ -768,7 +767,7 @@
                                         </Grid>
                                     </Button>
                                     <Button 
-                                        Click="BtnEsemenyek"
+                                        Click="BtnRaktarakraVonatkozoInterakciok"
                                         HorizontalAlignment="Left"
                                         Grid.Column="6"
                                         Width="39"
@@ -837,10 +836,14 @@
                                     </Button>
                                 </StackPanel>
                             </Grid>
+                            
+                            
+                            <!--raktarHozzaadasa kisablak-->
                             <Grid
                                 x:Name="raktarHozzaadasa"
                                 Grid.Row="1"
-                                Visibility="Collapsed">
+                                Visibility="Collapsed"
+                                >
                                 <Grid.Background>
                                     <SolidColorBrush Color="Black" Opacity="0.1"/>
                                 </Grid.Background>
@@ -953,7 +956,9 @@
                                                     BorderThickness="1">
                                                 <ScrollViewer VerticalScrollBarVisibility="Disabled" 
                                                               HorizontalScrollBarVisibility="Disabled">
-                                                    <TextBox Padding="5 -1"
+                                                    <TextBox 
+                                                        Name="txbRaktarNevHozzaadasa"
+                                                        Padding="5 -1"
                                                          BorderThickness="0"
                                                          VerticalContentAlignment="Center"
                                                          Foreground="#5D5D5D"
@@ -969,7 +974,9 @@
                                                     BorderThickness="1">
                                                 <ScrollViewer VerticalScrollBarVisibility="Disabled" 
                                                               HorizontalScrollBarVisibility="Disabled">
-                                                    <TextBox Padding="5 -1"
+                                                    <TextBox 
+                                                        x:Name="txbRaktarHelyHozzaadasa"
+                                                        Padding="5 -1"
                                                          BorderThickness="0"
                                                          VerticalContentAlignment="Center"
                                                          Foreground="#5D5D5D"
@@ -985,7 +992,9 @@
                                                     BorderThickness="1">
                                                 <ScrollViewer VerticalScrollBarVisibility="Disabled" 
                                                               HorizontalScrollBarVisibility="Disabled">
-                                                    <TextBox Padding="5 -1"
+                                                    <TextBox 
+                                                        x:Name="txbRaktarTelefonHozzaadasa"
+                                                        Padding="5 -1"
                                                          BorderThickness="0"
                                                          VerticalContentAlignment="Center"
                                                          Foreground="#5D5D5D"
@@ -1001,7 +1010,9 @@
                                                     BorderThickness="1">
                                                 <ScrollViewer VerticalScrollBarVisibility="Disabled" 
                                                               HorizontalScrollBarVisibility="Disabled">
-                                                    <TextBox Padding="5 -1"
+                                                    <TextBox 
+                                                        x:Name="txbRaktarEmailHozzaadasa"
+                                                        Padding="5 -1"
                                                          BorderThickness="0"
                                                          VerticalContentAlignment="Center"
                                                          Foreground="#5D5D5D"
@@ -1030,6 +1041,7 @@
                                                            Foreground="White"
                                                            FontFamily="Segoe UI"
                                                            FontSize="14"
+                                                           
                                                            />
                                                 </Grid>
                                             </Button>
@@ -1037,6 +1049,7 @@
                                     </Grid>
                                 </Grid>
                             </Grid>
+                            <!--raktarModositasa kisablak-->
                             <Grid
                                 x:Name="raktarModositasa"
                                 Grid.Row="1"
@@ -1061,8 +1074,7 @@
                                                Foreground="White"
                                                FontSize="14"
                                                FontFamily="Segoe UI"
-                                               Margin="5 0"
-                                               />
+                                               Margin="5 0"/>
                                         <Button 
                                             Width="29"
                                             Height="29"
@@ -1153,7 +1165,9 @@
                                                     BorderThickness="1">
                                                 <ScrollViewer VerticalScrollBarVisibility="Disabled" 
                                                               HorizontalScrollBarVisibility="Disabled">
-                                                    <TextBox Padding="5 -1"
+                                                    <TextBox 
+                                                        x:Name="txbRaktarNevModositasa"
+                                                        Padding="5 -1"
                                                          BorderThickness="0"
                                                          VerticalContentAlignment="Center"
                                                          Foreground="#5D5D5D"
@@ -1169,7 +1183,10 @@
                                                     BorderThickness="1">
                                                 <ScrollViewer VerticalScrollBarVisibility="Disabled" 
                                                               HorizontalScrollBarVisibility="Disabled">
-                                                    <TextBox Padding="5 -1"
+                                                    <TextBox 
+                                                        x:Name="txbRaktarHelyModositasa"
+                                                        
+                                                        Padding="5 -1"
                                                          BorderThickness="0"
                                                          VerticalContentAlignment="Center"
                                                          Foreground="#5D5D5D"
@@ -1185,7 +1202,10 @@
                                                     BorderThickness="1">
                                                 <ScrollViewer VerticalScrollBarVisibility="Disabled" 
                                                               HorizontalScrollBarVisibility="Disabled">
-                                                    <TextBox Padding="5 -1"
+                                                    <TextBox 
+                                                        x:Name="txbRaktarTelefonModositasa"
+                                                        
+                                                        Padding="5 -1"
                                                          BorderThickness="0"
                                                          VerticalContentAlignment="Center"
                                                          Foreground="#5D5D5D"
@@ -1201,7 +1221,10 @@
                                                     BorderThickness="1">
                                                 <ScrollViewer VerticalScrollBarVisibility="Disabled" 
                                                               HorizontalScrollBarVisibility="Disabled">
-                                                    <TextBox Padding="5 -1"
+                                                    <TextBox 
+                                                        x:Name="txbRaktarEmailModositasa"
+                                                        
+                                                        Padding="5 -1"
                                                          BorderThickness="0"
                                                          VerticalContentAlignment="Center"
                                                          Foreground="#5D5D5D"
@@ -1229,8 +1252,7 @@
                                                            HorizontalContentAlignment="Center"
                                                            Foreground="White"
                                                            FontFamily="Segoe UI"
-                                                           FontSize="14"
-                                                           />
+                                                           FontSize="14"/>
                                                 </Grid>
                                             </Button>
                                         </Grid>

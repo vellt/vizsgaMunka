@@ -25,11 +25,7 @@ namespace vizsgaMunka
             InitializeComponent();
         }
 
-        private void BtnEsemenyek(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+        
         
     }
 }

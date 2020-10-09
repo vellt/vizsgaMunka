@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Osztalyok.cs" />
     <Compile Include="raktarTablaSorAdatok.xaml.cs">
       <DependentUpon>raktarTablaSorAdatok.xaml</DependentUpon>
     </Compile>

@@ -4,20 +4,31 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:vizsgaMunka"
-             mc:Ignorable="d" >
+             mc:Ignorable="d"
+             Height="30">
+    
     <UserControl.Resources>
+        <Style x:Key="stilusBeallitasa" TargetType="Button">
+            <Setter Property="Padding" Value="-2"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="Background" Value="#F6F6F6"/>
+            <Setter Property="Foreground" Value="#707070"/>
 
-        <Style x:Key="kijeloles" TargetType="Button">
             <Style.Resources>
                 <Style TargetType="Grid">
+                    <Setter Property="Height" Value="30"/>
+                    <Setter Property="Background" Value="{Binding ElementName=btn, Path=Background}"/>
+
                     <Style.Resources>
-                        <Style TargetType="Grid">
-                            <Setter Property="Background" Value="Transparent"/>
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding ElementName=btn,Path=IsMouseOver}" Value="True">
-                                    <Setter Property="Background" Value="#7CC989"/>
-                                </DataTrigger>
-                            </Style.Triggers>
+                        <Style TargetType="Label">
+                            <Setter Property="Foreground" Value="{Binding ElementName=btn, Path=Foreground}"/>
+                            <Setter Property="FontFamily" Value="Segoe UI"/>
+                            <Setter Property="FontSize" Value="13"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                            
                         </Style>
                     </Style.Resources>
                 </Style>
@@ -25,88 +36,20 @@
         </Style>
 
     </UserControl.Resources>
-    <Button
-        Style="{StaticResource kijeloles}"
-            Padding="-1"
-            BorderThickness="0"
-            VerticalContentAlignment="Stretch"
-            HorizontalContentAlignment="Stretch"
-            Background="#F6F6F6"
-            Foreground="#707070"
-            Name="btn"
-        Click="BtnEsemenyek">
-        <Grid
-            Height="30"
-            Background="{Binding ElementName=btn, Path=Background}"
-            >
+    <Button Name="btn" Style="{StaticResource stilusBeallitasa}">
+        <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5"/>
-                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="73"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label 
-                    Grid.Column="1"
-                    Grid.Row="0"
-                    Content="1" 
-                    Foreground="#707070"
-                    FontFamily="Segoe UI"
-                    FontSize="13"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"/>
-            <Label 
-                    Grid.Column="2"
-                    Grid.Row="0"
-                    Content="Berettyóújfalu" 
-                    Foreground="{Binding ElementName=btn, Path=Foreground}"
-                    FontFamily="Segoe UI"
-                    FontSize="13"
-                
-                    HorizontalContentAlignment="Left"
-                    VerticalContentAlignment="Center"/>
-            <Label 
-                    Grid.Column="3"
-                    Grid.Row="0"
-                    Foreground="{Binding ElementName=btn, Path=Foreground}"
-                    Content="4100, Berettyóújfalu, bolt utca 12" 
-                    FontFamily="Segoe UI"
-                    FontSize="13"
-                
-                    HorizontalContentAlignment="Left"
-                    VerticalContentAlignment="Center"/>
-            <Label 
-                    Grid.Column="4"
-                    Grid.Row="0"
-                    Content="06 30 55 55 555" 
-                    Foreground="{Binding ElementName=btn, Path=Foreground}"
-                
-                    FontSize="13"
-                    FontFamily="Segoe UI"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"/>
-            <Label 
-                    Grid.Column="5"
-                    Grid.Row="0"
-                    Content="bolberettyo@gmail.com" 
-                    Foreground="{Binding ElementName=btn, Path=Foreground}"
-                    
-                    FontSize="13"
-                    FontFamily="Segoe UI"
-                    HorizontalContentAlignment="Left"
-                    VerticalContentAlignment="Center"/>
-            <Grid 
-                Grid.Column="0">
-                
-            </Grid>
-            <Grid 
-                x:Name="kattintás"
-                Grid.Column="0">
-
-            </Grid>
-
+            <Label Grid.Column="0" Content="1" />
+            <Label Grid.Column="1" Content="Berettyóújfalu" HorizontalContentAlignment="Left"/>
+            <Label Grid.Column="2" Content="4100, Berettyóújfalu, bolt utca 12" HorizontalContentAlignment="Left"/>
+            <Label Grid.Column="3" Content="06 30 55 55 555"/>
+            <Label Grid.Column="4" Content="bolberettyo@gmail.com" HorizontalContentAlignment="Left"/>
         </Grid>
     </Button>
-
 </UserControl>
