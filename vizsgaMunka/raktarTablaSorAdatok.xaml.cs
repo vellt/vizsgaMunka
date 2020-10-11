@@ -18,9 +18,9 @@ namespace vizsgaMunka
     /// <summary>
     /// Interaction logic for raktarTablaSorAdatok.xaml
     /// </summary>
-    public partial class raktarTablaSorAdatok : UserControl
+    public partial class TablaSorAdatok : UserControl
     {
-        public raktarTablaSorAdatok()
+        public TablaSorAdatok()
         {
             InitializeComponent();
         }
