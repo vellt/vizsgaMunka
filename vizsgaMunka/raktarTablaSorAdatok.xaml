@@ -45,11 +45,11 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Content="1" />
-            <Label Grid.Column="1" Content="Berettyóújfalu" HorizontalContentAlignment="Left"/>
-            <Label Grid.Column="2" Content="4100, Berettyóújfalu, bolt utca 12" HorizontalContentAlignment="Left"/>
-            <Label Grid.Column="3" Content="06 30 55 55 555"/>
-            <Label Grid.Column="4" Content="bolberettyo@gmail.com" HorizontalContentAlignment="Left"/>
+            <Label Grid.Column="0" Content="tartalom" />
+            <Label Grid.Column="1" Content="tartalom" HorizontalContentAlignment="Left" Padding="9 0"/>
+            <Label Grid.Column="2" Content="tartalom" HorizontalContentAlignment="Left"/>
+            <Label Grid.Column="3" Content="tartalom"/>
+            <Label Grid.Column="4" Content="tartalom" HorizontalContentAlignment="Left"/>
         </Grid>
     </Button>
 </UserControl>

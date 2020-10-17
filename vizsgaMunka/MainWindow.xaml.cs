@@ -364,9 +364,16 @@ namespace vizsgaMunka
             TablaSorAdatok rtsa = new TablaSorAdatok();
             ((Label)((Grid)((Button)rtsa.Content).Content).Children[0]).Content = id;
             ((Label)((Grid)((Button)rtsa.Content).Content).Children[1]).Content = nev;
+
+            ((Label)((Grid)((Button)rtsa.Content).Content).Children[2]).HorizontalContentAlignment = HorizontalAlignment.Center;
             ((Label)((Grid)((Button)rtsa.Content).Content).Children[2]).Content = afa;
+
             ((Label)((Grid)((Button)rtsa.Content).Content).Children[3]).Content = mennyisegiEgyseg;
+
+            ((Label)((Grid)((Button)rtsa.Content).Content).Children[4]).HorizontalContentAlignment = HorizontalAlignment.Right;
+            ((Label)((Grid)((Button)rtsa.Content).Content).Children[4]).Padding=new Thickness(0,0,40,0);
             ((Label)((Grid)((Button)rtsa.Content).Content).Children[4]).Content = egysegar;
+
             ((Grid)((Button)rtsa.Content).Content).Background = hatterSzin;
 
             btn.Content = rtsa;
@@ -498,16 +505,25 @@ namespace vizsgaMunka
 
         #endregion
 
+        #region Raktárközi Átadás
 
-       
+        #endregion
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             ujAdatHozzaadasaRaktarhoz(0, "berettyobolt", "Berettyoujfalu Piac u 12", "06 30 84 63 175", "berettyo@bolt.hu");
             ujErtesitesHozzaadasaAktivitas("Szántó", "@vel", "szállítót", DateTime.Now);
+            ujAdatHozzaadasaTermekez(0, "Sertés Karaj", "5 %", "kg", "1 299 Ft");
         }
 
+        private void BtnArukuldesekreVonatkozoInterakciok(object sender, RoutedEventArgs e)
+        {
 
+        }
 
-       
+        private void BtnArukdelesEsemenyek(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -255,7 +255,7 @@
                     Margin="50 20"
                     HorizontalAlignment="Left"
                     VerticalContentAlignment="Center"
-                    Visibility="Hidden"
+                    Visibility="Collapsed"
                     Background="White"
                     >
                     <Grid
@@ -636,7 +636,7 @@
                                     <RowDefinition Height="40"/>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.Row="0"
-                                  Background="#7CC989"
+                                  Background="White"
                                   >
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="80"/>
@@ -649,7 +649,7 @@
                                     <Label 
                                     Grid.Column="0"
                                     Content="#" 
-                                    Foreground="White"
+                                    Foreground="#707070"
                                     FontFamily="Segoe UI"
                                     FontSize="16"
                                     HorizontalContentAlignment="Center"
@@ -657,7 +657,7 @@
                                     <Label 
                                     Grid.Column="1"
                                     Content="Raktárnév" 
-                                    Foreground="White"
+                                    Foreground="#707070"
                                     FontFamily="Segoe UI"
                                     FontSize="16"
                                     HorizontalContentAlignment="Left"
@@ -665,7 +665,7 @@
                                     <Label 
                                     Grid.Column="2"
                                     Content="Hely" 
-                                    Foreground="White"
+                                    Foreground="#707070"
                                     FontFamily="Segoe UI"
                                     FontSize="16"
                                     HorizontalContentAlignment="Center"
@@ -673,7 +673,7 @@
                                     <Label 
                                     Grid.Column="3"
                                     Content="Telefon" 
-                                    Foreground="White"
+                                    Foreground="#707070"
                                     FontFamily="Segoe UI"
                                     FontSize="16"
                                     HorizontalContentAlignment="Center"
@@ -681,7 +681,7 @@
                                     <Label 
                                     Grid.Column="4"
                                     Content="Email" 
-                                    Foreground="White"
+                                    Foreground="#707070"
                                     FontFamily="Segoe UI"
                                     FontSize="16"
                                     HorizontalContentAlignment="Center"
@@ -697,7 +697,7 @@
                                     </StackPanel>
                                 </ScrollViewer>
                                 <StackPanel Grid.Row="3"
-                                  Background="#7CC989"
+                                  Background="#E0E0E0"
                                   Orientation="Horizontal">
                                     <Button 
                                     Width="39"
@@ -712,14 +712,14 @@
                                         <Grid
                                          Width="39"
                                         Height="39"
-                                        Background="#7CC989">
+                                        Background="#E0E0E0">
                                             <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
                                                 <Canvas Width="20" Height="20">
                                                     <Canvas.RenderTransform>
                                                         <TranslateTransform X="0" Y="0"/>
                                                     </Canvas.RenderTransform>
                                                     <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="White">
+                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#707070">
                                                         <Path.Data>
                                                             <PathGeometry Figures="M115.8 143.2a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.506 9.506 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.506 9.506 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.506 9.506 0 0 1-2.9-7.1A9.732 9.732 0 0 1 115.8 143.2Zm1.4 12.7a7.73 7.73 0 0 0 5.6 2.4 7.568 7.568 0 0 0 5.6-2.4 7.73 7.73 0 0 0 2.4-5.6 7.413 7.413 0 0 0-2.4-5.6 7.73 7.73 0 0 0-5.6-2.4 7.568 7.568 0 0 0-5.6 2.4 7.73 7.73 0 0 0-2.4 5.6A8.616 8.616 0 0 0 117.2 155.9Zm6.7-10.7v4h4v2h-4v4h-2v-4h-4v-2h4v-4Z" FillRule="NonZero"/>
                                                         </Path.Data>
@@ -817,14 +817,14 @@
                                         <Grid
                                             Height="39"
                                              Width="39"
-                                            Background="#7CC989">
+                                            Background="#E0E0E0">
                                             <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
                                                 <Canvas Width="16" Height="22">
                                                     <Canvas.RenderTransform>
                                                         <TranslateTransform X="0" Y="0"/>
                                                     </Canvas.RenderTransform>
                                                     <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="White">
+                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#707070">
                                                         <Path.Data>
                                                             <PathGeometry Figures="M529.4 17V14l4 4-4 4V19a7.413 7.413 0 0 1-5.6-2.4 7.73 7.73 0 0 1-2.4-5.6 7.271 7.271 0 0 1 1.3-4.3l1.5 1.5a5.3 5.3 0 0 0-.7 2.8 5.447 5.447 0 0 0 1.8 4.2A5.94 5.94 0 0 0 529.4 17Zm0-14A7.413 7.413 0 0 1 535 5.4a7.73 7.73 0 0 1 2.4 5.6 7.271 7.271 0 0 1-1.3 4.3l-1.5-1.5a5.3 5.3 0 0 0 .7-2.8 5.447 5.447 0 0 0-1.8-4.2A5.758 5.758 0 0 0 529.4 5V8l-4-4 4-4Z" FillRule="NonZero"/>
                                                         </Path.Data>
@@ -847,7 +847,7 @@
                                 Visibility="Collapsed"
                                 >
                                 <Grid.Background>
-                                    <SolidColorBrush Color="Black" Opacity="0.1"/>
+                                    <SolidColorBrush Color="Black" Opacity="0.5"/>
                                 </Grid.Background>
                                 <Grid
                                     Height="300"
@@ -859,7 +859,7 @@
                                     <Grid
                                         Width="540"
                                         Grid.Row="0"
-                                        Background="#7CC989"
+                                        Background="#707070"
                                         HorizontalAlignment="Right">
                                         <Label HorizontalAlignment="Left"
                                                Content="Raktár hozzáadása"
@@ -881,7 +881,7 @@
                                             <Grid
                                                 Width="29"
                                                 Height="29"
-                                                Background="#7CC989">
+                                                Background="#707070">
                                                 <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
                                                     <Canvas Width="20" Height="20">
                                                         <Canvas.RenderTransform>
@@ -1036,7 +1036,7 @@
                                                 HorizontalContentAlignment="Stretch"
                                                 Click="BtnRaktarEsemenyek"
                                                 Cursor="Hand">
-                                                <Grid Background="#7CC989">
+                                                <Grid Background="#707070">
                                                     <Label Content="Mentés"
                                                            VerticalContentAlignment="Center"
                                                            HorizontalContentAlignment="Center"
@@ -1057,7 +1057,7 @@
                                 Grid.Row="1"
                                 Visibility="Collapsed">
                                 <Grid.Background>
-                                    <SolidColorBrush Color="Black" Opacity="0.1"/>
+                                    <SolidColorBrush Color="Black" Opacity="0.5"/>
                                 </Grid.Background>
                                 <Grid
                                     Height="300"
@@ -1069,7 +1069,7 @@
                                     <Grid
                                         Width="540"
                                         Grid.Row="0"
-                                        Background="#7CC989"
+                                        Background="#707070"
                                         HorizontalAlignment="Right">
                                         <Label HorizontalAlignment="Left"
                                                Content="Raktár modosítása"
@@ -1090,7 +1090,7 @@
                                             <Grid
                                                 Width="29"
                                                 Height="29"
-                                                Background="#7CC989">
+                                                Background="#707070">
                                                 <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
                                                     <Canvas Width="20" Height="20">
                                                         <Canvas.RenderTransform>
@@ -1248,7 +1248,7 @@
                                                 HorizontalContentAlignment="Stretch"
                                                 Click="BtnRaktarEsemenyek"
                                                 Cursor="Hand">
-                                                <Grid Background="#7CC989">
+                                                <Grid Background="#707070">
                                                     <Label Content="Módosítás"
                                                            VerticalContentAlignment="Center"
                                                            HorizontalContentAlignment="Center"
@@ -1261,15 +1261,16 @@
                                     </Grid>
                                 </Grid>
                             </Grid>
+                            <!--raktarTörlése kisablak-->
                             <Grid
                                 x:Name="raktarTorlese"
                                 Grid.Row="1"
                                 Visibility="Collapsed">
                                 <Grid.Background>
-                                    <SolidColorBrush Color="Black" Opacity="0.1"/>
+                                    <SolidColorBrush Color="Black" Opacity="0.5"/>
                                 </Grid.Background>
                                 <Grid
-                                    Height="128"
+                                    Height="110"
                                     Width="254">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="30"/>
@@ -1278,7 +1279,7 @@
                                     <Grid
                                         Width="254"
                                         Grid.Row="0"
-                                        Background="#7CC989"
+                                        Background="#707070"
                                         HorizontalAlignment="Right">
                                         <Label HorizontalAlignment="Left"
                                                Content="Raktár törlése"
@@ -1299,7 +1300,7 @@
                                             <Grid
                                                 Width="29"
                                                 Height="29"
-                                                Background="#7CC989">
+                                                Background="#707070">
                                                 <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
                                                     <Canvas Width="20" Height="20">
                                                         <Canvas.RenderTransform>
@@ -1323,7 +1324,7 @@
                                           Background="White">
                                         <Grid.RowDefinitions >
                                             <RowDefinition Height="*"/>
-                                            <RowDefinition Height="55"/>
+                                            <RowDefinition Height="33"/>
                                         </Grid.RowDefinitions>
                                         <Grid Grid.Row="0"
                                               >
@@ -1337,41 +1338,41 @@
                                         </Grid>
                                         <Grid Grid.Row="1">
                                             <Button
-                                                Margin="20 0"
+                                                Margin="5 0"
                                                 HorizontalAlignment="Left"
                                                 Height="26"
-                                                Width="94"
+                                                Width="120"
                                                 Padding="-1"
                                                 BorderThickness="0"
                                                 VerticalContentAlignment="Stretch"
                                                 HorizontalContentAlignment="Stretch"
                                                 Click="BtnRaktarEsemenyek"
                                                 Cursor="Hand">
-                                                <Grid Background="#7CC989">
+                                                <Grid Background="#E0E0E0">
                                                     <Label Content="Igen"
                                                            VerticalContentAlignment="Center"
                                                            HorizontalContentAlignment="Center"
-                                                           Foreground="White"
+                                                           Foreground="#707070"
                                                            FontFamily="Segoe UI"
                                                            FontSize="14"/>
                                                 </Grid>
                                             </Button>
                                             <Button
-                                                Margin="20 0"
+                                                Margin="5 0"
                                                 HorizontalAlignment="Right"
                                                 Height="26"
-                                                Width="94"
+                                                Width="120"
                                                 Padding="-1"
                                                 BorderThickness="0"
                                                 VerticalContentAlignment="Stretch"
                                                 HorizontalContentAlignment="Stretch"
                                                 Click="BtnRaktarEsemenyek"
                                                 Cursor="Hand">
-                                                <Grid Background="#7CC989">
+                                                <Grid Background="#E0E0E0">
                                                     <Label Content="Nem"
                                                            VerticalContentAlignment="Center"
                                                            HorizontalContentAlignment="Center"
-                                                           Foreground="White"
+                                                           Foreground="#707070"
                                                            FontFamily="Segoe UI"
                                                            FontSize="14"/>
                                                 </Grid>
@@ -1381,8 +1382,6 @@
                                 </Grid>
                             </Grid>
                         </Grid>
-
-
                     </TabItem>
                     <!--TERMEKEK-->
                     <TabItem 
@@ -1398,7 +1397,7 @@
                                     <RowDefinition Height="40"/>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.Row="0"
-                                  Background="#7CC989"
+                                  Background="White"
                                   >
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="80"/>
@@ -1411,7 +1410,7 @@
                                     <Label 
                                     Grid.Column="0"
                                     Content="#" 
-                                    Foreground="White"
+                                    Foreground="#707070"
                                     FontFamily="Segoe UI"
                                     FontSize="16"
                                     HorizontalContentAlignment="Center"
@@ -1419,7 +1418,7 @@
                                     <Label 
                                     Grid.Column="1"
                                     Content="Megnevezés" 
-                                    Foreground="White"
+                                    Foreground="#707070"
                                     FontFamily="Segoe UI"
                                     FontSize="16"
                                     HorizontalContentAlignment="Left"
@@ -1427,7 +1426,7 @@
                                     <Label 
                                     Grid.Column="2"
                                     Content="ÁFA" 
-                                    Foreground="White"
+                                    Foreground="#707070"
                                     FontFamily="Segoe UI"
                                     FontSize="16"
                                     HorizontalContentAlignment="Center"
@@ -1435,7 +1434,7 @@
                                     <Label 
                                     Grid.Column="3"
                                     Content="Mennyiségi Egység" 
-                                    Foreground="White"
+                                    Foreground="#707070"
                                     FontFamily="Segoe UI"
                                     FontSize="16"
                                     HorizontalContentAlignment="Center"
@@ -1443,10 +1442,11 @@
                                     <Label 
                                     Grid.Column="4"
                                     Content="Egységár" 
-                                    Foreground="White"
+                                    Foreground="#707070"
                                     FontFamily="Segoe UI"
                                     FontSize="16"
-                                    HorizontalContentAlignment="Center"
+                                    HorizontalContentAlignment="Right"
+                                    Padding="40 0"
                                     VerticalContentAlignment="Center"/>
                                 </Grid>
                                 <ScrollViewer
@@ -1459,7 +1459,7 @@
                                     </StackPanel>
                                 </ScrollViewer>
                                 <StackPanel Grid.Row="3"
-                                  Background="#7CC989"
+                                  Background="#E0E0E0"
                                   Orientation="Horizontal">
                                     <Button 
                                     Width="39"
@@ -1474,14 +1474,14 @@
                                         <Grid
                                          Width="39"
                                         Height="39"
-                                        Background="#7CC989">
+                                        Background="#E0E0E0">
                                             <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
                                                 <Canvas Width="20" Height="20">
                                                     <Canvas.RenderTransform>
                                                         <TranslateTransform X="0" Y="0"/>
                                                     </Canvas.RenderTransform>
                                                     <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="White">
+                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#707070">
                                                         <Path.Data>
                                                             <PathGeometry Figures="M115.8 143.2a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.506 9.506 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.506 9.506 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.506 9.506 0 0 1-2.9-7.1A9.732 9.732 0 0 1 115.8 143.2Zm1.4 12.7a7.73 7.73 0 0 0 5.6 2.4 7.568 7.568 0 0 0 5.6-2.4 7.73 7.73 0 0 0 2.4-5.6 7.413 7.413 0 0 0-2.4-5.6 7.73 7.73 0 0 0-5.6-2.4 7.568 7.568 0 0 0-5.6 2.4 7.73 7.73 0 0 0-2.4 5.6A8.616 8.616 0 0 0 117.2 155.9Zm6.7-10.7v4h4v2h-4v4h-2v-4h-4v-2h4v-4Z" FillRule="NonZero"/>
                                                         </Path.Data>
@@ -1578,14 +1578,14 @@
                                         <Grid
                                             Height="39"
                                              Width="39"
-                                            Background="#7CC989">
+                                            Background="#E0E0E0">
                                             <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
                                                 <Canvas Width="16" Height="22">
                                                     <Canvas.RenderTransform>
                                                         <TranslateTransform X="0" Y="0"/>
                                                     </Canvas.RenderTransform>
                                                     <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="White">
+                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#707070">
                                                         <Path.Data>
                                                             <PathGeometry Figures="M529.4 17V14l4 4-4 4V19a7.413 7.413 0 0 1-5.6-2.4 7.73 7.73 0 0 1-2.4-5.6 7.271 7.271 0 0 1 1.3-4.3l1.5 1.5a5.3 5.3 0 0 0-.7 2.8 5.447 5.447 0 0 0 1.8 4.2A5.94 5.94 0 0 0 529.4 17Zm0-14A7.413 7.413 0 0 1 535 5.4a7.73 7.73 0 0 1 2.4 5.6 7.271 7.271 0 0 1-1.3 4.3l-1.5-1.5a5.3 5.3 0 0 0 .7-2.8 5.447 5.447 0 0 0-1.8-4.2A5.758 5.758 0 0 0 529.4 5V8l-4-4 4-4Z" FillRule="NonZero"/>
                                                         </Path.Data>
@@ -1605,7 +1605,7 @@
                                 Grid.Row="1"
                                 Visibility="Collapsed">
                                 <Grid.Background>
-                                    <SolidColorBrush Color="Black" Opacity="0.1"/>
+                                    <SolidColorBrush Color="Black" Opacity="0.5"/>
                                 </Grid.Background>
                                 <Grid
                                     Height="300"
@@ -1617,7 +1617,7 @@
                                     <Grid
                                         Width="540"
                                         Grid.Row="0"
-                                        Background="#7CC989"
+                                        Background="#707070"
                                         HorizontalAlignment="Right">
                                         <Label HorizontalAlignment="Left"
                                                Content="Termék hozzáadása"
@@ -1639,7 +1639,7 @@
                                             <Grid
                                                 Width="29"
                                                 Height="29"
-                                                Background="#7CC989">
+                                                Background="#707070">
                                                 <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
                                                     <Canvas Width="20" Height="20">
                                                         <Canvas.RenderTransform>
@@ -1794,7 +1794,7 @@
                                                 HorizontalContentAlignment="Stretch"
                                                 Click="BtnTermekEsemenyek"
                                                 Cursor="Hand">
-                                                <Grid Background="#7CC989">
+                                                <Grid Background="#707070">
                                                     <Label Content="Mentés"
                                                            VerticalContentAlignment="Center"
                                                            HorizontalContentAlignment="Center"
@@ -1813,7 +1813,7 @@
                                 Grid.Row="1"
                                 Visibility="Collapsed">
                                 <Grid.Background>
-                                    <SolidColorBrush Color="Black" Opacity="0.1"/>
+                                    <SolidColorBrush Color="Black" Opacity="0.5"/>
                                 </Grid.Background>
                                 <Grid
                                     Height="300"
@@ -1825,7 +1825,7 @@
                                     <Grid
                                         Width="540"
                                         Grid.Row="0"
-                                        Background="#7CC989"
+                                        Background="#707070"
                                         HorizontalAlignment="Right">
                                         <Label HorizontalAlignment="Left"
                                                Content="Termek modosítása"
@@ -1846,7 +1846,7 @@
                                             <Grid
                                                 Width="29"
                                                 Height="29"
-                                                Background="#7CC989">
+                                                Background="#707070">
                                                 <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
                                                     <Canvas Width="20" Height="20">
                                                         <Canvas.RenderTransform>
@@ -2001,7 +2001,7 @@
                                                 HorizontalContentAlignment="Stretch"
                                                 Click="BtnTermekEsemenyek"
                                                 Cursor="Hand">
-                                                <Grid Background="#7CC989">
+                                                <Grid Background="#707070">
                                                     <Label Content="Módosítás"
                                                            VerticalContentAlignment="Center"
                                                            HorizontalContentAlignment="Center"
@@ -2017,13 +2017,12 @@
                             <!--termekTörlése kisablak-->
                             <Grid
                                 x:Name="termekTorlese"
-                                Grid.Row="1"
                                 Visibility="Collapsed">
                                 <Grid.Background>
-                                    <SolidColorBrush Color="Black" Opacity="0.1"/>
+                                    <SolidColorBrush Color="Black" Opacity="0.5"/>
                                 </Grid.Background>
                                 <Grid
-                                    Height="128"
+                                    Height="110"
                                     Width="254">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="30"/>
@@ -2032,7 +2031,7 @@
                                     <Grid
                                         Width="254"
                                         Grid.Row="0"
-                                        Background="#7CC989"
+                                        Background="#707070"
                                         HorizontalAlignment="Right">
                                         <Label HorizontalAlignment="Left"
                                                Content="Termék törlése"
@@ -2053,7 +2052,7 @@
                                             <Grid
                                                 Width="29"
                                                 Height="29"
-                                                Background="#7CC989">
+                                                Background="#707070">
                                                 <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
                                                     <Canvas Width="20" Height="20">
                                                         <Canvas.RenderTransform>
@@ -2077,7 +2076,7 @@
                                           Background="White">
                                         <Grid.RowDefinitions >
                                             <RowDefinition Height="*"/>
-                                            <RowDefinition Height="55"/>
+                                            <RowDefinition Height="34"/>
                                         </Grid.RowDefinitions>
                                         <Grid Grid.Row="0"
                                               >
@@ -2091,41 +2090,41 @@
                                         </Grid>
                                         <Grid Grid.Row="1">
                                             <Button
-                                                Margin="20 0"
+                                                Margin="5 0"
                                                 HorizontalAlignment="Left"
                                                 Height="26"
-                                                Width="94"
+                                                Width="120"
                                                 Padding="-1"
                                                 BorderThickness="0"
                                                 VerticalContentAlignment="Stretch"
                                                 HorizontalContentAlignment="Stretch"
                                                 Click="BtnTermekEsemenyek"
                                                 Cursor="Hand">
-                                                <Grid Background="#7CC989">
+                                                <Grid Background="#E0E0E0">
                                                     <Label Content="Igen"
                                                            VerticalContentAlignment="Center"
                                                            HorizontalContentAlignment="Center"
-                                                           Foreground="White"
+                                                           Foreground="#707070"
                                                            FontFamily="Segoe UI"
                                                            FontSize="14"/>
                                                 </Grid>
                                             </Button>
                                             <Button
-                                                Margin="20 0"
+                                                Margin="5 0"
                                                 HorizontalAlignment="Right"
                                                 Height="26"
-                                                Width="94"
+                                                Width="120"
                                                 Padding="-1"
                                                 BorderThickness="0"
                                                 VerticalContentAlignment="Stretch"
                                                 HorizontalContentAlignment="Stretch"
                                                 Click="BtnTermekEsemenyek"
                                                 Cursor="Hand">
-                                                <Grid Background="#7CC989">
+                                                <Grid Background="#E0E0E0">
                                                     <Label Content="Nem"
                                                            VerticalContentAlignment="Center"
                                                            HorizontalContentAlignment="Center"
-                                                           Foreground="White"
+                                                           Foreground="#707070"
                                                            FontFamily="Segoe UI"
                                                            FontSize="14"/>
                                                 </Grid>
@@ -2140,8 +2139,878 @@
                     <!--RAKTARKÖZÖTTI ÁTADÁS-->
                     <TabItem 
                         x:Name="tbiRaktarkoziAtadas"
-                        Visibility="Collapsed">
+                        Visibility="Visible">
+                        <Grid>
+                            <Grid
+                            Margin="20"
+                            Background="White">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0"
+                                  Background="White"
+                                  >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="17"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label 
+                                    Grid.Column="0"
+                                    Content="#" 
+                                    Foreground="#707070"
+                                    FontFamily="Segoe UI"
+                                    FontSize="16"
+                                    HorizontalContentAlignment="Center"
+                                    VerticalContentAlignment="Center"/>
+                                    <Label 
+                                    Grid.Column="1"
+                                    Content="Dátum" 
+                                    Foreground="#707070"
+                                    FontFamily="Segoe UI"
+                                    FontSize="16"
+                                    HorizontalContentAlignment="Left"
+                                    VerticalContentAlignment="Center"/>
+                                    <Label 
+                                    Grid.Column="2"
+                                    Content="Árukiadó Raktár" 
+                                    Foreground="#707070"
+                                    FontFamily="Segoe UI"
+                                    FontSize="16"
+                                    HorizontalContentAlignment="Left"
+                                    VerticalContentAlignment="Center"/>
+                                    <Label 
+                                    Grid.Column="3"
+                                    Content="Bevételező Raktár" 
+                                    Foreground="#707070"
+                                    FontFamily="Segoe UI"
+                                    FontSize="16"
+                                    HorizontalContentAlignment="Left"
+                                    VerticalContentAlignment="Center"/>
+                                    <Label 
+                                    Grid.Column="4"
+                                    Content="Áruérték" 
+                                    Foreground="#707070"
+                                    FontFamily="Segoe UI"
+                                    FontSize="16"
+                                    HorizontalContentAlignment="Right"
+                                    Padding="40 0"
+                                    VerticalContentAlignment="Center"/>
+                                </Grid>
+                                <ScrollViewer
+                                Grid.Row="1"
+                                HorizontalScrollBarVisibility="Disabled">
+                                    <StackPanel
+                                    x:Name="spArukuldesekTabla"
+                                    Orientation="Vertical">
+                                        <!--tartalom: Arukuldesek-->
+                                    </StackPanel>
+                                </ScrollViewer>
+                                <StackPanel Grid.Row="3"
+                                  Background="#E0E0E0"
+                                  Orientation="Horizontal">
+                                    <Button 
+                                    Width="39"
+                                    Height="39"
+                                    Padding="-1"
+                                    Cursor="Hand"
+                                    BorderThickness="0"
+                                    VerticalContentAlignment="Stretch"
+                                    HorizontalContentAlignment="Stretch"
+                                    Click="BtnArukuldesekreVonatkozoInterakciok"
+                                    ToolTip="új áruküldés" >
+                                        <Grid
+                                         Width="39"
+                                        Height="39"
+                                        Background="#E0E0E0">
+                                            <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                                <Canvas Width="20" Height="20">
+                                                    <Canvas.RenderTransform>
+                                                        <TranslateTransform X="0" Y="0"/>
+                                                    </Canvas.RenderTransform>
+                                                    <Canvas.Resources/>
+                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#707070">
+                                                        <Path.Data>
+                                                            <PathGeometry Figures="M115.8 143.2a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.506 9.506 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.506 9.506 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.506 9.506 0 0 1-2.9-7.1A9.732 9.732 0 0 1 115.8 143.2Zm1.4 12.7a7.73 7.73 0 0 0 5.6 2.4 7.568 7.568 0 0 0 5.6-2.4 7.73 7.73 0 0 0 2.4-5.6 7.413 7.413 0 0 0-2.4-5.6 7.73 7.73 0 0 0-5.6-2.4 7.568 7.568 0 0 0-5.6 2.4 7.73 7.73 0 0 0-2.4 5.6A8.616 8.616 0 0 0 117.2 155.9Zm6.7-10.7v4h4v2h-4v4h-2v-4h-4v-2h4v-4Z" FillRule="NonZero"/>
+                                                        </Path.Data>
+                                                        <Path.RenderTransform>
+                                                            <TranslateTransform X="-112.9" Y="-140.3"/>
+                                                        </Path.RenderTransform>
+                                                    </Path>
+                                                </Canvas>
+                                            </Viewbox>
+                                        </Grid>
+                                    </Button>
+                                    <Button 
+                                        Click="BtnArukuldesekreVonatkozoInterakciok"
+                                        Grid.Column="5"
+                                        Grid.Row="0"
+                                        Width="39"
+                                        Height="39"
+                                        Padding="-1"
+                                        Cursor="Hand"
+                                        BorderThickness="0"
+                                        VerticalContentAlignment="Stretch"
+                                        HorizontalContentAlignment="Stretch"
+                                        ToolTip="áruküldés módosítása"
+                                        Name="btnArukuldesekTablaModositas"
+                                        Visibility="Visible">
+                                        <Grid
+                                            Height="39"
+                                             Width="39"
+                                            Background="#E0E0E0">
+                                            <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                                <Canvas  Width="17.9" Height="18">
+                                                    <Canvas.RenderTransform>
+                                                        <TranslateTransform X="0" Y="0"/>
+                                                    </Canvas.RenderTransform>
+                                                    <Canvas.Resources/>
+                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#707070">
+                                                        <Path.Data>
+                                                            <PathGeometry Figures="M40 573.1 51 562l3.8 3.8L43.7 576.9H40Zm17.7-10.3-1.8 1.8-3.8-3.8 1.8-1.8a.967.967 0 0 1 1.4 0l2.3 2.3a.908.908 0 0 1 .3.7C57.9 562.3 57.9 562.7 57.7 562.8Z" FillRule="NonZero"/>
+                                                        </Path.Data>
+                                                        <Path.RenderTransform>
+                                                            <TranslateTransform X="-40" Y="-558.7"/>
+                                                        </Path.RenderTransform>
+                                                    </Path>
+                                                </Canvas>
+                                            </Viewbox>
+                                        </Grid>
+                                    </Button>
+                                    <Button 
+                                        Click="BtnArukuldesekreVonatkozoInterakciok"
+                                        HorizontalAlignment="Left"
+                                        Grid.Column="6"
+                                        Width="39"
+                                        Height="39"
+                                        Padding="-1"
+                                        Cursor="Hand"
+                                        BorderThickness="0"
+                                        VerticalContentAlignment="Stretch"
+                                        HorizontalContentAlignment="Stretch"
+                                        ToolTip="áruköldés törlése"
+                                        Name="btnArukuldesekTablaTorles"
+                                        Visibility="Visible">
+                                        <Grid
+                                            Height="39"
+                                             Width="39"
+                                            Background="#E0E0E0">
+                                            <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                                <Canvas  Width="12" Height="18">
+                                                    <Canvas.RenderTransform>
+                                                        <TranslateTransform X="0" Y="0"/>
+                                                    </Canvas.RenderTransform>
+                                                    <Canvas.Resources/>
+                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#707070">
+                                                        <Path.Data>
+                                                            <PathGeometry Figures="M425.5 1047v2h-14v-2H415l1-1h5l1 1Zm-12.9 15v-12h12v12a2.051 2.051 0 0 1-2 2h-8a2.051 2.051 0 0 1-2-2Z" FillRule="NonZero"/>
+                                                        </Path.Data>
+                                                        <Path.RenderTransform>
+                                                            <TranslateTransform X="-411.5" Y="-1046"/>
+                                                        </Path.RenderTransform>
+                                                    </Path>
+                                                </Canvas>
+                                            </Viewbox>
+                                        </Grid>
+                                    </Button>
+                                    <Button 
+                                        Width="39"
+                                        Height="39"
+                                        Padding="-1"
+                                        Cursor="Hand"
+                                        BorderThickness="0"
+                                        VerticalContentAlignment="Stretch"
+                                        HorizontalContentAlignment="Stretch"
+                                        Click="BtnArukuldesekreVonatkozoInterakciok"
+                                        ToolTip="szinkronizálás">
+                                        <Grid
+                                            Height="39"
+                                             Width="39"
+                                            Background="#E0E0E0">
+                                            <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                                <Canvas Width="16" Height="22">
+                                                    <Canvas.RenderTransform>
+                                                        <TranslateTransform X="0" Y="0"/>
+                                                    </Canvas.RenderTransform>
+                                                    <Canvas.Resources/>
+                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#707070">
+                                                        <Path.Data>
+                                                            <PathGeometry Figures="M529.4 17V14l4 4-4 4V19a7.413 7.413 0 0 1-5.6-2.4 7.73 7.73 0 0 1-2.4-5.6 7.271 7.271 0 0 1 1.3-4.3l1.5 1.5a5.3 5.3 0 0 0-.7 2.8 5.447 5.447 0 0 0 1.8 4.2A5.94 5.94 0 0 0 529.4 17Zm0-14A7.413 7.413 0 0 1 535 5.4a7.73 7.73 0 0 1 2.4 5.6 7.271 7.271 0 0 1-1.3 4.3l-1.5-1.5a5.3 5.3 0 0 0 .7-2.8 5.447 5.447 0 0 0-1.8-4.2A5.758 5.758 0 0 0 529.4 5V8l-4-4 4-4Z" FillRule="NonZero"/>
+                                                        </Path.Data>
+                                                        <Path.RenderTransform>
+                                                            <TranslateTransform X="-521.4"/>
+                                                        </Path.RenderTransform>
+                                                    </Path>
+                                                </Canvas>
+                                            </Viewbox>
+                                        </Grid>
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+                            <!--Új áruküldés ablak-->
+                            <Grid
+                                x:Name="arukuldesHozzaadasa"
+                                Grid.Row="1"
+                                Visibility="Visible"
+                                Margin="20"
+                                Background="#E0E0E0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="175"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0"
+                                      Background="White">
+                                    <Button Width="99"
+                                            Height="28"
+                                            Padding="-1"
+                                            Cursor="Hand"
+                                            BorderThickness="0"
+                                            VerticalContentAlignment="Stretch"
+                                            HorizontalContentAlignment="Stretch"
+                                            HorizontalAlignment="Left"
+                                            >
+                                        <Grid Width="100"
+                                              Height="30"
+                                              Background="White">
+                                            
+                                        </Grid>
+                                    </Button>
+                                    <Label Content="#2415"
+                                           HorizontalAlignment="Right"
+                                           Foreground="#707070"
+                                           FontFamily="Segoe UI"
+                                           Margin="5 0"
+                                           FontSize="14"
+                                           VerticalContentAlignment="Center"/>
+                                </Grid>
+                                <Grid Grid.Row="1"
+                                      >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0"
+                                                Background="#F1F1F1"
+                                                Margin="14 14 7 7">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0"
+                                              Background="White">
+                                            <Label FontSize="18"
+                                                   VerticalAlignment="Center"
+                                                   Padding="15 0"
+                                                   Content="Kiállító adatai"
+                                                   Foreground="#707070"
+                                                   FontFamily="Segoe UI"/>
+                                        </Grid>
+                                        <Grid Grid.Row="1">
+
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Grid.Column="1"
+                                                Background="#F1F1F1"
+                                                Margin="7 14 7 7">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0"
+                                              Background="White">
+                                            <Label FontSize="18"
+                                                   VerticalAlignment="Center"
+                                                   Padding="15 0"
+                                                   Content="Raktár kiválsztása"
+                                                   Foreground="#707070"
+                                                   FontFamily="Segoe UI"/>
+                                        </Grid>
+                                        <Grid Grid.Row="1">
+
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Grid.Column="2"
+                                                Background="#F1F1F1"
+                                                Margin="7 14 14 7">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0"
+                                              Background="White">
+                                            <Label FontSize="18"
+                                                   VerticalAlignment="Center"
+                                                   Padding="15 0"
+                                                   Content="Megjegyzés hozzáfúzése"
+                                                   Foreground="#707070"
+                                                   FontFamily="Segoe UI"/>
+                                        </Grid>
+                                        <Grid Grid.Row="1">
+
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="255"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0"
+                                          Margin=" 14 7 7 14">
+                                        <Grid.RowDefinitions >
+                                            <RowDefinition Height="50"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0"
+                                              Background="White">
+                                            <Border Margin="5" BorderBrush="#F6F6F6" BorderThickness="1">
+                                                <Grid>
+                                                    <TextBox 
+                                                        VerticalContentAlignment="Center"
+                                                        BorderThickness="0"
+                                                        Padding="6"
+                                                        Text="Keresés"
+                                                        Foreground="#8E8E8E"
+                                                        TextWrapping="NoWrap"
+                                                        Background="Transparent" Margin="0,0,30,0"/>
+                                                    <Button 
+                                                        Height="39" 
+                                                        Width="29"
+                                                        Margin="190,0,0,0"
+                                                        Padding="-1"
+                                                        BorderThickness="0"
+                                                        VerticalContentAlignment="Stretch"
+                                                        HorizontalContentAlignment="Stretch">
+                                                        <Canvas 
+                                                            Background="White"
+                                                            Height="40"
+                                                            Width="30"
+                                                            Cursor="Hand">
+                                                            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#FFA7A7A7" Stretch="Fill" Canvas.Top="1163.75" Canvas.Left="25.313" Height="14.125" Width="13.874" >
+                                                                <Path.Data>
+                                                                    <PathGeometry Figures="M15.5 1161.4l5 5-1.5 1.5-5-5v-.8l-.3-.3a6.362 6.362 0 0 1-4.2 1.5 6.039 6.039 0 0 1-4.6-1.9 6.6 6.6 0 0 1-1.9-4.6 6.039 6.039 0 0 1 1.9-4.6 6.6 6.6 0 0 1 4.6-1.9 6.19 6.19 0 0 1 4.6 1.9 6.6 6.6 0 0 1 1.9 4.6 6.361 6.361 0 0 1-1.5 4.2l.3.3h.7Zm-9.2-1.3a4.224 4.224 0 0 0 3.2 1.3 4.377 4.377 0 0 0 3.2-1.3 4.588 4.588 0 0 0 0-6.4 4.224 4.224 0 0 0-3.2-1.3 4.377 4.377 0 0 0-3.2 1.3 4.224 4.224 0 0 0-1.3 3.2A4.626 4.626 0 0 0 6.3 1160.1Z" FillRule="NonZero"/>
+                                                                </Path.Data>
+                                                                <Path.RenderTransform>
+                                                                    <TransformGroup>
+                                                                        <ScaleTransform ScaleX="-1"/>
+                                                                        <SkewTransform/>
+                                                                        <RotateTransform/>
+                                                                        <TranslateTransform X="-3" Y="-1150.3"/>
+                                                                    </TransformGroup>
+                                                                </Path.RenderTransform>
+                                                            </Path>
+                                                        </Canvas>
+                                                    </Button>
+                                                </Grid>
+                                            </Border>
+                                        </Grid>
+                                        <Grid Grid.Row="1"
+                                              Background="#F1F1F1">
+                                            <ScrollViewer Margin="5" HorizontalScrollBarVisibility="Disabled"
+                                                          VerticalScrollBarVisibility="Auto">
+                                                <StackPanel >
+                                                    <Grid Margin="5" Height="30"
+                                                          Background="White">
+                                                        <Label HorizontalAlignment="Left"
+                                                               Content="Sertés Comb"
+                                                               Foreground="#707070"
+                                                               FontFamily="Segoe UI"
+                                                               FontSize="12"
+                                                               VerticalContentAlignment="Center"/>
+                                                        <Button VerticalAlignment="Center"
+                                                                Width="28"
+                                                                Height="28"
+                                                                HorizontalAlignment="Right"
+                                                                Padding="-1"
+                                                                BorderThickness="0"
+                                                                Cursor="Hand"
+                                                                HorizontalContentAlignment="Stretch"
+                                                                VerticalContentAlignment="Stretch"
+                                                                Margin=" 1 0"
+                                                                >
+                                                            <Grid Width="30"
+                                                                  Height="30"
+                                                                  Background="White" >
+                                                                <Canvas Name="svg3" Width="10.128" Height="10.128">
+                                                                    <Canvas.RenderTransform>
+                                                                        <TranslateTransform X="0" Y="0"/>
+                                                                    </Canvas.RenderTransform>
+                                                                    <Canvas.Resources/>
+                                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path" Fill="#FFA7A7A7">
+                                                                        <Path.Data>
+                                                                            <PathGeometry Figures="M15.128 148.988H10.788v4.341H9.341v-4.341H5v-1.447H9.341V143.2h1.447v4.341h4.341Z" FillRule="NonZero"/>
+                                                                        </Path.Data>
+                                                                        <Path.RenderTransform>
+                                                                            <TranslateTransform X="-5" Y="-143.2"/>
+                                                                        </Path.RenderTransform>
+                                                                    </Path>
+                                                                </Canvas>
+                                                            </Grid>
+                                                        </Button>
+
+                                                    </Grid>
+                                                </StackPanel>
+                                            </ScrollViewer>
+                                        </Grid>
+                                        
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <Grid Background="White"
+                                              Margin="7 7 14 14">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid Grid.Row="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="4"/>
+                                                    <ColumnDefinition Width="50"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="17"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Grid.Column="1"
+                                                       Content="#"
+                                                       FontSize="16"
+                                                       VerticalContentAlignment="Center"
+                                                       HorizontalContentAlignment="Center"
+                                                       Foreground="#707070"/>
+                                                <Label Grid.Column="2"
+                                                       Content="Megnevezés"
+                                                       FontSize="16"
+                                                       VerticalContentAlignment="Center"
+                                                       HorizontalContentAlignment="Left"
+                                                       Foreground="#707070"/>
+                                                <Label Grid.Column="3"
+                                                       Content="Menniység"
+                                                       FontSize="16"
+                                                       VerticalContentAlignment="Center"
+                                                       HorizontalContentAlignment="Right"
+                                                       Foreground="#707070"/>
+                                                <Label Grid.Column="4"
+                                                       Content="Me.e."
+                                                       FontSize="16"
+                                                       VerticalContentAlignment="Center"
+                                                       HorizontalContentAlignment="Center"
+                                                       Foreground="#707070"/>
+                                                <Label Grid.Column="5"
+                                                       Content="Egységár"
+                                                       FontSize="16"
+                                                       VerticalContentAlignment="Center"
+                                                       HorizontalContentAlignment="Right"
+                                                       Foreground="#707070"/>
+                                                <Label Grid.Column="6"
+                                                       Content="ÁFA"
+                                                       FontSize="16"
+                                                       VerticalContentAlignment="Center"
+                                                       HorizontalContentAlignment="Center"
+                                                       Foreground="#707070"/>
+                                                <Label Grid.Column="7"
+                                                       Content="Bruttó ár"
+                                                       FontSize="16"
+                                                       VerticalContentAlignment="Center"
+                                                       HorizontalContentAlignment="Center"
+                                                       Foreground="#707070"/>
+                                            </Grid>
+                                            <Grid Grid.Row="1">
+                                                <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                                                              HorizontalScrollBarVisibility="Disabled">
+                                                    <StackPanel>
+                                                        <Grid Height="30">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="4"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Grid Grid.Column="0">
+
+                                                            </Grid>
+                                                            <Button Grid.Column="1"
+		                                                            Height="29"
+		                                                            Padding="-1"
+		                                                            BorderThickness="0"
+		                                                            Cursor="Hand"
+		                                                            HorizontalContentAlignment="Stretch"
+		                                                            VerticalContentAlignment="Stretch">
+                                                                <Grid Background="White">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="50"/>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="17"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Label Grid.Column="0"
+                                                                           Content="1"
+                                                                           FontSize="13"
+                                                                           VerticalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Center"
+                                                                           Foreground="#707070"/>
+                                                                    <Label Grid.Column="1"
+                                                                           Content="Sertés Comb"
+                                                                           FontSize="13"
+                                                                           VerticalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Left"
+                                                                           Foreground="#707070"/>
+                                                                    <Label Grid.Column="2"
+                                                                           Content="56.00"
+                                                                           FontSize="13"
+                                                                           VerticalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Right"
+                                                                           Foreground="#707070"/>
+                                                                    <Label Grid.Column="3"
+                                                                           Content="kg"
+                                                                           FontSize="13"
+                                                                           VerticalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Center"
+                                                                           Foreground="#707070"/>
+                                                                    <Label Grid.Column="4"
+                                                                           Content="1 250 Ft"
+                                                                           FontSize="13"
+                                                                           VerticalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Right"
+                                                                           Foreground="#707070"/>
+                                                                    <Label Grid.Column="5"
+                                                                           Content="5 %"
+                                                                           FontSize="13"
+                                                                           VerticalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Center"
+                                                                           Foreground="#707070"/>
+                                                                    <Label Grid.Column="6"
+                                                                           Content="70 000 Ft"
+                                                                           FontSize="13"
+                                                                           VerticalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Center"
+                                                                           Foreground="#707070"/>
+                                                                </Grid>
+                                                            </Button>
+                                                        </Grid>
+                                                        <Grid Height="30"
+                                                              >
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="4"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Grid Grid.Column="0">
+
+                                                            </Grid>
+                                                            <Button Grid.Column="1"
+		                                                            Height="29"
+		                                                            Padding="-1"
+		                                                            BorderThickness="0"
+		                                                            Cursor="Hand"
+		                                                            HorizontalContentAlignment="Stretch"
+		                                                            VerticalContentAlignment="Stretch">
+                                                                <Grid Background="#F6F6F6">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="50"/>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="17"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Label Grid.Column="0"
+                                                                           Content="1"
+                                                                           FontSize="13"
+                                                                           VerticalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Center"
+                                                                           Foreground="#707070"/>
+                                                                    <Label Grid.Column="1"
+                                                                           Content="Sertés Comb"
+                                                                           FontSize="13"
+                                                                           VerticalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Left"
+                                                                           Foreground="#707070"/>
+                                                                    <Label Grid.Column="2"
+                                                                           Content="56.00"
+                                                                           FontSize="13"
+                                                                           VerticalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Right"
+                                                                           Foreground="#707070"/>
+                                                                    <Label Grid.Column="3"
+                                                                           Content="kg"
+                                                                           FontSize="13"
+                                                                           VerticalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Center"
+                                                                           Foreground="#707070"/>
+                                                                    <Label Grid.Column="4"
+                                                                           Content="1 250 Ft"
+                                                                           FontSize="13"
+                                                                           VerticalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Right"
+                                                                           Foreground="#707070"/>
+                                                                    <Label Grid.Column="5"
+                                                                           Content="5 %"
+                                                                           FontSize="13"
+                                                                           VerticalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Center"
+                                                                           Foreground="#707070"/>
+                                                                    <Label Grid.Column="6"
+                                                                           Content="70 000 Ft"
+                                                                           FontSize="13"
+                                                                           VerticalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Center"
+                                                                           Foreground="#707070"/>
+                                                                </Grid>
+                                                            </Button>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </ScrollViewer>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid Background="#F1F1F1"
+                                      Grid.Row="3">
+                                    <StackPanel 
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Right">
+                                        <Label Content="Végösszeg:"
+                                               FontSize="14"
+                                               VerticalContentAlignment="Center"
+                                               Padding="0 -2"
+                                               Margin="10 0"
+                                               Foreground="#707070"/>
+                                        <Label Content="240 000 Ft"
+                                               FontSize="14"
+                                               VerticalContentAlignment="Center"
+                                               Padding="0 -2"
+                                               Margin="0 0 50 0"
+                                               Foreground="#707070"/>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Row="4">
+                                    <StackPanel 
+                                                Background="#E0E0E0"
+                                                Orientation="Horizontal"
+                                                HorizontalAlignment="Left">
+                                        <Button 
+                                                Width="39"
+                                                Height="39"
+                                                Padding="-1"
+                                                Cursor="Hand"
+                                                BorderThickness="0"
+                                                VerticalContentAlignment="Stretch"
+                                                HorizontalContentAlignment="Stretch"
+                                                Click="BtnRaktarakraVonatkozoInterakciok"
+                                                ToolTip="termék hozzáadása" >
+                                            <Grid
+                                                 Width="39"
+                                                 Height="39"
+                                                 Background="#E0E0E0">
+                                                <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                                    <Canvas Width="20" Height="20">
+                                                        <Canvas.RenderTransform>
+                                                            <TranslateTransform X="0" Y="0"/>
+                                                        </Canvas.RenderTransform>
+                                                        <Canvas.Resources/>
+                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#707070">
+                                                            <Path.Data>
+                                                                <PathGeometry Figures="M115.8 143.2a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.506 9.506 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.506 9.506 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.506 9.506 0 0 1-2.9-7.1A9.732 9.732 0 0 1 115.8 143.2Zm1.4 12.7a7.73 7.73 0 0 0 5.6 2.4 7.568 7.568 0 0 0 5.6-2.4 7.73 7.73 0 0 0 2.4-5.6 7.413 7.413 0 0 0-2.4-5.6 7.73 7.73 0 0 0-5.6-2.4 7.568 7.568 0 0 0-5.6 2.4 7.73 7.73 0 0 0-2.4 5.6A8.616 8.616 0 0 0 117.2 155.9Zm6.7-10.7v4h4v2h-4v4h-2v-4h-4v-2h4v-4Z" FillRule="NonZero"/>
+                                                            </Path.Data>
+                                                            <Path.RenderTransform>
+                                                                <TranslateTransform X="-112.9" Y="-140.3"/>
+                                                            </Path.RenderTransform>
+                                                        </Path>
+                                                    </Canvas>
+                                                </Viewbox>
+                                            </Grid>
+                                        </Button>
+
+                                        <Button 
+                                                Click="BtnRaktarakraVonatkozoInterakciok"
+                                                Grid.Column="5"
+                                                Grid.Row="0"
+                                                Width="39"
+                                                Height="39"
+                                                Padding="-1"
+                                                Cursor="Hand"
+                                                BorderThickness="0"
+                                                VerticalContentAlignment="Stretch"
+                                                HorizontalContentAlignment="Stretch"
+                                                ToolTip="termék módosítása"
+                                                Visibility="Visible">
+                                            <Grid
+                                                 Height="39"
+                                                 Width="39"
+                                                Background="#E0E0E0">
+                                                <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                                    <Canvas  Width="17.9" Height="18">
+                                                        <Canvas.RenderTransform>
+                                                            <TranslateTransform X="0" Y="0"/>
+                                                        </Canvas.RenderTransform>
+                                                        <Canvas.Resources/>
+                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#707070">
+                                                            <Path.Data>
+                                                                <PathGeometry Figures="M40 573.1 51 562l3.8 3.8L43.7 576.9H40Zm17.7-10.3-1.8 1.8-3.8-3.8 1.8-1.8a.967.967 0 0 1 1.4 0l2.3 2.3a.908.908 0 0 1 .3.7C57.9 562.3 57.9 562.7 57.7 562.8Z" FillRule="NonZero"/>
+                                                            </Path.Data>
+                                                            <Path.RenderTransform>
+                                                                <TranslateTransform X="-40" Y="-558.7"/>
+                                                            </Path.RenderTransform>
+                                                        </Path>
+                                                    </Canvas>
+                                                </Viewbox>
+                                            </Grid>
+                                        </Button>
+                                        <Button 
+                                                Click="BtnRaktarakraVonatkozoInterakciok"
+                                                HorizontalAlignment="Left"
+                                                Grid.Column="6"
+                                                Width="39"
+                                                Height="39"
+                                                Padding="-1"
+                                                Cursor="Hand"
+                                                BorderThickness="0"
+                                                VerticalContentAlignment="Stretch"
+                                                HorizontalContentAlignment="Stretch"
+                                                ToolTip="termék törlése"
+                                                Visibility="Visible">
+                                            <Grid
+                                                Height="39"
+                                                 Width="39"
+                                                Background="#E0E0E0">
+                                                <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                                    <Canvas  Width="12" Height="18">
+                                                        <Canvas.RenderTransform>
+                                                            <TranslateTransform X="0" Y="0"/>
+                                                        </Canvas.RenderTransform>
+                                                        <Canvas.Resources/>
+                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#707070">
+                                                            <Path.Data>
+                                                                <PathGeometry Figures="M425.5 1047v2h-14v-2H415l1-1h5l1 1Zm-12.9 15v-12h12v12a2.051 2.051 0 0 1-2 2h-8a2.051 2.051 0 0 1-2-2Z" FillRule="NonZero"/>
+                                                            </Path.Data>
+                                                            <Path.RenderTransform>
+                                                                <TranslateTransform X="-411.5" Y="-1046"/>
+                                                            </Path.RenderTransform>
+                                                        </Path>
+                                                    </Canvas>
+                                                </Viewbox>
+                                            </Grid>
+                                        </Button>
+                                        
+                                    </StackPanel>
+                                    <StackPanel 
+                                                Background="#E0E0E0"
+                                                Orientation="Horizontal"
+                                                HorizontalAlignment="Right">
+                                        
+                                        <Button 
+                                                Click="BtnRaktarakraVonatkozoInterakciok"
+                                                Grid.Column="5"
+                                                Grid.Row="0"
+                                                Width="39"
+                                                Height="39"
+                                                Padding="-1"
+                                                Cursor="Hand"
+                                                BorderThickness="0"
+                                                VerticalContentAlignment="Stretch"
+                                                HorizontalContentAlignment="Stretch"
+                                                ToolTip="Nyomtatás"
+                                                Visibility="Visible">
+                                            <Grid
+                                                 Height="39"
+                                                 Width="39"
+                                                Background="#E0E0E0">
+                                                <Canvas Width="22.222" Height="20">
+                                                    <Canvas.RenderTransform>
+                                                        <TranslateTransform X="0" Y="0"/>
+                                                    </Canvas.RenderTransform>
+                                                    <Canvas.Resources/>
+                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#FF707070">
+                                                        <Path.Data>
+                                                            <PathGeometry Figures="M944.889 773.156a3.418 3.418 0 0 1 3.334 3.333v6.667h-4.445V787.6H930.444v-4.444H926v-6.667a3.418 3.418 0 0 1 3.333-3.333Zm-1.111-5.556v4.444H930.444V767.6Zm-2.222 17.778v-5.556h-8.889v5.556Zm2.556-8.111a1.074 1.074 0 1 0-.333-.778A1.009 1.009 0 0 0 944.111 777.267Z" FillRule="NonZero"/>
+                                                        </Path.Data>
+                                                        <Path.RenderTransform>
+                                                            <TranslateTransform X="-926" Y="-767.6"/>
+                                                        </Path.RenderTransform>
+                                                    </Path>
+                                                </Canvas>
+                                            </Grid>
+                                        </Button>
+                                        <Button 
+                                                Click="BtnRaktarakraVonatkozoInterakciok"
+                                                HorizontalAlignment="Left"
+                                                Grid.Column="6"
+                                                Width="39"
+                                                Height="39"
+                                                Padding="-1"
+                                                Cursor="Hand"
+                                                BorderThickness="0"
+                                                VerticalContentAlignment="Stretch"
+                                                HorizontalContentAlignment="Stretch"
+                                                ToolTip="Mentés"
+                                                Visibility="Visible">
+                                            <Grid
+                                                Height="39"
+                                                 Width="39"
+                                                Background="#E0E0E0">
+                                                <Canvas Width="20" Height="20">
+                                                    <Canvas.RenderTransform>
+                                                        <TranslateTransform X="0" Y="0"/>
+                                                    </Canvas.RenderTransform>
+                                                    <Canvas.Resources/>
+                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#FF707070">
+                                                        <Path.Data>
+                                                            <PathGeometry Figures="M189.7 1048a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.356 9.356 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.356 9.356 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.356 9.356 0 0 1-2.9-7.1A9.733 9.733 0 0 1 189.7 1048Zm5.1 12 9-9-1.4-1.5-7.6 7.6-3.6-3.6-1.4 1.4Z" FillRule="NonZero"/>
+                                                        </Path.Data>
+                                                        <Path.RenderTransform>
+                                                            <TranslateTransform X="-186.8" Y="-1045.1"/>
+                                                        </Path.RenderTransform>
+                                                    </Path>
+                                                </Canvas>
+                                            </Grid>
+                                        </Button>
+
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+                            <!--termekModositasa kisablak-->
+                            <Grid
+                                x:Name="arukuldesModositasa"
+                                Grid.Row="1"
+                                Visibility="Collapsed">
+                                <Grid.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0.2"/>
+                                </Grid.Background>
+                                <Grid
+                                    Height="300"
+                                    Width="540">
+                                </Grid>
+                            </Grid>
+                            <!--termekTörlése kisablak-->
+                            <Grid
+                                x:Name="arukuldesTorlese"
+                                Grid.Row="1"
+                                Visibility="Collapsed">
+                                <Grid.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0.2"/>
+                                </Grid.Background>
+                                <Grid
+                                    Height="300"
+                                    Width="540">
+                                </Grid>
+                            </Grid>
+                        </Grid>
                     </TabItem>
+                    <!--BEALLITASOK-->
                     <TabItem 
                         x:Name="tbiBeallitasok"
                         Visibility="Collapsed">
@@ -2153,7 +3022,7 @@
                   Grid.Row="1"
                   Visibility="Collapsed">
                 <Grid.Background>
-                    <SolidColorBrush Color="Black" Opacity="0.1"/>
+                    <SolidColorBrush Color="Black" Opacity="0.2"/>
                 </Grid.Background>
             </Grid>
 

@@ -15,7 +15,6 @@ C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\vizsgaMunka.exe
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\vizsgaMunka.pdb
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\App.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ertesitesek.g.cs
-C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ertesitesek.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ResourcesDictionaries\SiteNavBarButtonDictionary.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ResourcesDictionaries\TopNavbarButtonDictionary.baml
