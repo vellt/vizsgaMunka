@@ -55,10 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ArukuldesTablazatSorai.xaml.cs">
+      <DependentUpon>ArukuldesTablazatSorai.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Osztalyok.cs" />
     <Compile Include="raktarTablaSorAdatok.xaml.cs">
       <DependentUpon>raktarTablaSorAdatok.xaml</DependentUpon>
     </Compile>
+    <Page Include="ArukuldesTablazatSorai.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ertesitesek.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

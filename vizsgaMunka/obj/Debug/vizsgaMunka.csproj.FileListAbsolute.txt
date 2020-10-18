@@ -20,3 +20,5 @@ C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ResourcesDictionari
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ResourcesDictionaries\TopNavbarButtonDictionary.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\raktarTablaSorAdatok.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\raktarTablaSorAdatok.baml
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ArukuldesTablazatSorai.g.cs
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ArukuldesTablazatSorai.baml
