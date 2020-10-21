@@ -9,10 +9,10 @@ namespace vizsgaMunka
 {
     public class Ceg
     {
-        public int ID { get; set; }
-        public string Nev { get; set; }
-        public string Cim { get; set; }
-        public int Adoszam { get; set; }
+        private int ID { get; set; }
+        private string Nev { get; set; }
+        private string Cim { get; set; }
+        private int Adoszam { get; set; }
     }
 
     public class Fiok

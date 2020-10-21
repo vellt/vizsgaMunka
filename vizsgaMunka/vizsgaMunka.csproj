@@ -55,13 +55,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\Aktivitasok.cs" />
     <Compile Include="ArukuldesTablazatSorai.xaml.cs">
       <DependentUpon>ArukuldesTablazatSorai.xaml</DependentUpon>
     </Compile>
     <Compile Include="Osztalyok.cs" />
+    <Compile Include="Pages\Raktarak.cs" />
     <Compile Include="raktarTablaSorAdatok.xaml.cs">
       <DependentUpon>raktarTablaSorAdatok.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Termekek.cs" />
     <Page Include="ArukuldesTablazatSorai.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -70,7 +73,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Root.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -81,8 +84,8 @@
     <Compile Include="ertesitesek.xaml.cs">
       <DependentUpon>ertesitesek.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Root.xaml.cs">
+      <DependentUpon>Root.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="raktarTablaSorAdatok.xaml">
@@ -123,6 +126,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

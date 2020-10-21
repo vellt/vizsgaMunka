@@ -2,11 +2,9 @@ C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\bin\Debug\vizsgaMunka.exe.con
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\bin\Debug\vizsgaMunka.exe
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\bin\Debug\vizsgaMunka.pdb
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\vizsgaMunka.csprojAssemblyReference.cache
-C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\MainWindow.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\App.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\vizsgaMunka_MarkupCompile.cache
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\vizsgaMunka_MarkupCompile.lref
-C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\MainWindow.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\vizsgaMunka.g.resources
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\vizsgaMunka.Properties.Resources.resources
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\vizsgaMunka.csproj.GenerateResource.cache
@@ -22,3 +20,5 @@ C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\raktarTablaSorAdato
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\raktarTablaSorAdatok.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ArukuldesTablazatSorai.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ArukuldesTablazatSorai.baml
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\Root.g.cs
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\Root.baml
