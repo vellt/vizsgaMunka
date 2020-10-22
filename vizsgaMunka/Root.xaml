@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:vizsgaMunka"
+        xmlns:icon="clr-namespace:vizsgaMunka.VectorIcons"
         mc:Ignorable="d"
         Title="MainWindow" 
         MinHeight="800"
@@ -53,8 +54,8 @@
                             <ColumnDefinition Width="75"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Grid />
-                        <Canvas>
+                        <Grid  Grid.Column="0"/>
+                        <Canvas Grid.Column="1">
                             <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
                                 <Path.Data>
                                     <PathGeometry Figures="M964.9 1152.4h16v2h-16Zm16.1 4v2H965v-2Zm-16.1 6v-2h16v2Zm10.1 2v2H965v-2Z" FillRule="NonZero"/>
@@ -64,7 +65,7 @@
                                 </Path.RenderTransform>
                             </Path>
                         </Canvas>
-                        <Label Content="Aktivitások"/>
+                        <Label Content="Aktivitások" Grid.Column="2"/>
                     </Grid>
 
                 </Grid>
@@ -326,26 +327,7 @@
                                 <ColumnDefinition Width="60"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Viewbox Grid.Column="0" 
-                                     Width="40" 
-                                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                <Canvas 
-                                    Width="20" 
-                                    Height="20">
-                                    <Canvas.RenderTransform>
-                                        <TranslateTransform X="0" Y="0"/>
-                                    </Canvas.RenderTransform>
-                                    <Canvas.Resources/>
-                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="LightGray">
-                                        <Path.Data>
-                                            <PathGeometry Figures="M263.7 1013.2a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.356 9.356 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.356 9.356 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 10.141 10.141 0 0 1 0-14.2Zm7 14.2a7.068 7.068 0 0 0 6-3.2c0-.9-.7-1.6-2.1-2.2a8.9 8.9 0 0 0-7.8 0c-1.4.6-2.1 1.3-2.1 2.2A6.842 6.842 0 0 0 270.7 1027.4Zm2.1-13.3a2.9 2.9 0 1 0 .9 2.1A2.878 2.878 0 0 0 272.8 1014.1Z" FillRule="NonZero"/>
-                                        </Path.Data>
-                                        <Path.RenderTransform>
-                                            <TranslateTransform X="-260.8" Y="-1010.3"/>
-                                        </Path.RenderTransform>
-                                    </Path>
-                                </Canvas>
-                            </Viewbox>
+                            <icon:ProfilPic Grid.Row="0"/>
                             <Grid Grid.Column="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
@@ -405,22 +387,7 @@
                                             <ColumnDefinition Width="130"/>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
-                                            <Viewbox Width="40" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                <Canvas Width="20" Height="20">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="LightGray">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M263.7 1013.2a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.356 9.356 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.356 9.356 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 10.141 10.141 0 0 1 0-14.2Zm7 14.2a7.068 7.068 0 0 0 6-3.2c0-.9-.7-1.6-2.1-2.2a8.9 8.9 0 0 0-7.8 0c-1.4.6-2.1 1.3-2.1 2.2A6.842 6.842 0 0 0 270.7 1027.4Zm2.1-13.3a2.9 2.9 0 1 0 .9 2.1A2.878 2.878 0 0 0 272.8 1014.1Z" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                        <Path.RenderTransform>
-                                                            <TranslateTransform X="-260.8" Y="-1010.3"/>
-                                                        </Path.RenderTransform>
-                                                    </Path>
-                                                </Canvas>
-                                            </Viewbox>
+                                            <icon:ProfilPic/>
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <Grid.RowDefinitions>
@@ -567,22 +534,7 @@
                                          Width="39"
                                         Height="39"
                                         Background="#E0E0E0">
-                                            <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                <Canvas Width="20" Height="20">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#707070">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M115.8 143.2a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.506 9.506 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.506 9.506 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.506 9.506 0 0 1-2.9-7.1A9.732 9.732 0 0 1 115.8 143.2Zm1.4 12.7a7.73 7.73 0 0 0 5.6 2.4 7.568 7.568 0 0 0 5.6-2.4 7.73 7.73 0 0 0 2.4-5.6 7.413 7.413 0 0 0-2.4-5.6 7.73 7.73 0 0 0-5.6-2.4 7.568 7.568 0 0 0-5.6 2.4 7.73 7.73 0 0 0-2.4 5.6A8.616 8.616 0 0 0 117.2 155.9Zm6.7-10.7v4h4v2h-4v4h-2v-4h-4v-2h4v-4Z" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                        <Path.RenderTransform>
-                                                            <TranslateTransform X="-112.9" Y="-140.3"/>
-                                                        </Path.RenderTransform>
-                                                    </Path>
-                                                </Canvas>
-                                            </Viewbox>
+                                            <icon:Add1/>
                                         </Grid>
                                     </Button>
 
@@ -603,23 +555,8 @@
                                         <Grid
                                             Height="39"
                                              Width="39"
-                                            Background="#7CC989">
-                                            <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                <Canvas  Width="17.9" Height="18">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="White">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M40 573.1 51 562l3.8 3.8L43.7 576.9H40Zm17.7-10.3-1.8 1.8-3.8-3.8 1.8-1.8a.967.967 0 0 1 1.4 0l2.3 2.3a.908.908 0 0 1 .3.7C57.9 562.3 57.9 562.7 57.7 562.8Z" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                        <Path.RenderTransform>
-                                                            <TranslateTransform X="-40" Y="-558.7"/>
-                                                        </Path.RenderTransform>
-                                                    </Path>
-                                                </Canvas>
-                                            </Viewbox>
+                                            Background="#E0E0E0">
+                                            <icon:Edit/>
                                         </Grid>
                                     </Button>
                                     <Button 
@@ -639,23 +576,8 @@
                                         <Grid
                                             Height="39"
                                              Width="39"
-                                            Background="#7CC989">
-                                            <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                <Canvas  Width="12" Height="18">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="White">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M425.5 1047v2h-14v-2H415l1-1h5l1 1Zm-12.9 15v-12h12v12a2.051 2.051 0 0 1-2 2h-8a2.051 2.051 0 0 1-2-2Z" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                        <Path.RenderTransform>
-                                                            <TranslateTransform X="-411.5" Y="-1046"/>
-                                                        </Path.RenderTransform>
-                                                    </Path>
-                                                </Canvas>
-                                            </Viewbox>
+                                            Background="#E0E0E0">
+                                            <icon:Bin/>
                                         </Grid>
                                     </Button>
                                     <Button 
@@ -672,22 +594,7 @@
                                             Height="39"
                                              Width="39"
                                             Background="#E0E0E0">
-                                            <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                <Canvas Width="16" Height="22">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#707070">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M529.4 17V14l4 4-4 4V19a7.413 7.413 0 0 1-5.6-2.4 7.73 7.73 0 0 1-2.4-5.6 7.271 7.271 0 0 1 1.3-4.3l1.5 1.5a5.3 5.3 0 0 0-.7 2.8 5.447 5.447 0 0 0 1.8 4.2A5.94 5.94 0 0 0 529.4 17Zm0-14A7.413 7.413 0 0 1 535 5.4a7.73 7.73 0 0 1 2.4 5.6 7.271 7.271 0 0 1-1.3 4.3l-1.5-1.5a5.3 5.3 0 0 0 .7-2.8 5.447 5.447 0 0 0-1.8-4.2A5.758 5.758 0 0 0 529.4 5V8l-4-4 4-4Z" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                        <Path.RenderTransform>
-                                                            <TranslateTransform X="-521.4"/>
-                                                        </Path.RenderTransform>
-                                                    </Path>
-                                                </Canvas>
-                                            </Viewbox>
+                                            <icon:Synch/>
                                         </Grid>
                                     </Button>
                                 </StackPanel>
@@ -736,22 +643,7 @@
                                                 Width="29"
                                                 Height="29"
                                                 Background="#707070">
-                                                <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                    <Canvas Width="20" Height="20">
-                                                        <Canvas.RenderTransform>
-                                                            <TranslateTransform X="0" Y="0"/>
-                                                        </Canvas.RenderTransform>
-                                                        <Canvas.Resources/>
-                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#FFFFFFFF">
-                                                            <Path.Data>
-                                                                <PathGeometry Figures="M300.6 1082.8a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.356 9.356 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.356 9.356 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.356 9.356 0 0 1-2.9-7.1A9.732 9.732 0 0 1 300.6 1082.8Zm1.4 12.7a7.73 7.73 0 0 0 5.6 2.4 7.568 7.568 0 0 0 5.6-2.4 8.146 8.146 0 0 0 2.4-5.6 7.568 7.568 0 0 0-2.4-5.6 8.146 8.146 0 0 0-5.6-2.4 7.568 7.568 0 0 0-5.6 2.4 7.733 7.733 0 0 0 0 11.2Zm8.3-9.7 1.4 1.4-2.6 2.6 2.6 2.6-1.4 1.4-2.6-2.6-2.6 2.6-1.4-1.4 2.6-2.6-2.6-2.6 1.4-1.4 2.6 2.6Z" FillRule="NonZero"/>
-                                                            </Path.Data>
-                                                            <Path.RenderTransform>
-                                                                <TranslateTransform X="-297.7" Y="-1079.9"/>
-                                                            </Path.RenderTransform>
-                                                        </Path>
-                                                    </Canvas>
-                                                </Viewbox>
+                                                <icon:Close />
                                             </Grid>
                                         </Button>
                                     </Grid>
@@ -945,22 +837,7 @@
                                                 Width="29"
                                                 Height="29"
                                                 Background="#707070">
-                                                <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                    <Canvas Width="20" Height="20">
-                                                        <Canvas.RenderTransform>
-                                                            <TranslateTransform X="0" Y="0"/>
-                                                        </Canvas.RenderTransform>
-                                                        <Canvas.Resources/>
-                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#FFFFFFFF">
-                                                            <Path.Data>
-                                                                <PathGeometry Figures="M300.6 1082.8a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.356 9.356 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.356 9.356 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.356 9.356 0 0 1-2.9-7.1A9.732 9.732 0 0 1 300.6 1082.8Zm1.4 12.7a7.73 7.73 0 0 0 5.6 2.4 7.568 7.568 0 0 0 5.6-2.4 8.146 8.146 0 0 0 2.4-5.6 7.568 7.568 0 0 0-2.4-5.6 8.146 8.146 0 0 0-5.6-2.4 7.568 7.568 0 0 0-5.6 2.4 7.733 7.733 0 0 0 0 11.2Zm8.3-9.7 1.4 1.4-2.6 2.6 2.6 2.6-1.4 1.4-2.6-2.6-2.6 2.6-1.4-1.4 2.6-2.6-2.6-2.6 1.4-1.4 2.6 2.6Z" FillRule="NonZero"/>
-                                                            </Path.Data>
-                                                            <Path.RenderTransform>
-                                                                <TranslateTransform X="-297.7" Y="-1079.9"/>
-                                                            </Path.RenderTransform>
-                                                        </Path>
-                                                    </Canvas>
-                                                </Viewbox>
+                                                <icon:Close/>
                                             </Grid>
                                         </Button>
                                     </Grid>
@@ -1155,22 +1032,7 @@
                                                 Width="29"
                                                 Height="29"
                                                 Background="#707070">
-                                                <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                    <Canvas Width="20" Height="20">
-                                                        <Canvas.RenderTransform>
-                                                            <TranslateTransform X="0" Y="0"/>
-                                                        </Canvas.RenderTransform>
-                                                        <Canvas.Resources/>
-                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#FFFFFFFF">
-                                                            <Path.Data>
-                                                                <PathGeometry Figures="M300.6 1082.8a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.356 9.356 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.356 9.356 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.356 9.356 0 0 1-2.9-7.1A9.732 9.732 0 0 1 300.6 1082.8Zm1.4 12.7a7.73 7.73 0 0 0 5.6 2.4 7.568 7.568 0 0 0 5.6-2.4 8.146 8.146 0 0 0 2.4-5.6 7.568 7.568 0 0 0-2.4-5.6 8.146 8.146 0 0 0-5.6-2.4 7.568 7.568 0 0 0-5.6 2.4 7.733 7.733 0 0 0 0 11.2Zm8.3-9.7 1.4 1.4-2.6 2.6 2.6 2.6-1.4 1.4-2.6-2.6-2.6 2.6-1.4-1.4 2.6-2.6-2.6-2.6 1.4-1.4 2.6 2.6Z" FillRule="NonZero"/>
-                                                            </Path.Data>
-                                                            <Path.RenderTransform>
-                                                                <TranslateTransform X="-297.7" Y="-1079.9"/>
-                                                            </Path.RenderTransform>
-                                                        </Path>
-                                                    </Canvas>
-                                                </Viewbox>
+                                                <icon:Close />
                                             </Grid>
                                         </Button>
                                     </Grid>
@@ -1329,22 +1191,7 @@
                                          Width="39"
                                         Height="39"
                                         Background="#E0E0E0">
-                                            <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                <Canvas Width="20" Height="20">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#707070">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M115.8 143.2a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.506 9.506 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.506 9.506 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.506 9.506 0 0 1-2.9-7.1A9.732 9.732 0 0 1 115.8 143.2Zm1.4 12.7a7.73 7.73 0 0 0 5.6 2.4 7.568 7.568 0 0 0 5.6-2.4 7.73 7.73 0 0 0 2.4-5.6 7.413 7.413 0 0 0-2.4-5.6 7.73 7.73 0 0 0-5.6-2.4 7.568 7.568 0 0 0-5.6 2.4 7.73 7.73 0 0 0-2.4 5.6A8.616 8.616 0 0 0 117.2 155.9Zm6.7-10.7v4h4v2h-4v4h-2v-4h-4v-2h4v-4Z" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                        <Path.RenderTransform>
-                                                            <TranslateTransform X="-112.9" Y="-140.3"/>
-                                                        </Path.RenderTransform>
-                                                    </Path>
-                                                </Canvas>
-                                            </Viewbox>
+                                            <icon:Add1 />
                                         </Grid>
                                     </Button>
                                     <Button 
@@ -1364,23 +1211,8 @@
                                         <Grid
                                             Height="39"
                                              Width="39"
-                                            Background="#7CC989">
-                                            <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                <Canvas  Width="17.9" Height="18">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="White">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M40 573.1 51 562l3.8 3.8L43.7 576.9H40Zm17.7-10.3-1.8 1.8-3.8-3.8 1.8-1.8a.967.967 0 0 1 1.4 0l2.3 2.3a.908.908 0 0 1 .3.7C57.9 562.3 57.9 562.7 57.7 562.8Z" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                        <Path.RenderTransform>
-                                                            <TranslateTransform X="-40" Y="-558.7"/>
-                                                        </Path.RenderTransform>
-                                                    </Path>
-                                                </Canvas>
-                                            </Viewbox>
+                                            Background="#E0E0E0">
+                                            <icon:Edit/>
                                         </Grid>
                                     </Button>
                                     <Button 
@@ -1400,23 +1232,8 @@
                                         <Grid
                                             Height="39"
                                              Width="39"
-                                            Background="#7CC989">
-                                            <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                <Canvas  Width="12" Height="18">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="White">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M425.5 1047v2h-14v-2H415l1-1h5l1 1Zm-12.9 15v-12h12v12a2.051 2.051 0 0 1-2 2h-8a2.051 2.051 0 0 1-2-2Z" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                        <Path.RenderTransform>
-                                                            <TranslateTransform X="-411.5" Y="-1046"/>
-                                                        </Path.RenderTransform>
-                                                    </Path>
-                                                </Canvas>
-                                            </Viewbox>
+                                            Background="#E0E0E0">
+                                            <icon:Bin/>
                                         </Grid>
                                     </Button>
                                     <Button 
@@ -1433,22 +1250,7 @@
                                             Height="39"
                                              Width="39"
                                             Background="#E0E0E0">
-                                            <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                <Canvas Width="16" Height="22">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#707070">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M529.4 17V14l4 4-4 4V19a7.413 7.413 0 0 1-5.6-2.4 7.73 7.73 0 0 1-2.4-5.6 7.271 7.271 0 0 1 1.3-4.3l1.5 1.5a5.3 5.3 0 0 0-.7 2.8 5.447 5.447 0 0 0 1.8 4.2A5.94 5.94 0 0 0 529.4 17Zm0-14A7.413 7.413 0 0 1 535 5.4a7.73 7.73 0 0 1 2.4 5.6 7.271 7.271 0 0 1-1.3 4.3l-1.5-1.5a5.3 5.3 0 0 0 .7-2.8 5.447 5.447 0 0 0-1.8-4.2A5.758 5.758 0 0 0 529.4 5V8l-4-4 4-4Z" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                        <Path.RenderTransform>
-                                                            <TranslateTransform X="-521.4"/>
-                                                        </Path.RenderTransform>
-                                                    </Path>
-                                                </Canvas>
-                                            </Viewbox>
+                                            <icon:Synch/>
                                         </Grid>
                                     </Button>
                                 </StackPanel>
@@ -1478,8 +1280,7 @@
                                                Foreground="White"
                                                FontSize="14"
                                                FontFamily="Segoe UI"
-                                               Margin="5 0"
-                                               />
+                                               Margin="5 0" />
                                         <Button 
                                             Width="29"
                                             Height="29"
@@ -1494,22 +1295,7 @@
                                                 Width="29"
                                                 Height="29"
                                                 Background="#707070">
-                                                <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                    <Canvas Width="20" Height="20">
-                                                        <Canvas.RenderTransform>
-                                                            <TranslateTransform X="0" Y="0"/>
-                                                        </Canvas.RenderTransform>
-                                                        <Canvas.Resources/>
-                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#FFFFFFFF">
-                                                            <Path.Data>
-                                                                <PathGeometry Figures="M300.6 1082.8a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.356 9.356 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.356 9.356 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.356 9.356 0 0 1-2.9-7.1A9.732 9.732 0 0 1 300.6 1082.8Zm1.4 12.7a7.73 7.73 0 0 0 5.6 2.4 7.568 7.568 0 0 0 5.6-2.4 8.146 8.146 0 0 0 2.4-5.6 7.568 7.568 0 0 0-2.4-5.6 8.146 8.146 0 0 0-5.6-2.4 7.568 7.568 0 0 0-5.6 2.4 7.733 7.733 0 0 0 0 11.2Zm8.3-9.7 1.4 1.4-2.6 2.6 2.6 2.6-1.4 1.4-2.6-2.6-2.6 2.6-1.4-1.4 2.6-2.6-2.6-2.6 1.4-1.4 2.6 2.6Z" FillRule="NonZero"/>
-                                                            </Path.Data>
-                                                            <Path.RenderTransform>
-                                                                <TranslateTransform X="-297.7" Y="-1079.9"/>
-                                                            </Path.RenderTransform>
-                                                        </Path>
-                                                    </Canvas>
-                                                </Viewbox>
+                                                <icon:Close/>
                                             </Grid>
                                         </Button>
                                     </Grid>
@@ -1701,22 +1487,7 @@
                                                 Width="29"
                                                 Height="29"
                                                 Background="#707070">
-                                                <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                    <Canvas Width="20" Height="20">
-                                                        <Canvas.RenderTransform>
-                                                            <TranslateTransform X="0" Y="0"/>
-                                                        </Canvas.RenderTransform>
-                                                        <Canvas.Resources/>
-                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#FFFFFFFF">
-                                                            <Path.Data>
-                                                                <PathGeometry Figures="M300.6 1082.8a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.356 9.356 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.356 9.356 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.356 9.356 0 0 1-2.9-7.1A9.732 9.732 0 0 1 300.6 1082.8Zm1.4 12.7a7.73 7.73 0 0 0 5.6 2.4 7.568 7.568 0 0 0 5.6-2.4 8.146 8.146 0 0 0 2.4-5.6 7.568 7.568 0 0 0-2.4-5.6 8.146 8.146 0 0 0-5.6-2.4 7.568 7.568 0 0 0-5.6 2.4 7.733 7.733 0 0 0 0 11.2Zm8.3-9.7 1.4 1.4-2.6 2.6 2.6 2.6-1.4 1.4-2.6-2.6-2.6 2.6-1.4-1.4 2.6-2.6-2.6-2.6 1.4-1.4 2.6 2.6Z" FillRule="NonZero"/>
-                                                            </Path.Data>
-                                                            <Path.RenderTransform>
-                                                                <TranslateTransform X="-297.7" Y="-1079.9"/>
-                                                            </Path.RenderTransform>
-                                                        </Path>
-                                                    </Canvas>
-                                                </Viewbox>
+                                                <icon:Close/>
                                             </Grid>
                                         </Button>
                                     </Grid>
@@ -1841,9 +1612,7 @@
                                                          TextWrapping="NoWrap">
                                                     </TextBox>
                                                 </ScrollViewer>
-
                                             </Border>
-
                                         </Grid>
                                         <Grid Grid.Row="1">
                                             <Button
@@ -1907,22 +1676,7 @@
                                                 Width="29"
                                                 Height="29"
                                                 Background="#707070">
-                                                <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                    <Canvas Width="20" Height="20">
-                                                        <Canvas.RenderTransform>
-                                                            <TranslateTransform X="0" Y="0"/>
-                                                        </Canvas.RenderTransform>
-                                                        <Canvas.Resources/>
-                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#FFFFFFFF">
-                                                            <Path.Data>
-                                                                <PathGeometry Figures="M300.6 1082.8a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.356 9.356 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.356 9.356 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.356 9.356 0 0 1-2.9-7.1A9.732 9.732 0 0 1 300.6 1082.8Zm1.4 12.7a7.73 7.73 0 0 0 5.6 2.4 7.568 7.568 0 0 0 5.6-2.4 8.146 8.146 0 0 0 2.4-5.6 7.568 7.568 0 0 0-2.4-5.6 8.146 8.146 0 0 0-5.6-2.4 7.568 7.568 0 0 0-5.6 2.4 7.733 7.733 0 0 0 0 11.2Zm8.3-9.7 1.4 1.4-2.6 2.6 2.6 2.6-1.4 1.4-2.6-2.6-2.6 2.6-1.4-1.4 2.6-2.6-2.6-2.6 1.4-1.4 2.6 2.6Z" FillRule="NonZero"/>
-                                                            </Path.Data>
-                                                            <Path.RenderTransform>
-                                                                <TranslateTransform X="-297.7" Y="-1079.9"/>
-                                                            </Path.RenderTransform>
-                                                        </Path>
-                                                    </Canvas>
-                                                </Viewbox>
+                                                <icon:Close/>
                                             </Grid>
                                         </Button>
                                     </Grid>
@@ -2083,22 +1837,7 @@
                                          Width="39"
                                         Height="39"
                                         Background="#E0E0E0">
-                                            <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                <Canvas Width="20" Height="20">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#707070">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M115.8 143.2a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.506 9.506 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.506 9.506 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.506 9.506 0 0 1-2.9-7.1A9.732 9.732 0 0 1 115.8 143.2Zm1.4 12.7a7.73 7.73 0 0 0 5.6 2.4 7.568 7.568 0 0 0 5.6-2.4 7.73 7.73 0 0 0 2.4-5.6 7.413 7.413 0 0 0-2.4-5.6 7.73 7.73 0 0 0-5.6-2.4 7.568 7.568 0 0 0-5.6 2.4 7.73 7.73 0 0 0-2.4 5.6A8.616 8.616 0 0 0 117.2 155.9Zm6.7-10.7v4h4v2h-4v4h-2v-4h-4v-2h4v-4Z" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                        <Path.RenderTransform>
-                                                            <TranslateTransform X="-112.9" Y="-140.3"/>
-                                                        </Path.RenderTransform>
-                                                    </Path>
-                                                </Canvas>
-                                            </Viewbox>
+                                            <icon:Add1/>
                                         </Grid>
                                     </Button>
                                     <Button 
@@ -2119,22 +1858,7 @@
                                             Height="39"
                                              Width="39"
                                             Background="#E0E0E0">
-                                            <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                <Canvas  Width="17.9" Height="18">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#707070">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M40 573.1 51 562l3.8 3.8L43.7 576.9H40Zm17.7-10.3-1.8 1.8-3.8-3.8 1.8-1.8a.967.967 0 0 1 1.4 0l2.3 2.3a.908.908 0 0 1 .3.7C57.9 562.3 57.9 562.7 57.7 562.8Z" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                        <Path.RenderTransform>
-                                                            <TranslateTransform X="-40" Y="-558.7"/>
-                                                        </Path.RenderTransform>
-                                                    </Path>
-                                                </Canvas>
-                                            </Viewbox>
+                                            <icon:Edit/>
                                         </Grid>
                                     </Button>
                                     <Button 
@@ -2155,22 +1879,7 @@
                                             Height="39"
                                              Width="39"
                                             Background="#E0E0E0">
-                                            <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                <Canvas  Width="12" Height="18">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#707070">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M425.5 1047v2h-14v-2H415l1-1h5l1 1Zm-12.9 15v-12h12v12a2.051 2.051 0 0 1-2 2h-8a2.051 2.051 0 0 1-2-2Z" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                        <Path.RenderTransform>
-                                                            <TranslateTransform X="-411.5" Y="-1046"/>
-                                                        </Path.RenderTransform>
-                                                    </Path>
-                                                </Canvas>
-                                            </Viewbox>
+                                            <icon:Bin/>
                                         </Grid>
                                     </Button>
                                     <Button 
@@ -2187,22 +1896,7 @@
                                             Height="39"
                                              Width="39"
                                             Background="#E0E0E0">
-                                            <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                <Canvas Width="16" Height="22">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#707070">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M529.4 17V14l4 4-4 4V19a7.413 7.413 0 0 1-5.6-2.4 7.73 7.73 0 0 1-2.4-5.6 7.271 7.271 0 0 1 1.3-4.3l1.5 1.5a5.3 5.3 0 0 0-.7 2.8 5.447 5.447 0 0 0 1.8 4.2A5.94 5.94 0 0 0 529.4 17Zm0-14A7.413 7.413 0 0 1 535 5.4a7.73 7.73 0 0 1 2.4 5.6 7.271 7.271 0 0 1-1.3 4.3l-1.5-1.5a5.3 5.3 0 0 0 .7-2.8 5.447 5.447 0 0 0-1.8-4.2A5.758 5.758 0 0 0 529.4 5V8l-4-4 4-4Z" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                        <Path.RenderTransform>
-                                                            <TranslateTransform X="-521.4"/>
-                                                        </Path.RenderTransform>
-                                                    </Path>
-                                                </Canvas>
-                                            </Viewbox>
+                                            <icon:Synch/>
                                         </Grid>
                                     </Button>
                                 </StackPanel>
@@ -2241,21 +1935,7 @@
                                                 <ColumnDefinition Width="38"/>
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
-                                            <Canvas Grid.Column="0"
-                                                Width="10.394" Height="10.394">
-                                                <Canvas.RenderTransform>
-                                                    <TranslateTransform X="0" Y="0"/>
-                                                </Canvas.RenderTransform>
-                                                <Canvas.Resources/>
-                                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#FF707070">
-                                                    <Path.Data>
-                                                        <PathGeometry Figures="M51.394 877.547v1.3H43.468l3.638 3.638-.909.909L41 878.2l5.2-5.2.909.909-3.638 3.638Z" FillRule="NonZero"/>
-                                                    </Path.Data>
-                                                    <Path.RenderTransform>
-                                                        <TranslateTransform X="-41" Y="-873"/>
-                                                    </Path.RenderTransform>
-                                                </Path>
-                                            </Canvas>
+                                            <icon:BackArrow Grid.Column="0"/>
                                             <Label Grid.Column="1" Content="Vissza"
                                                    Foreground="#707070"
                                                    FontFamily="Segoe UI"
@@ -2294,12 +1974,12 @@
                                                    FontFamily="Segoe UI"/>
                                         </Grid>
                                         <StackPanel Grid.Row="1">
-                                            <Label Content="Harsányi Trans Kft"
+                                            <Label Content="Cég Kft"
                                                    FontSize="16"
                                                    Foreground="#484848"
                                                    FontFamily="Segoe UI"
                                                    Padding="15 5"/>
-                                            <Label Content="Cím: 4100 Furta Nagyatádi Krt. 40."
+                                            <Label Content="Cím: 222222222"
                                                    Foreground="#707070"
                                                    FontFamily="Segoe UI"
                                                    Padding="15 0"
@@ -2429,17 +2109,63 @@
                                 </Grid>
                                 <Grid Grid.Row="2">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="255"/>
+                                        <ColumnDefinition Width="auto"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Grid Grid.Column="0"
-                                          Margin=" 14 7 7 14">
+                                    <Grid x:Name="TermekTallozo"
+                                          Grid.Column="0"
+                                          Width="255"
+                                          Margin=" 14 7 0 14"
+                                          Visibility="Collapsed">
                                         <Grid.RowDefinitions >
+                                            <RowDefinition Height="30" />
                                             <RowDefinition Height="50"/>
                                             <RowDefinition Height="*"/>
                                         </Grid.RowDefinitions>
-                                        <Grid Grid.Row="0"
-                                              Background="White">
+
+                                        <Grid
+                                        Width="255"
+                                        Grid.Row="0"
+                                        Background="White"
+                                        HorizontalAlignment="Right">
+                                            <Label HorizontalAlignment="Left"
+                                               Content="Termék tallózó"
+                                               Foreground="#707070"
+                                               FontSize="14"
+                                               FontFamily="Segoe UI"
+                                               Margin="5 0"/>
+                                            <Button 
+                                            Width="28"
+                                            Height="28"
+                                            Padding="-2"
+                                                Margin="1"
+                                            HorizontalContentAlignment="Stretch"
+                                            VerticalContentAlignment="Stretch"
+                                            HorizontalAlignment="Right"
+                                            Cursor="Hand"
+                                            Click="TermekTallozoBezarasa"
+                                            ToolTip="Bezár">
+                                                <Grid
+                                                Width="29"
+                                                Height="29"
+                                                Background="White">
+                                                    <icon:CloseBlack Height="15" Width="15"/>
+                                                </Grid>
+                                            </Button>
+                                        </Grid>
+
+                                        <Grid Grid.Row="2"
+                                              Background="#F1F1F1">
+                                            <ScrollViewer Margin="5" HorizontalScrollBarVisibility="Disabled"
+                                                          VerticalScrollBarVisibility="Auto">
+                                                <StackPanel
+                                                    x:Name="spnlRaktarakKozottiAtadasTermekekSzurtLista">
+                                                    <!--TERMÉK TALLÓZÓ TALÁLATAI-->
+                                                </StackPanel>
+                                            </ScrollViewer>
+                                        </Grid>
+                                        <Grid Grid.Row="1"
+                                              Background="White" >
                                             <Border Margin="5" BorderBrush="#F6F6F6" BorderThickness="1">
                                                 <Grid>
                                                     <TextBox 
@@ -2447,7 +2173,9 @@
                                                         VerticalContentAlignment="Center"
                                                         BorderThickness="0"
                                                         Padding="6"
-                                                        Text="Keresés"
+                                                        Text="Keresés..."
+                                                        GotFocus="RemoveText"
+                                                        LostFocus="AddText"
                                                         Foreground="#8E8E8E"
                                                         TextWrapping="NoWrap"
                                                         Background="Transparent" Margin="0,0,30,0" TextChanged="txbTermekTallozoTextChanged"/>
@@ -2459,84 +2187,20 @@
                                                         BorderThickness="0"
                                                         VerticalContentAlignment="Stretch"
                                                         HorizontalContentAlignment="Stretch">
-                                                        <Canvas 
-                                                            Background="White"
+                                                        <Grid Background="White"
                                                             Height="40"
                                                             Width="30"
                                                             Cursor="Hand">
-                                                            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#FFA7A7A7" Stretch="Fill" Canvas.Top="1163.75" Canvas.Left="25.313" Height="14.125" Width="13.874" >
-                                                                <Path.Data>
-                                                                    <PathGeometry Figures="M15.5 1161.4l5 5-1.5 1.5-5-5v-.8l-.3-.3a6.362 6.362 0 0 1-4.2 1.5 6.039 6.039 0 0 1-4.6-1.9 6.6 6.6 0 0 1-1.9-4.6 6.039 6.039 0 0 1 1.9-4.6 6.6 6.6 0 0 1 4.6-1.9 6.19 6.19 0 0 1 4.6 1.9 6.6 6.6 0 0 1 1.9 4.6 6.361 6.361 0 0 1-1.5 4.2l.3.3h.7Zm-9.2-1.3a4.224 4.224 0 0 0 3.2 1.3 4.377 4.377 0 0 0 3.2-1.3 4.588 4.588 0 0 0 0-6.4 4.224 4.224 0 0 0-3.2-1.3 4.377 4.377 0 0 0-3.2 1.3 4.224 4.224 0 0 0-1.3 3.2A4.626 4.626 0 0 0 6.3 1160.1Z" FillRule="NonZero"/>
-                                                                </Path.Data>
-                                                                <Path.RenderTransform>
-                                                                    <TransformGroup>
-                                                                        <ScaleTransform ScaleX="-1"/>
-                                                                        <SkewTransform/>
-                                                                        <RotateTransform/>
-                                                                        <TranslateTransform X="-3" Y="-1150.3"/>
-                                                                    </TransformGroup>
-                                                                </Path.RenderTransform>
-                                                            </Path>
-                                                        </Canvas>
+                                                            <icon:Finder/>
+                                                        </Grid>
                                                     </Button>
                                                 </Grid>
                                             </Border>
                                         </Grid>
-                                        <Grid Grid.Row="1"
-                                              Background="#F1F1F1">
-                                            <ScrollViewer Margin="5" HorizontalScrollBarVisibility="Disabled"
-                                                          VerticalScrollBarVisibility="Auto">
-                                                <StackPanel
-                                                    x:Name="spnlRaktarakKozottiAtadasTermekekSzurtLista">
-                                                    <Grid Margin="5" Height="30"
-                                                          Background="White">
-                                                        <Label HorizontalAlignment="Left"
-                                                               Content="Sertés Comb"
-                                                               Foreground="#707070"
-                                                               FontFamily="Segoe UI"
-                                                               FontSize="12"
-                                                               VerticalContentAlignment="Center"/>
-                                                        <Button VerticalAlignment="Center"
-                                                                Width="28"
-                                                                Height="28"
-                                                                HorizontalAlignment="Right"
-                                                                Padding="-1"
-                                                                BorderThickness="0"
-                                                                Cursor="Hand"
-                                                                HorizontalContentAlignment="Stretch"
-                                                                VerticalContentAlignment="Stretch"
-                                                                Margin=" 1 0"
-                                                                ToolTip="hozzáadáas a táblázathoz"
-                                                                Click="btnArukuldesBelsoAblakEsemenyek">
-                                                            <Grid Width="30"
-                                                                  Height="30"
-                                                                  Background="White" >
-                                                                <Canvas Name="svg3" Width="10.128" Height="10.128">
-                                                                    <Canvas.RenderTransform>
-                                                                        <TranslateTransform X="0" Y="0"/>
-                                                                    </Canvas.RenderTransform>
-                                                                    <Canvas.Resources/>
-                                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path" Fill="#FFA7A7A7">
-                                                                        <Path.Data>
-                                                                            <PathGeometry Figures="M15.128 148.988H10.788v4.341H9.341v-4.341H5v-1.447H9.341V143.2h1.447v4.341h4.341Z" FillRule="NonZero"/>
-                                                                        </Path.Data>
-                                                                        <Path.RenderTransform>
-                                                                            <TranslateTransform X="-5" Y="-143.2"/>
-                                                                        </Path.RenderTransform>
-                                                                    </Path>
-                                                                </Canvas>
-                                                            </Grid>
-                                                        </Button>
-
-                                                    </Grid>
-                                                </StackPanel>
-                                            </ScrollViewer>
-                                        </Grid>
-
                                     </Grid>
                                     <Grid Grid.Column="1">
                                         <Grid Background="White"
-                                              Margin="7 7 14 14">
+                                              Margin="14 7 14 14">
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="50"/>
                                                 <RowDefinition Height="*"/>
@@ -2545,7 +2209,7 @@
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="4"/>
                                                     <ColumnDefinition Width="50"/>
-                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="140"/>
                                                     <ColumnDefinition Width="*"/>
                                                     <ColumnDefinition Width="*"/>
                                                     <ColumnDefinition Width="*"/>
@@ -2575,7 +2239,7 @@
                                                        Content="Me.e."
                                                        FontSize="16"
                                                        VerticalContentAlignment="Center"
-                                                       HorizontalContentAlignment="Center"
+                                                       HorizontalContentAlignment="Right"
                                                        Foreground="#707070"/>
                                                 <Label Grid.Column="5"
                                                        Content="Egységár"
@@ -2587,13 +2251,13 @@
                                                        Content="ÁFA"
                                                        FontSize="16"
                                                        VerticalContentAlignment="Center"
-                                                       HorizontalContentAlignment="Center"
+                                                       HorizontalContentAlignment="Right"
                                                        Foreground="#707070"/>
                                                 <Label Grid.Column="7"
                                                        Content="Bruttó ár"
                                                        FontSize="16"
                                                        VerticalContentAlignment="Center"
-                                                       HorizontalContentAlignment="Center"
+                                                       HorizontalContentAlignment="Right"
                                                        Foreground="#707070"/>
                                             </Grid>
                                             <Grid Grid.Row="1">
@@ -2618,7 +2282,7 @@
                                                                 <Grid Background="White">
                                                                     <Grid.ColumnDefinitions>
                                                                         <ColumnDefinition Width="50"/>
-                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="140"/>
                                                                         <ColumnDefinition Width="*"/>
                                                                         <ColumnDefinition Width="*"/>
                                                                         <ColumnDefinition Width="*"/>
@@ -2648,7 +2312,7 @@
                                                                            Content="kg"
                                                                            FontSize="13"
                                                                            VerticalContentAlignment="Center"
-                                                                           HorizontalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Right"
                                                                            Foreground="#707070"/>
                                                                     <Label Grid.Column="4"
                                                                            Content="1 250 Ft"
@@ -2660,13 +2324,13 @@
                                                                            Content="5 %"
                                                                            FontSize="13"
                                                                            VerticalContentAlignment="Center"
-                                                                           HorizontalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Right"
                                                                            Foreground="#707070"/>
                                                                     <Label Grid.Column="6"
                                                                            Content="70 000 Ft"
                                                                            FontSize="13"
                                                                            VerticalContentAlignment="Center"
-                                                                           HorizontalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Right"
                                                                            Foreground="#707070"/>
                                                                 </Grid>
                                                             </Button>
@@ -2690,7 +2354,7 @@
                                                                 <Grid Background="#F6F6F6">
                                                                     <Grid.ColumnDefinitions>
                                                                         <ColumnDefinition Width="50"/>
-                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="140"/>
                                                                         <ColumnDefinition Width="*"/>
                                                                         <ColumnDefinition Width="*"/>
                                                                         <ColumnDefinition Width="*"/>
@@ -2720,7 +2384,7 @@
                                                                            Content="kg"
                                                                            FontSize="13"
                                                                            VerticalContentAlignment="Center"
-                                                                           HorizontalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Right"
                                                                            Foreground="#707070"/>
                                                                     <Label Grid.Column="4"
                                                                            Content="1 250 Ft"
@@ -2732,13 +2396,13 @@
                                                                            Content="5 %"
                                                                            FontSize="13"
                                                                            VerticalContentAlignment="Center"
-                                                                           HorizontalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Right"
                                                                            Foreground="#707070"/>
                                                                     <Label Grid.Column="6"
                                                                            Content="70 000 Ft"
                                                                            FontSize="13"
                                                                            VerticalContentAlignment="Center"
-                                                                           HorizontalContentAlignment="Center"
+                                                                           HorizontalContentAlignment="Right"
                                                                            Foreground="#707070"/>
                                                                 </Grid>
                                                             </Button>
@@ -2774,7 +2438,7 @@
                                                 Orientation="Horizontal"
                                                 HorizontalAlignment="Left">
                                         <Button 
-                                                Click="btnArukuldesBelsoAblakEsemenyek"
+                                                Click="termekTallozoMegjelitese"
                                                 Width="39"
                                                 Height="39"
                                                 Padding="-1"
@@ -2787,22 +2451,7 @@
                                                  Width="39"
                                                  Height="39"
                                                  Background="#E0E0E0">
-                                                <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                    <Canvas Width="20" Height="20">
-                                                        <Canvas.RenderTransform>
-                                                            <TranslateTransform X="0" Y="0"/>
-                                                        </Canvas.RenderTransform>
-                                                        <Canvas.Resources/>
-                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#707070">
-                                                            <Path.Data>
-                                                                <PathGeometry Figures="M115.8 143.2a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.506 9.506 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.506 9.506 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.506 9.506 0 0 1-2.9-7.1A9.732 9.732 0 0 1 115.8 143.2Zm1.4 12.7a7.73 7.73 0 0 0 5.6 2.4 7.568 7.568 0 0 0 5.6-2.4 7.73 7.73 0 0 0 2.4-5.6 7.413 7.413 0 0 0-2.4-5.6 7.73 7.73 0 0 0-5.6-2.4 7.568 7.568 0 0 0-5.6 2.4 7.73 7.73 0 0 0-2.4 5.6A8.616 8.616 0 0 0 117.2 155.9Zm6.7-10.7v4h4v2h-4v4h-2v-4h-4v-2h4v-4Z" FillRule="NonZero"/>
-                                                            </Path.Data>
-                                                            <Path.RenderTransform>
-                                                                <TranslateTransform X="-112.9" Y="-140.3"/>
-                                                            </Path.RenderTransform>
-                                                        </Path>
-                                                    </Canvas>
-                                                </Viewbox>
+                                                <icon:Add1/>
                                             </Grid>
                                         </Button>
 
@@ -2817,27 +2466,12 @@
                                                 VerticalContentAlignment="Stretch"
                                                 HorizontalContentAlignment="Stretch"
                                                 ToolTip="termék módosítása"
-                                                Visibility="Visible">
+                                                Visibility="Collapsed">
                                             <Grid
                                                  Height="39"
                                                  Width="39"
                                                 Background="#E0E0E0">
-                                                <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                    <Canvas  Width="17.9" Height="18">
-                                                        <Canvas.RenderTransform>
-                                                            <TranslateTransform X="0" Y="0"/>
-                                                        </Canvas.RenderTransform>
-                                                        <Canvas.Resources/>
-                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#707070">
-                                                            <Path.Data>
-                                                                <PathGeometry Figures="M40 573.1 51 562l3.8 3.8L43.7 576.9H40Zm17.7-10.3-1.8 1.8-3.8-3.8 1.8-1.8a.967.967 0 0 1 1.4 0l2.3 2.3a.908.908 0 0 1 .3.7C57.9 562.3 57.9 562.7 57.7 562.8Z" FillRule="NonZero"/>
-                                                            </Path.Data>
-                                                            <Path.RenderTransform>
-                                                                <TranslateTransform X="-40" Y="-558.7"/>
-                                                            </Path.RenderTransform>
-                                                        </Path>
-                                                    </Canvas>
-                                                </Viewbox>
+                                                <icon:Edit/>
                                             </Grid>
                                         </Button>
                                         <Button Click="btnArukuldesBelsoAblakEsemenyek"
@@ -2851,27 +2485,12 @@
                                                 VerticalContentAlignment="Stretch"
                                                 HorizontalContentAlignment="Stretch"
                                                 ToolTip="termék törlése"
-                                                Visibility="Visible">
+                                                Visibility="Collapsed">
                                             <Grid
                                                 Height="39"
                                                  Width="39"
                                                 Background="#E0E0E0">
-                                                <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                                    <Canvas  Width="12" Height="18">
-                                                        <Canvas.RenderTransform>
-                                                            <TranslateTransform X="0" Y="0"/>
-                                                        </Canvas.RenderTransform>
-                                                        <Canvas.Resources/>
-                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#707070">
-                                                            <Path.Data>
-                                                                <PathGeometry Figures="M425.5 1047v2h-14v-2H415l1-1h5l1 1Zm-12.9 15v-12h12v12a2.051 2.051 0 0 1-2 2h-8a2.051 2.051 0 0 1-2-2Z" FillRule="NonZero"/>
-                                                            </Path.Data>
-                                                            <Path.RenderTransform>
-                                                                <TranslateTransform X="-411.5" Y="-1046"/>
-                                                            </Path.RenderTransform>
-                                                        </Path>
-                                                    </Canvas>
-                                                </Viewbox>
+                                                <icon:Bin/>
                                             </Grid>
                                         </Button>
 
@@ -2898,20 +2517,7 @@
                                                  Height="39"
                                                  Width="39"
                                                 Background="#E0E0E0">
-                                                <Canvas Width="22.222" Height="20">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#FF707070">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M944.889 773.156a3.418 3.418 0 0 1 3.334 3.333v6.667h-4.445V787.6H930.444v-4.444H926v-6.667a3.418 3.418 0 0 1 3.333-3.333Zm-1.111-5.556v4.444H930.444V767.6Zm-2.222 17.778v-5.556h-8.889v5.556Zm2.556-8.111a1.074 1.074 0 1 0-.333-.778A1.009 1.009 0 0 0 944.111 777.267Z" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                        <Path.RenderTransform>
-                                                            <TranslateTransform X="-926" Y="-767.6"/>
-                                                        </Path.RenderTransform>
-                                                    </Path>
-                                                </Canvas>
+                                                <icon:Printer/>
                                             </Grid>
                                         </Button>
                                         <Button 
@@ -2931,20 +2537,7 @@
                                                 Height="39"
                                                  Width="39"
                                                 Background="#E0E0E0">
-                                                <Canvas Width="20" Height="20">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#FF707070">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M189.7 1048a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.356 9.356 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.356 9.356 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.356 9.356 0 0 1-2.9-7.1A9.733 9.733 0 0 1 189.7 1048Zm5.1 12 9-9-1.4-1.5-7.6 7.6-3.6-3.6-1.4 1.4Z" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                        <Path.RenderTransform>
-                                                            <TranslateTransform X="-186.8" Y="-1045.1"/>
-                                                        </Path.RenderTransform>
-                                                    </Path>
-                                                </Canvas>
+                                                <icon:Ok/>
                                             </Grid>
                                         </Button>
 
@@ -3114,25 +2707,7 @@
                             <ColumnDefinition Width="31"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Viewbox 
-                        Grid.Column="0"
-                        Height="11"
-                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                            <Canvas  Width="11.072" Height="11.072">
-                                <Canvas.RenderTransform>
-                                    <TranslateTransform X="0" Y="0"/>
-                                </Canvas.RenderTransform>
-                                <Canvas.Resources/>
-                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#FF616161">
-                                    <Path.Data>
-                                        <PathGeometry Figures="M524.783 983.9a9.556 9.556 0 0 1 4.567 0 8.409 8.409 0 0 1 2.284.969 1.845 1.845 0 0 1 1.038 1.522v2.076H521.6V986.4a1.938 1.938 0 0 1 1.038-1.522A6.029 6.029 0 0 1 524.783 983.9Zm5.052 1.592a7.959 7.959 0 0 0-2.837-.554 8.262 8.262 0 0 0-2.837.554c-.969.346-1.384.692-1.384.9v.761h8.443V986.4C531.219 986.188 530.8 985.842 529.835 985.5Zm-4.775-7.266a2.676 2.676 0 1 1-.83 1.938A2.619 2.619 0 0 1 525.06 978.23Zm2.976.9a1.505 1.505 0 1 0 .415 1.038A1.408 1.408 0 0 0 528.036 979.13Z" FillRule="NonZero"/>
-                                    </Path.Data>
-                                    <Path.RenderTransform>
-                                        <TranslateTransform X="-521.6" Y="-977.4"/>
-                                    </Path.RenderTransform>
-                                </Path>
-                            </Canvas>
-                        </Viewbox>
+                        <icon:Account Grid.Column="0"/>
                         <Label 
                         VerticalContentAlignment="Center"
                         Grid.Column="1"
@@ -3151,33 +2726,14 @@
                         VerticalContentAlignment="Stretch"
                         Padding="-1"
                         Style="{StaticResource menuKijelentkezes}">
-                    <Grid 
-                            Height="30"
+                    <Grid Height="30"
                           Width="215"
                           x:Name="memuGridKijelentkezes">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="31"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Viewbox 
-                        Grid.Column="0"
-                        Height="11"
-                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                            <Canvas  Width="11.072" Height="11.072">
-                                <Canvas.RenderTransform>
-                                    <TranslateTransform X="0" Y="0"/>
-                                </Canvas.RenderTransform>
-                                <Canvas.Resources/>
-                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#FF616161">
-                                    <Path.Data>
-                                        <PathGeometry Figures="M641.078 1046a1.253 1.253 0 0 1 1.222 1.222v8.556a1.253 1.253 0 0 1-1.222 1.222h-8.556a1.11 1.11 0 0 1-.856-.367 1.206 1.206 0 0 1-.367-.855v-2.445h1.222v2.445h8.556v-8.556h-8.556v2.444H631.3v-2.444a1.253 1.253 0 0 1 1.222-1.222Zm-5.439 7.7 1.589-1.589H631.3v-1.222h5.928l-1.589-1.589.856-.856 3.056 3.056-3.056 3.056Z" FillRule="NonZero"/>
-                                    </Path.Data>
-                                    <Path.RenderTransform>
-                                        <TranslateTransform X="-631.3" Y="-1046"/>
-                                    </Path.RenderTransform>
-                                </Path>
-                            </Canvas>
-                        </Viewbox>
+                        <icon:Logout Grid.Column="0"/>
                         <Label 
                         VerticalContentAlignment="Center"
                         Grid.Column="1"

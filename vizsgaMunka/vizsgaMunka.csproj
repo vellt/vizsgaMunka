@@ -65,6 +65,51 @@
       <DependentUpon>raktarTablaSorAdatok.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Termekek.cs" />
+    <Compile Include="VectorIcons\Account.xaml.cs">
+      <DependentUpon>Account.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\Activity.xaml.cs">
+      <DependentUpon>Activity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\Add.xaml.cs">
+      <DependentUpon>Add.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\Add1.xaml.cs">
+      <DependentUpon>Add1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\BackArrow.xaml.cs">
+      <DependentUpon>BackArrow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\Bin.xaml.cs">
+      <DependentUpon>Bin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\Close.xaml.cs">
+      <DependentUpon>Close.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\CloseBlack.xaml.cs">
+      <DependentUpon>CloseBlack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\Edit.xaml.cs">
+      <DependentUpon>Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\Finder.xaml.cs">
+      <DependentUpon>Finder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\Logout.xaml.cs">
+      <DependentUpon>Logout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\Ok.xaml.cs">
+      <DependentUpon>Ok.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\Printer.xaml.cs">
+      <DependentUpon>Printer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\ProfilPic.xaml.cs">
+      <DependentUpon>ProfilPic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\Synch.xaml.cs">
+      <DependentUpon>Synch.xaml</DependentUpon>
+    </Compile>
     <Page Include="ArukuldesTablazatSorai.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -97,6 +142,66 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ResourcesDictionaries\TopNavbarButtonDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Account.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Activity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Add.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Add1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\BackArrow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Bin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Close.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\CloseBlack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Finder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Logout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Ok.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Printer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\ProfilPic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Synch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

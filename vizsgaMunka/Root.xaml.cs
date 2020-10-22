@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using vizsgaMunka.VectorIcons;
 
 namespace vizsgaMunka
 {
@@ -24,6 +25,7 @@ namespace vizsgaMunka
         
         
         List<Szallitolevelek> ListOfArukuldesek = new List<Szallitolevelek>();
+        List<Termek> szurtLista = new List<Termek>();
         public MainWindow()
         {
             InitializeComponent();
@@ -528,14 +530,10 @@ namespace vizsgaMunka
 
         private void txbTermekTallozoTextChanged(object sender, TextChangedEventArgs e)
         {
-            if (txbTermekTallozo.Text == "")
+            spnlRaktarakKozottiAtadasTermekekSzurtLista.Children.Clear();
+            szurtLista = new List<Termek>();
+            if (txbTermekTallozo.Text != "Keresés..." && !string.IsNullOrWhiteSpace(txbTermekTallozo.Text))
             {
-                //ures lista;
-                spnlRaktarakKozottiAtadasTermekekSzurtLista.Children.Clear();
-            }
-            else
-            {
-                List<Termek> szurtLista = new List<Termek>();
                 for (int i = 0; i < ListOfTermekek.Count; i++)
                 {
                     if (ListOfTermekek[i].Nev.ToUpper().StartsWith(txbTermekTallozo.Text.ToUpper()))
@@ -550,23 +548,77 @@ namespace vizsgaMunka
                 }
                 TermekTallozoFeltolteseSzurtListaval(szurtLista);
             }
+            
         }
 
         private void TermekTallozoFeltolteseSzurtListaval(List<Termek> szurtLista)
         {
             //létre hozni a listában elem sablont és feltolteni a szurtlista elemeivel
-            Grid gr = new Grid();
-            gr.Margin = new Thickness(5);
-            gr.Height = 30;
-            gr.Background = Brushes.White;
 
-            Label lb = new Label();
-            lb.HorizontalAlignment = HorizontalAlignment.Left;
-            lb.Content = "Csirke Mellfilé";
-            lb.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#707070"));
-            lb.FontFamily = new FontFamily("Segoe UI");
-            lb.FontSize = 12;
-            lb.VerticalContentAlignment = VerticalAlignment.Center;
+            for (int i = 0; i < szurtLista.Count; i++)
+            {
+                Grid gr1 = new Grid();
+                gr1.Margin = new Thickness(5);
+                gr1.Height = 30;
+                gr1.Background = Brushes.White;
+
+                Label lb = new Label();
+                lb.HorizontalAlignment = HorizontalAlignment.Left;
+                lb.Content = szurtLista[i].Nev;
+                lb.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#707070"));
+                lb.FontFamily = new FontFamily("Segoe UI");
+                lb.FontSize = 12;
+                lb.VerticalContentAlignment = VerticalAlignment.Center;
+
+                Button btn = new Button();
+                btn.VerticalAlignment = VerticalAlignment.Center;
+                btn.Width = 28;
+                btn.Height = 28;
+                btn.HorizontalAlignment = HorizontalAlignment.Right;
+                btn.Padding = new Thickness(-1);
+                btn.BorderThickness = new Thickness(0);
+                btn.Cursor = Cursors.Hand;
+                btn.HorizontalContentAlignment = HorizontalAlignment.Stretch;
+                btn.Margin = new Thickness(1, 0, 1, 0);
+                btn.ToolTip = "Elem hozzáadáasa a táblázathoz";
+                btn.Click += btnArukuldesBelsoAblakEsemenyek;
+
+                Grid gr2 = new Grid();
+                gr2.Width = 30;
+                gr2.Height = 30;
+                gr2.Background = Brushes.White;
+                gr2.Children.Add(new Add());
+
+                btn.Content = gr2;
+                gr1.Children.Add(lb);
+                gr1.Children.Add(btn);
+
+                spnlRaktarakKozottiAtadasTermekekSzurtLista.Children.Add(gr1);
+            }
+        }
+
+        private void RemoveText(object sender, RoutedEventArgs e)
+        {
+            if (txbTermekTallozo.Text == "Keresés...")
+            {
+                txbTermekTallozo.Text = "";
+            }
+        }
+
+        private void AddText(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txbTermekTallozo.Text))
+                txbTermekTallozo.Text = "Keresés...";
+        }
+
+        private void termekTallozoMegjelitese(object sender, RoutedEventArgs e)
+        {
+            TermekTallozo.Visibility = Visibility.Visible;
+        }
+
+        private void TermekTallozoBezarasa(object sender, RoutedEventArgs e)
+        {
+            TermekTallozo.Visibility = Visibility.Collapsed;
         }
     }
 }
