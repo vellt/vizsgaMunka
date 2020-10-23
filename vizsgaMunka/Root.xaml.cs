@@ -130,99 +130,16 @@ namespace vizsgaMunka
         }
         #endregion
 
-
-        #region Raktarak
-        /// <summary>
-        /// Raktar Kisablak indito
-        /// </summary>
-        private void BtnRaktarakraVonatkozoInterakciok(object sender, RoutedEventArgs e)
-        {
-            switch (((Button)sender).ToolTip.ToString())
-            {
-                case "raktár hozzáadása":
-                    raktarHozzaadasa.Visibility = Visibility.Visible;
-                    //kezdő értékek beállítása
-                    txbRaktarNevHozzaadasa.Text = String.Empty;
-                    txbRaktarHelyHozzaadasa.Text = String.Empty;
-                    txbRaktarTelefonHozzaadasa.Text = String.Empty;
-                    txbRaktarEmailHozzaadasa.Text = String.Empty;
-                    break;
-                case "raktár módosítása":
-                    raktarModositasa.Visibility = Visibility.Visible;
-                    //kezdő értékek beállítása
-                    int index = indexOfSelectedRowRaktarak();
-                    txbRaktarNevModositasa.Text = ListOfRaktarak[index].Nev;
-                    txbRaktarHelyModositasa.Text = ListOfRaktarak[index].Hely;
-                    txbRaktarTelefonModositasa.Text = ListOfRaktarak[index].Telefon;
-                    txbRaktarEmailModositasa.Text = ListOfRaktarak[index].Email;
-                    break;
-                case "raktár törlése":
-                    raktarTorlese.Visibility = Visibility.Visible;
-                    break;
-                case "szinkronizálás":
-                    szinkronizalasRaktarak();
-                    break;
-            }
-        }
-
-        
-
-        private void BtnRaktarEsemenyek(object sender, RoutedEventArgs e)
-        {
-            int index = indexOfSelectedRowRaktarak();
-            if (((Button)sender).ToolTip != null)
-            {
-                //Ablak bezarasa gomb eseménye
-                raktarHozzaadasa.Visibility = Visibility.Collapsed;
-                raktarModositasa.Visibility = Visibility.Collapsed;
-                raktarTorlese.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                switch (((Label)((Grid)((Button)sender).Content).Children[0]).Content)
-                {
-                    case "Mentés":
-                        //Mentés gomb eseménye
-                        raktarHozzaadasa.Visibility = Visibility.Collapsed;
-                        ujAdatHozzaadasaRaktarhoz(spRaktartTabla.Children.Count,
-                                                  txbRaktarNevHozzaadasa.Text,
-                                                  txbRaktarHelyHozzaadasa.Text,
-                                                  txbRaktarTelefonHozzaadasa.Text, txbRaktarEmailHozzaadasa.Text);
-                        break;
-                    case "Módosítás":
-                        //Módosítás gomb eseménye
-                        raktarModositasa.Visibility = Visibility.Collapsed;
-                        RaktarAdatModositasa(index,
-                                             txbRaktarNevModositasa.Text,
-                                             txbRaktarHelyModositasa.Text,
-                                             txbRaktarTelefonModositasa.Text,
-                                             txbRaktarEmailModositasa.Text);
-                        break;
-                    case "Igen":
-                        //meglévő raktar törlése "igen"
-                        raktarTorlese.Visibility = Visibility.Collapsed;
-                        RaktarAdatTorlese(index);
-                        break;
-                    default:
-                        //meglévő raktar törlése "nem"
-                        raktarTorlese.Visibility = Visibility.Collapsed;
-                        break;
-                }
-            }
-
-        }
-
-
-
-
-        #endregion
+        //Raktarak
+        partial void BtnRaktarakraVonatkozoInterakciok(object sender, RoutedEventArgs e);
+        partial void BtnRaktarEsemenyek(object sender, RoutedEventArgs e);
 
         //Termekek
         partial void BtnTermekekreVonatkozoInterakciok(object sender, RoutedEventArgs e);
         partial void BtnTermekEsemenyek(object sender, RoutedEventArgs e);
         
 
-        #region Raktarak Termekek
+        #region Raktarak Termekek Arukuldesek
 
         /// <summary>
         /// A tablazatban a sor elejét mező kijelölésekor zöldre szinezi
@@ -282,21 +199,7 @@ namespace vizsgaMunka
             }
         }
 
-        private void szinkronizalasArukuldes()
-        {
-            spArukuldesekTabla.Children.Clear();
-            for (int i = 0; i < ListOfArukuldesek.Count; i++)
-                tablazatKialakitasaArukukldesek(
-                    ListOfArukuldesek[i].ID, 
-                    ListOfArukuldesek[i].Datum, 
-                    ListOfArukuldesek[i].ArukiadoRaktar_Raktar_ID, 
-                    ListOfArukuldesek[i].BevetelezoRaktar_Raktar_ID, 
-                    ListOfArukuldesek[i].Aruertek, 
-                    ListOfArukuldesek[i].Megjegyzes,
-                    (i % 2 == 0) ? Brushes.WhiteSmoke : Brushes.White);
-            ((ScrollViewer)spArukuldesekTabla.Parent).ScrollToEnd();
-            ;
-        }
+        
 
         private void tablazatKialakitasaArukukldesek(int id, DateTime datum, int arukiadoRaktar_id, int bevetelezoRaktar_id, int aruertek, string megjegyzes, SolidColorBrush hatterSzin)
         {
@@ -347,75 +250,11 @@ namespace vizsgaMunka
 
        
 
-        private int indexOfSelectedRowArukiadas()
-        {
-            var background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF05B422"));
-            for (int i = 0; i < spArukuldesekTabla.Children.Count; i++)
-            {
-                var background2 = ((Grid)((Grid)spArukuldesekTabla.Children[i]).Children[0]).Background;
-                if (background2.ToString() == background.ToString())
-                    return i;
-            }
-            return -1;
-        }
+       
 
-        private void BtnArukuldesTorlesEsemenyek(object sender, RoutedEventArgs e)
-        {
-            int index = indexOfSelectedRowArukiadas();
-            if (((Button)sender).ToolTip != null)
-            {
-                //Ablak bezarasa gomb eseménye
-                RaktarkoziAtadasTorlese.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                switch (((Label)((Grid)((Button)sender).Content).Children[0]).Content)
-                {
-                    case "Igen":
-                        //meglévő termék törlése "igen"
-                        RaktarkoziAtadasTorlese.Visibility = Visibility.Collapsed;
-                        AtadasAdatTorlese(index);
-                        break;
-                    default:
-                        //meglévő termék törlése "nem"
-                        RaktarkoziAtadasTorlese.Visibility = Visibility.Collapsed;
-                        break;
-                }
-            }
-        }
+        
 
-        private void btnArukuldesBelsoAblakEsemenyek(object sender, RoutedEventArgs e)
-        {
-            switch ((((Button)sender).ToolTip==null)?"": ((Button)sender).ToolTip.ToString())
-            {
-                case "termék hozzáadása":
-                    //a terméktallozora fokuszaljon rá
-                    break;
-                case "termék módosítása":
-                    //jelenjen meg a módósító ablak
-                    //A kijelolt tablazat elemét módosítsa,
-                    break;
-                case "termék törlése":
-                    //jelenjen meg a törlő ablak
-                    //A kijelolt tablazat elemét törölje,
-                    break;
-                case "Nyomtatás":
-                    //az átadást mentse
-                    //mutassa meg a nyomtatási nézetet
-                    //nyomtatas utan zarja be az ablakot
-                case "Mentés":
-                    //mentti
-                    break;
-                    //a terméktalozóban lévő hozzáadáas
-                case "hozzáadáas a táblázathoz":
-                    break;
-                default:
-                    //a bezargombnak nincs tooltipje, igy itt valoszinulge arra kattintott
-                    //ablak bezarasa
-                    RaktarkoziAtadasAblak.Visibility = Visibility.Collapsed;
-                    break;
-            }
-        }
+       
 
         private void AtadasAdatTorlese(int index)
         {
@@ -449,6 +288,39 @@ namespace vizsgaMunka
             ujAdatHozzaadasaTermekez(0, "Sertés Karaj", "5 %", "kg", "1 299 Ft");
             ujAdatHozzaadasaAtadasokhoz(0, DateTime.Now, 0, 0, 700000,"megjegyzes");
             ujAdatHozzaadasaAtadasokhoz(0, DateTime.Now, 0, 0, 700000,"megjegyzes");
+        }
+
+        private void btnArukuldesBelsoAblakEsemenyek(object sender, RoutedEventArgs e)
+        {
+            switch ((((Button)sender).ToolTip == null) ? "" : ((Button)sender).ToolTip.ToString())
+            {
+                case "termék hozzáadása":
+                    //a terméktallozora fokuszaljon rá
+                    break;
+                case "termék módosítása":
+                    //jelenjen meg a módósító ablak
+                    //A kijelolt tablazat elemét módosítsa,
+                    break;
+                case "termék törlése":
+                    //jelenjen meg a törlő ablak
+                    //A kijelolt tablazat elemét törölje,
+                    break;
+                case "Nyomtatás":
+                //az átadást mentse
+                //mutassa meg a nyomtatási nézetet
+                //nyomtatas utan zarja be az ablakot
+                case "Mentés":
+                    //mentti
+                    break;
+                //a terméktalozóban lévő hozzáadáas
+                case "hozzáadáas a táblázathoz":
+                    break;
+                default:
+                    //a bezargombnak nincs tooltipje, igy itt valoszinulge arra kattintott
+                    //ablak bezarasa
+                    RaktarkoziAtadasAblak.Visibility = Visibility.Collapsed;
+                    break;
+            }
         }
 
         private void txbTermekTallozoTextChanged(object sender, TextChangedEventArgs e)
