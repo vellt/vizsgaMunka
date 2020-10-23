@@ -55,21 +55,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DesignPatterns\ActivityRowForList.xaml.cs">
+      <DependentUpon>ActivityRowForList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DesignPatterns\TableRowWith5Column.xaml.cs">
+      <DependentUpon>TableRowWith5Column.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DesignPatterns\TableRowWith7Column.xaml.cs">
+      <DependentUpon>TableRowWith7Column.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Aktivitasok.cs" />
-    <Compile Include="ArukuldesTablazatSorai.xaml.cs">
-      <DependentUpon>ArukuldesTablazatSorai.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Osztalyok.cs" />
+    <Compile Include="Pages\Arukuldesek.cs" />
+    <Compile Include="Pages\ArukuldesTartalma.cs" />
     <Compile Include="Pages\Raktarak.cs" />
-    <Compile Include="raktarTablaSorAdatok.xaml.cs">
-      <DependentUpon>raktarTablaSorAdatok.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Termekek.cs" />
     <Compile Include="VectorIcons\Account.xaml.cs">
       <DependentUpon>Account.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="VectorIcons\Activity.xaml.cs">
-      <DependentUpon>Activity.xaml</DependentUpon>
     </Compile>
     <Compile Include="VectorIcons\Add.xaml.cs">
       <DependentUpon>Add.xaml</DependentUpon>
@@ -110,7 +112,15 @@
     <Compile Include="VectorIcons\Synch.xaml.cs">
       <DependentUpon>Synch.xaml</DependentUpon>
     </Compile>
-    <Page Include="ArukuldesTablazatSorai.xaml">
+    <Page Include="DesignPatterns\ActivityRowForList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DesignPatterns\TableRowWith5Column.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DesignPatterns\TableRowWith7Column.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,10 +143,6 @@
       <DependentUpon>Root.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="raktarTablaSorAdatok.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="ResourcesDictionaries\SiteNavbarButtonDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -146,10 +152,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VectorIcons\Account.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="VectorIcons\Activity.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

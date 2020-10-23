@@ -1,4 +1,5 @@
-﻿using System.CodeDom;
+﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,90 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using vizsgaMunka.VectorIcons;
+using vizsgaMunka.DesignPatterns;
 
 namespace vizsgaMunka
 {
     public partial class MainWindow : Window
     {
         List<Termek> ListOfTermekek = new List<Termek>();
+
+        partial void BtnTermekekreVonatkozoInterakciok(object sender, RoutedEventArgs e)
+        {
+            switch (((Button) sender).ToolTip.ToString())
+            {
+                case "termék hozzáadása":
+                    termekHozzaadasa.Visibility = Visibility.Visible;
+                    //kezdő értékek beállítása
+                    txbTermekNevHozzaadasa.Text = String.Empty;
+                    txbTermekAFAHozzaadasa.Text = String.Empty;
+                    txbTermekMEHozzaadasa.Text = String.Empty;
+                    txbTermekArHozzaadasa.Text = String.Empty;
+                    break;
+                case "termék módosítása":
+                    termekModositasa.Visibility = Visibility.Visible;
+                    //kezdő értékek beállítása
+                    int index = indexOfSelectedRowTermekek();
+                    txbTermekNevModositasa.Text = ListOfTermekek[index].Nev;
+                    txbTermekAFAModositasa.Text = ListOfTermekek[index].AFA;
+                    txbTermekMEModositasa.Text = ListOfTermekek[index].MennyisegiEgyseg;
+                    txbTermekArModositasa.Text = ListOfTermekek[index].Egysegar;
+                    break;
+                case "termék törlése":
+                    termekTorlese.Visibility = Visibility.Visible;
+                    break;
+                case "szinkronizálás":
+                    szinkronizalasTermekek();
+                    break;
+            }
+        }
+
+        partial void BtnTermekEsemenyek(object sender, RoutedEventArgs e)
+        {
+            int index = indexOfSelectedRowTermekek();
+            if (((Button)sender).ToolTip != null)
+            {
+                //Ablak bezarasa gomb eseménye
+                termekHozzaadasa.Visibility = Visibility.Collapsed;
+                termekModositasa.Visibility = Visibility.Collapsed;
+                termekTorlese.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                switch (((Label)((Grid)((Button)sender).Content).Children[0]).Content)
+                {
+                    case "Mentés":
+                        //Mentés gomb eseménye
+                        termekHozzaadasa.Visibility = Visibility.Collapsed;
+                        ujAdatHozzaadasaTermekez(spTermekekTabla.Children.Count,
+                                                  txbTermekNevHozzaadasa.Text,
+                                                  txbTermekAFAHozzaadasa.Text,
+                                                  txbTermekMEHozzaadasa.Text, txbTermekArHozzaadasa.Text);
+                        break;
+                    case "Módosítás":
+                        //Módosítás gomb eseménye
+                        termekModositasa.Visibility = Visibility.Collapsed;
+                        TermekAdatModositasa(index,
+                                             txbTermekNevModositasa.Text,
+                                             txbTermekAFAModositasa.Text,
+                                             txbTermekMEModositasa.Text,
+                                             txbTermekArModositasa.Text);
+                        break;
+                    case "Igen":
+                        //meglévő termék törlése "igen"
+                        termekTorlese.Visibility = Visibility.Collapsed;
+                        TermekAdatTorlese(index);
+                        break;
+                    default:
+                        //meglévő termék törlése "nem"
+                        termekTorlese.Visibility = Visibility.Collapsed;
+                        break;
+                }
+            }
+
+
+        }
 
         /// <summary>
         /// Szinkronizálja a táblát
@@ -41,22 +120,18 @@ namespace vizsgaMunka
             btn.BorderThickness = new Thickness(0);
             btn.Cursor = Cursors.Hand;
 
-            TablaSorAdatok rtsa = new TablaSorAdatok();
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[0]).Content = id;
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[1]).Content = nev;
+            TableRowWith5Column tableROW = new TableRowWith5Column();
+            tableROW.egy.Content = id;
+            tableROW.ketto.Content = nev;
+            tableROW.ketto.HorizontalContentAlignment = HorizontalAlignment.Left;
+            tableROW.harom.Content = afa;
+            tableROW.negy.Content = mennyisegiEgyseg;
+            tableROW.ot.Content = egysegar;
+            tableROW.ot.Padding = new Thickness(0, 0, 45, 0);
+            tableROW.ot.HorizontalContentAlignment = HorizontalAlignment.Right;
+            tableROW.hatter.Background = hatterSzin;
 
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[2]).HorizontalContentAlignment = HorizontalAlignment.Center;
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[2]).Content = afa;
-
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[3]).Content = mennyisegiEgyseg;
-
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[4]).HorizontalContentAlignment = HorizontalAlignment.Right;
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[4]).Padding = new Thickness(0, 0, 40, 0);
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[4]).Content = egysegar;
-
-            ((Grid)((Button)rtsa.Content).Content).Background = hatterSzin;
-
-            btn.Content = rtsa;
+            btn.Content = tableROW;
             btn.Click += SorokKijeloleseKattintasera;
 
             Grid gr0 = new Grid();

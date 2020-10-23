@@ -1,4 +1,5 @@
-﻿using System.CodeDom;
+﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using vizsgaMunka.VectorIcons;
+using vizsgaMunka.DesignPatterns;
 
 namespace vizsgaMunka
 {
@@ -21,6 +24,83 @@ namespace vizsgaMunka
         /// <summary>
         /// Törli a kijelölt sort a táblázatból
         /// </summary>
+
+
+        partial void BtnRaktarakraVonatkozoInterakciok(object sender, RoutedEventArgs e)
+        {
+            switch (((Button)sender).ToolTip.ToString())
+            {
+                case "raktár hozzáadása":
+                    raktarHozzaadasa.Visibility = Visibility.Visible;
+                    //kezdő értékek beállítása
+                    txbRaktarNevHozzaadasa.Text = String.Empty;
+                    txbRaktarHelyHozzaadasa.Text = String.Empty;
+                    txbRaktarTelefonHozzaadasa.Text = String.Empty;
+                    txbRaktarEmailHozzaadasa.Text = String.Empty;
+                    break;
+                case "raktár módosítása":
+                    raktarModositasa.Visibility = Visibility.Visible;
+                    //kezdő értékek beállítása
+                    int index = indexOfSelectedRowRaktarak();
+                    txbRaktarNevModositasa.Text = ListOfRaktarak[index].Nev;
+                    txbRaktarHelyModositasa.Text = ListOfRaktarak[index].Hely;
+                    txbRaktarTelefonModositasa.Text = ListOfRaktarak[index].Telefon;
+                    txbRaktarEmailModositasa.Text = ListOfRaktarak[index].Email;
+                    break;
+                case "raktár törlése":
+                    raktarTorlese.Visibility = Visibility.Visible;
+                    break;
+                case "szinkronizálás":
+                    szinkronizalasRaktarak();
+                    break;
+            }
+        }
+
+        partial void BtnRaktarEsemenyek(object sender, RoutedEventArgs e)
+        {
+            int index = indexOfSelectedRowRaktarak();
+            if (((Button)sender).ToolTip != null)
+            {
+                //Ablak bezarasa gomb eseménye
+                raktarHozzaadasa.Visibility = Visibility.Collapsed;
+                raktarModositasa.Visibility = Visibility.Collapsed;
+                raktarTorlese.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                switch (((Label)((Grid)((Button)sender).Content).Children[0]).Content)
+                {
+                    case "Mentés":
+                        //Mentés gomb eseménye
+                        raktarHozzaadasa.Visibility = Visibility.Collapsed;
+                        ujAdatHozzaadasaRaktarhoz(spRaktartTabla.Children.Count,
+                                                  txbRaktarNevHozzaadasa.Text,
+                                                  txbRaktarHelyHozzaadasa.Text,
+                                                  txbRaktarTelefonHozzaadasa.Text, txbRaktarEmailHozzaadasa.Text);
+                        break;
+                    case "Módosítás":
+                        //Módosítás gomb eseménye
+                        raktarModositasa.Visibility = Visibility.Collapsed;
+                        RaktarAdatModositasa(index,
+                                             txbRaktarNevModositasa.Text,
+                                             txbRaktarHelyModositasa.Text,
+                                             txbRaktarTelefonModositasa.Text,
+                                             txbRaktarEmailModositasa.Text);
+                        break;
+                    case "Igen":
+                        //meglévő raktar törlése "igen"
+                        raktarTorlese.Visibility = Visibility.Collapsed;
+                        RaktarAdatTorlese(index);
+                        break;
+                    default:
+                        //meglévő raktar törlése "nem"
+                        raktarTorlese.Visibility = Visibility.Collapsed;
+                        break;
+                }
+            }
+
+        }
+
         private void RaktarAdatTorlese(int index)
         {
             ListOfRaktarak.RemoveAt(index);
@@ -86,15 +166,16 @@ namespace vizsgaMunka
             btn.BorderThickness = new Thickness(0);
             btn.Cursor = Cursors.Hand;
 
-            TablaSorAdatok rtsa = new TablaSorAdatok();
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[0]).Content = id;
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[1]).Content = nev;
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[2]).Content = hely;
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[3]).Content = telefonszam;
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[4]).Content = email;
-            ((Grid)((Button)rtsa.Content).Content).Background = hatterSzin;
+            TableRowWith5Column tableROW = new TableRowWith5Column();
+            tableROW.egy.Content = id;
+            tableROW.ketto.Content = nev;
+            tableROW.ketto.HorizontalContentAlignment = HorizontalAlignment.Left;
+            tableROW.harom.Content = hely;
+            tableROW.negy.Content = telefonszam;
+            tableROW.ot.Content = email;
+            tableROW.hatter.Background = hatterSzin;
 
-            btn.Content = rtsa;
+            btn.Content = tableROW;
             btn.Click += SorokKijeloleseKattintasera;
 
             Grid gr0 = new Grid();
@@ -118,6 +199,7 @@ namespace vizsgaMunka
             //törlés módosítűás gomb eltüntetése
             btnTablaTorles.Visibility = Visibility.Collapsed;
             btnTablaModositas.Visibility = Visibility.Collapsed;
+            ;
         }
     }
 }

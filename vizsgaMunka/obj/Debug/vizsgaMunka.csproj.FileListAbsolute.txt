@@ -16,17 +16,11 @@ C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ertesitesek.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ertesitesek.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ResourcesDictionaries\SiteNavBarButtonDictionary.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ResourcesDictionaries\TopNavbarButtonDictionary.baml
-C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\raktarTablaSorAdatok.g.cs
-C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\raktarTablaSorAdatok.baml
-C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ArukuldesTablazatSorai.g.cs
-C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ArukuldesTablazatSorai.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\Root.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\Root.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\Add.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\Add.baml
-C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\Activity.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\Activity.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\ProfilPic.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\ProfilPic.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\Add1.g.cs
@@ -53,3 +47,9 @@ C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\Account
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\Logout.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\Account.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\Logout.baml
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\DesignPatterns\ActivityRowForList.g.cs
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\DesignPatterns\TableRowWith7Column.g.cs
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\DesignPatterns\ActivityRowForList.baml
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\DesignPatterns\TableRowWith7Column.baml
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\DesignPatterns\TableRowWith5Column.g.cs
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\DesignPatterns\TableRowWith5Column.baml

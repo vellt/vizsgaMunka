@@ -460,6 +460,7 @@
                                   Background="White"
                                   >
                                     <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5"/>
                                         <ColumnDefinition Width="80"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
@@ -468,7 +469,7 @@
                                         <ColumnDefinition Width="17"/>
                                     </Grid.ColumnDefinitions>
                                     <Label 
-                                    Grid.Column="0"
+                                    Grid.Column="1"
                                     Content="#" 
                                     Foreground="#707070"
                                     FontFamily="Segoe UI"
@@ -476,7 +477,7 @@
                                     HorizontalContentAlignment="Center"
                                     VerticalContentAlignment="Center"/>
                                     <Label 
-                                    Grid.Column="1"
+                                    Grid.Column="2"
                                     Content="Raktárnév" 
                                     Foreground="#707070"
                                     FontFamily="Segoe UI"
@@ -484,7 +485,7 @@
                                     HorizontalContentAlignment="Left"
                                     VerticalContentAlignment="Center"/>
                                     <Label 
-                                    Grid.Column="2"
+                                    Grid.Column="3"
                                     Content="Hely" 
                                     Foreground="#707070"
                                     FontFamily="Segoe UI"
@@ -492,7 +493,7 @@
                                     HorizontalContentAlignment="Center"
                                     VerticalContentAlignment="Center"/>
                                     <Label 
-                                    Grid.Column="3"
+                                    Grid.Column="4"
                                     Content="Telefon" 
                                     Foreground="#707070"
                                     FontFamily="Segoe UI"
@@ -500,7 +501,7 @@
                                     HorizontalContentAlignment="Center"
                                     VerticalContentAlignment="Center"/>
                                     <Label 
-                                    Grid.Column="4"
+                                    Grid.Column="5"
                                     Content="Email" 
                                     Foreground="#707070"
                                     FontFamily="Segoe UI"
@@ -1116,6 +1117,7 @@
                                   Background="White"
                                   >
                                     <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5"/>
                                         <ColumnDefinition Width="80"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
@@ -1124,7 +1126,7 @@
                                         <ColumnDefinition Width="17"/>
                                     </Grid.ColumnDefinitions>
                                     <Label 
-                                    Grid.Column="0"
+                                    Grid.Column="1"
                                     Content="#" 
                                     Foreground="#707070"
                                     FontFamily="Segoe UI"
@@ -1132,7 +1134,7 @@
                                     HorizontalContentAlignment="Center"
                                     VerticalContentAlignment="Center"/>
                                     <Label 
-                                    Grid.Column="1"
+                                    Grid.Column="2"
                                     Content="Megnevezés" 
                                     Foreground="#707070"
                                     FontFamily="Segoe UI"
@@ -1140,7 +1142,7 @@
                                     HorizontalContentAlignment="Left"
                                     VerticalContentAlignment="Center"/>
                                     <Label 
-                                    Grid.Column="2"
+                                    Grid.Column="3"
                                     Content="ÁFA" 
                                     Foreground="#707070"
                                     FontFamily="Segoe UI"
@@ -1148,7 +1150,7 @@
                                     HorizontalContentAlignment="Center"
                                     VerticalContentAlignment="Center"/>
                                     <Label 
-                                    Grid.Column="3"
+                                    Grid.Column="4"
                                     Content="Mennyiségi Egység" 
                                     Foreground="#707070"
                                     FontFamily="Segoe UI"
@@ -1156,7 +1158,7 @@
                                     HorizontalContentAlignment="Center"
                                     VerticalContentAlignment="Center"/>
                                     <Label 
-                                    Grid.Column="4"
+                                    Grid.Column="5"
                                     Content="Egységár" 
                                     Foreground="#707070"
                                     FontFamily="Segoe UI"
@@ -1761,6 +1763,7 @@
                                   Background="White"
                                   >
                                     <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5"/>
                                         <ColumnDefinition Width="80"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
@@ -1769,7 +1772,7 @@
                                         <ColumnDefinition Width="17"/>
                                     </Grid.ColumnDefinitions>
                                     <Label 
-                                    Grid.Column="0"
+                                    Grid.Column="1"
                                     Content="#" 
                                     Foreground="#707070"
                                     FontFamily="Segoe UI"
@@ -1777,15 +1780,15 @@
                                     HorizontalContentAlignment="Center"
                                     VerticalContentAlignment="Center"/>
                                     <Label 
-                                    Grid.Column="1"
+                                    Grid.Column="2"
                                     Content="Dátum" 
                                     Foreground="#707070"
                                     FontFamily="Segoe UI"
                                     FontSize="16"
-                                    HorizontalContentAlignment="Left"
+                                    HorizontalContentAlignment="Center"
                                     VerticalContentAlignment="Center"/>
                                     <Label 
-                                    Grid.Column="2"
+                                    Grid.Column="3"
                                     Content="Árukiadó Raktár" 
                                     Foreground="#707070"
                                     FontFamily="Segoe UI"
@@ -1793,7 +1796,7 @@
                                     HorizontalContentAlignment="Left"
                                     VerticalContentAlignment="Center"/>
                                     <Label 
-                                    Grid.Column="3"
+                                    Grid.Column="4"
                                     Content="Bevételező Raktár" 
                                     Foreground="#707070"
                                     FontFamily="Segoe UI"
@@ -1801,7 +1804,7 @@
                                     HorizontalContentAlignment="Left"
                                     VerticalContentAlignment="Center"/>
                                     <Label 
-                                    Grid.Column="4"
+                                    Grid.Column="5"
                                     Content="Áruérték" 
                                     Foreground="#707070"
                                     FontFamily="Segoe UI"
@@ -1906,7 +1909,7 @@
                             <Grid
                                 x:Name="RaktarkoziAtadasAblak"
                                 Grid.Row="1"
-                                Visibility="Visible"
+                                Visibility="Collapsed"
                                 Margin="20"
                                 Background="#E0E0E0">
                                 <Grid.RowDefinitions>
@@ -1917,7 +1920,7 @@
                                     <RowDefinition Height="40"/>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.Row="0"
-                                      Background="White">
+                                      Background="#FFF1F1F1">
                                     <Button Click="btnArukuldesBelsoAblakEsemenyek"
                                             Width="99"
                                             Height="28"
@@ -1930,7 +1933,7 @@
                                             >
                                         <Grid Width="100"
                                               Height="30"
-                                              Background="White">
+                                              Background="#FFF1F1F1">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="38"/>
                                                 <ColumnDefinition Width="*"/>
@@ -2549,7 +2552,7 @@
                             <Grid
                                 x:Name="RaktarkoziAtadasTorlese"
                                 Grid.Row="1"
-                                Visibility="Collapsed">
+                                Visibility="Visible">
                                 <Grid.Background>
                                     <SolidColorBrush Color="Black" Opacity="0.5"/>
                                 </Grid.Background>

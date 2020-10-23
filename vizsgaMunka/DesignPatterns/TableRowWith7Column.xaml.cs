@@ -13,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace vizsgaMunka
+namespace vizsgaMunka.DesignPatterns
 {
     /// <summary>
-    /// Interaction logic for raktarTablaSorAdatok.xaml
+    /// Interaction logic for TableRowWith7Column.xaml
     /// </summary>
-    public partial class TablaSorAdatok : UserControl
+    public partial class TableRowWith7Column : UserControl
     {
-        public TablaSorAdatok()
+        public TableRowWith7Column()
         {
             InitializeComponent();
         }
-
-        
-        
     }
 }

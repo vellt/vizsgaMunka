@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using vizsgaMunka.VectorIcons;
+using vizsgaMunka.DesignPatterns;
 
 namespace vizsgaMunka
 {
@@ -211,90 +212,15 @@ namespace vizsgaMunka
 
         }
 
-       
 
-       
+
+
         #endregion
 
-        #region Termekek
-        private void BtnTermekekreVonatkozoInterakciok(object sender, RoutedEventArgs e)
-        {
-            switch (((Button)sender).ToolTip.ToString())
-            {
-                case "termék hozzáadása":
-                    termekHozzaadasa.Visibility = Visibility.Visible;
-                    //kezdő értékek beállítása
-                    txbTermekNevHozzaadasa.Text = String.Empty;
-                    txbTermekAFAHozzaadasa.Text = String.Empty;
-                    txbTermekMEHozzaadasa.Text = String.Empty;
-                    txbTermekArHozzaadasa.Text = String.Empty;
-                    break;
-                case "termék módosítása":
-                    termekModositasa.Visibility = Visibility.Visible;
-                    //kezdő értékek beállítása
-                    int index = indexOfSelectedRowTermekek();
-                    txbTermekNevModositasa.Text = ListOfTermekek[index].Nev;
-                    txbTermekAFAModositasa.Text = ListOfTermekek[index].AFA;
-                    txbTermekMEModositasa.Text = ListOfTermekek[index].MennyisegiEgyseg;
-                    txbTermekArModositasa.Text = ListOfTermekek[index].Egysegar;
-                    break;
-                case "termék törlése":
-                    termekTorlese.Visibility = Visibility.Visible;
-                    break;
-                case "szinkronizálás":
-                    szinkronizalasTermekek();
-                    break;
-            }
-        }
-
+        //Termekek
+        partial void BtnTermekekreVonatkozoInterakciok(object sender, RoutedEventArgs e);
+        partial void BtnTermekEsemenyek(object sender, RoutedEventArgs e);
         
-        private void BtnTermekEsemenyek(object sender, RoutedEventArgs e)
-        {
-            int index = indexOfSelectedRowTermekek();
-            if (((Button)sender).ToolTip != null)
-            {
-                //Ablak bezarasa gomb eseménye
-                termekHozzaadasa.Visibility = Visibility.Collapsed;
-                termekModositasa.Visibility = Visibility.Collapsed;
-                termekTorlese.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                switch (((Label)((Grid)((Button)sender).Content).Children[0]).Content)
-                {
-                    case "Mentés":
-                        //Mentés gomb eseménye
-                        termekHozzaadasa.Visibility = Visibility.Collapsed;
-                        ujAdatHozzaadasaTermekez(spTermekekTabla.Children.Count,
-                                                  txbTermekNevHozzaadasa.Text,
-                                                  txbTermekAFAHozzaadasa.Text,
-                                                  txbTermekMEHozzaadasa.Text, txbTermekArHozzaadasa.Text);
-                        break;
-                    case "Módosítás":
-                        //Módosítás gomb eseménye
-                        termekModositasa.Visibility = Visibility.Collapsed;
-                        TermekAdatModositasa(index,
-                                             txbTermekNevModositasa.Text,
-                                             txbTermekAFAModositasa.Text,
-                                             txbTermekMEModositasa.Text,
-                                             txbTermekArModositasa.Text);
-                        break;
-                    case "Igen":
-                        //meglévő termék törlése "igen"
-                        termekTorlese.Visibility = Visibility.Collapsed;
-                        TermekAdatTorlese(index);
-                        break;
-                    default:
-                        //meglévő termék törlése "nem"
-                        termekTorlese.Visibility = Visibility.Collapsed;
-                        break;
-                }
-            }
-
-
-        }
-       
-        #endregion
 
         #region Raktarak Termekek
 
@@ -338,14 +264,14 @@ namespace vizsgaMunka
                     cmbxArukiadoRaktarak.SelectedIndex = 0; //arukiado raktar kezdő ertek beallitása
                     cmbxBevetelezoRaktarak.SelectedIndex = 0; //bevetelezo raktar kezdő ertek beallitása
                     dprDatum.SelectedDate = DateTime.Now; //datum beállítása
-                    txbTermekTallozo.Text = String.Empty; //törli a termék tallozo kereséi mezőértékét
+                    txbTermekTallozo.Text = "Keresés..."; //törli a termék tallozo kereséi mezőértékét
                     spnlRaktarakKozottiAtadasTermekekSzurtLista.Children.Clear(); //törli a termék tallozo ered enyeit
                     spArukuldesBelsoTabla.Children.Clear(); //törli a belső táblát
                     break;
                 case "elem módosítása":
-                    RaktarkoziAtadasAblak.Visibility = Visibility.Visible;
+                    //RaktarkoziAtadasAblak.Visibility = Visibility.Visible;
                     //kezdő értékek beállítása
-                   
+                    
                     break;
                 case "elem törlése":
                     RaktarkoziAtadasTorlese.Visibility = Visibility.Visible; //az elem törlő ablak megjelenik
@@ -381,22 +307,19 @@ namespace vizsgaMunka
             btn.BorderThickness = new Thickness(0);
             btn.Cursor = Cursors.Hand;
 
-            ArukuldesTablazatSorai rtsa = new ArukuldesTablazatSorai();
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[0]).Content = id;
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[1]).Content = datum.ToString("yyyy.MM.dd. HH:mm");
+            TableRowWith5Column tableROW = new TableRowWith5Column();
+            tableROW.egy.Content = id;
+            tableROW.ketto.Content = datum.ToString("yyyy.MM.dd. HH:mm");
+            tableROW.harom.Content = ListOfRaktarak[arukiadoRaktar_id].Nev;
+            tableROW.harom.HorizontalContentAlignment = HorizontalAlignment.Left;
+            tableROW.negy.Content = ListOfRaktarak[bevetelezoRaktar_id].Nev;
+            tableROW.negy.HorizontalContentAlignment = HorizontalAlignment.Left;
+            tableROW.ot.Content = aruertek;
+            tableROW.ot.Padding = new Thickness(0, 0, 45, 0);
+            tableROW.ot.HorizontalContentAlignment = HorizontalAlignment.Right;
+            tableROW.hatter.Background = hatterSzin;
 
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[2]).HorizontalContentAlignment = HorizontalAlignment.Center;
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[2]).Content =ListOfRaktarak[arukiadoRaktar_id].Nev;
-
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[3]).Content = ListOfRaktarak[bevetelezoRaktar_id].Nev;
-
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[4]).HorizontalContentAlignment = HorizontalAlignment.Right;
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[4]).Padding = new Thickness(0, 0, 40, 0);
-            ((Label)((Grid)((Button)rtsa.Content).Content).Children[4]).Content = aruertek;
-
-            ((Grid)((Button)rtsa.Content).Content).Background = hatterSzin;
-
-            btn.Content = rtsa;
+            btn.Content = tableROW;
             btn.Click += SorokKijeloleseKattintasera;
 
             Grid gr0 = new Grid();
