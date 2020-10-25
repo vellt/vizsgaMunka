@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\ArukuldesTartalma.cs" />
+    <Compile Include="Classes\Ceg.cs" />
     <Compile Include="DesignPatterns\ActivityRowForList.xaml.cs">
       <DependentUpon>ActivityRowForList.xaml</DependentUpon>
     </Compile>
@@ -64,12 +66,15 @@
     <Compile Include="DesignPatterns\TableRowWith7Column.xaml.cs">
       <DependentUpon>TableRowWith7Column.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Fiok.cs" />
     <Compile Include="Pages\Aktivitasok.cs" />
-    <Compile Include="Osztalyok.cs" />
     <Compile Include="Pages\Arukuldesek.cs" />
     <Compile Include="Pages\ArukuldesTartalma.cs" />
     <Compile Include="Pages\Raktarak.cs" />
     <Compile Include="Pages\Termekek.cs" />
+    <Compile Include="Classes\Raktar.cs" />
+    <Compile Include="Classes\Termek.cs" />
+    <Compile Include="Classes\Szallitolevelek.cs" />
     <Compile Include="VectorIcons\Account.xaml.cs">
       <DependentUpon>Account.xaml</DependentUpon>
     </Compile>
@@ -124,10 +129,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ertesitesek.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Root.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -135,9 +136,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ertesitesek.xaml.cs">
-      <DependentUpon>ertesitesek.xaml</DependentUpon>
     </Compile>
     <Compile Include="Root.xaml.cs">
       <DependentUpon>Root.xaml</DependentUpon>
@@ -234,8 +232,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

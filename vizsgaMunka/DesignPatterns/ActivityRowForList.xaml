@@ -4,9 +4,65 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:vizsgaMunka.DesignPatterns"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             xmlns:icon="clr-namespace:vizsgaMunka.VectorIcons"
+             mc:Ignorable="d" >
+    <Grid Margin="50 5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="59"/>
+            <RowDefinition Height="36"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="130"/>
+            </Grid.ColumnDefinitions>
+            <icon:ProfilPic Grid.Column="0"/>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label 
+                    x:Name="lbTeljesNev"
+                    Margin="0 0 0 -5"
+                    Grid.Row="0"
+                    VerticalContentAlignment="Bottom"
+                    Content="Vezetéknév Keresztnév"
+                    FontFamily="Segoe UI"
+                    FontSize="13"
+                    Foreground="#48403D" 
+                    FontWeight="Bold"/>
+                <Label 
+                    x:Name="lbFelhasznaloNev"
+                    Margin="0 -5 0 0"
+                    Grid.Row="1"
+                    Content="@felhasználónév"
+                    VerticalContentAlignment="Top"
+                    FontFamily="Segoe UI"
+                    Foreground="#C4C4C4"
+                    FontSize="11"/>
+            </Grid>
+            <Label 
+                x:Name="datum"
+                Margin="0 5 5 0"
+                Grid.Column="2"
+                Content="2020.09.21 16:30"
+                HorizontalContentAlignment="Right"
+                VerticalContentAlignment="Top"
+                FontFamily="Segoe UI"
+                Foreground="Gray"
+                FontSize="14" />
+        </Grid>
+        <Label 
+            x:Name="lbAktivitasLeirasa"
+            Grid.Row="1"
+            Background="WhiteSmoke"
+            Content="Rövid leírás a végeztt tevékenységről"
+            VerticalContentAlignment="Center"
+            FontFamily="Segoe UI"
+            Foreground="Gray"
+            FontSize="14"
+            Padding="12 0"/>
     </Grid>
 </UserControl>

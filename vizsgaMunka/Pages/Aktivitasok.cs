@@ -25,14 +25,13 @@ namespace vizsgaMunka
         /// </summary>
         private void ujErtesitesHozzaadasaAktivitas(string Nev, string FelhasznaloNev, string Tartalom, DateTime datum)
         {
-            string datum_ = datum.ToString("yyyy.MM.dd. HH:mm");
-            ertesitesek ert = new ertesitesek();
-            ((Label)((Grid)ert.Content).Children[1]).Content = Tartalom;
-            ((Label)((Grid)((Grid)((Grid)ert.Content).Children[0]).Children[1]).Children[0]).Content = Nev;
-            ((Label)((Grid)((Grid)((Grid)ert.Content).Children[0]).Children[1]).Children[1]).Content = FelhasznaloNev;
-            ((Label)((Grid)((Grid)ert.Content).Children[0]).Children[2]).Content = datum_;
-            ertesitesekSP.Children.Add(ert);
-
+            ActivityRowForList a = new ActivityRowForList();
+            a.lbTeljesNev.Content = Nev;
+            a.lbFelhasznaloNev.Content = FelhasznaloNev;
+            a.datum.Content = datum.ToString("yyyy.MM.dd. HH:mm");
+            a.lbAktivitasLeirasa.Content = Tartalom;
+            
+            ertesitesekSP.Children.Add(a);
         }
     }
 }

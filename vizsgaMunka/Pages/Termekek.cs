@@ -39,9 +39,9 @@ namespace vizsgaMunka
                     //kezdő értékek beállítása
                     int index = indexOfSelectedRowTermekek();
                     txbTermekNevModositasa.Text = ListOfTermekek[index].Nev;
-                    txbTermekAFAModositasa.Text = ListOfTermekek[index].AFA;
+                    txbTermekAFAModositasa.Text = ListOfTermekek[index].AFA.ToString();
                     txbTermekMEModositasa.Text = ListOfTermekek[index].MennyisegiEgyseg;
-                    txbTermekArModositasa.Text = ListOfTermekek[index].Egysegar;
+                    txbTermekArModositasa.Text = ListOfTermekek[index].Egysegar.ToString();
                     break;
                 case "termék törlése":
                     termekTorlese.Visibility = Visibility.Visible;
@@ -69,19 +69,22 @@ namespace vizsgaMunka
                     case "Mentés":
                         //Mentés gomb eseménye
                         termekHozzaadasa.Visibility = Visibility.Collapsed;
-                        ujAdatHozzaadasaTermekez(spTermekekTabla.Children.Count,
-                                                  txbTermekNevHozzaadasa.Text,
-                                                  txbTermekAFAHozzaadasa.Text,
-                                                  txbTermekMEHozzaadasa.Text, txbTermekArHozzaadasa.Text);
+                        ujAdatHozzaadasaTermekez(
+                            spTermekekTabla.Children.Count,
+                            txbTermekNevHozzaadasa.Text,
+                            Convert.ToInt32( txbTermekAFAHozzaadasa.Text),
+                            txbTermekMEHozzaadasa.Text, 
+                            Convert.ToInt32( txbTermekArHozzaadasa.Text));
                         break;
                     case "Módosítás":
                         //Módosítás gomb eseménye
                         termekModositasa.Visibility = Visibility.Collapsed;
-                        TermekAdatModositasa(index,
-                                             txbTermekNevModositasa.Text,
-                                             txbTermekAFAModositasa.Text,
-                                             txbTermekMEModositasa.Text,
-                                             txbTermekArModositasa.Text);
+                        TermekAdatModositasa(
+                            index,
+                            txbTermekNevModositasa.Text,
+                            Convert.ToInt32( txbTermekAFAModositasa.Text),
+                            txbTermekMEModositasa.Text,
+                            Convert.ToInt32( txbTermekArModositasa.Text));
                         break;
                     case "Igen":
                         //meglévő termék törlése "igen"
@@ -111,7 +114,7 @@ namespace vizsgaMunka
         /// <summary>
         /// Beszúrja a sorokat
         /// </summary>
-        private void tablazatKialakitasaTermekek(int id, string nev, string afa, string mennyisegiEgyseg, string egysegar, SolidColorBrush hatterSzin)
+        private void tablazatKialakitasaTermekek(int id, string nev, int afa, string mennyisegiEgyseg, int egysegar, SolidColorBrush hatterSzin)
         {
             Button btn = new Button();
             btn.Padding = new Thickness(-2);
@@ -124,9 +127,9 @@ namespace vizsgaMunka
             tableROW.egy.Content = id;
             tableROW.ketto.Content = nev;
             tableROW.ketto.HorizontalContentAlignment = HorizontalAlignment.Left;
-            tableROW.harom.Content = afa;
+            tableROW.harom.Content =SzamFormazasaAFA(afa);
             tableROW.negy.Content = mennyisegiEgyseg;
-            tableROW.ot.Content = egysegar;
+            tableROW.ot.Content =SzamFormazasaFt(egysegar);
             tableROW.ot.Padding = new Thickness(0, 0, 45, 0);
             tableROW.ot.HorizontalContentAlignment = HorizontalAlignment.Right;
             tableROW.hatter.Background = hatterSzin;
@@ -185,7 +188,7 @@ namespace vizsgaMunka
         /// <summary>
         /// A meglévő táblázat egy kijelölt sorának adatát módódítja
         /// </summary>
-        private void TermekAdatModositasa(int index, string nev, string afa, string mennyisegiEgyseg, string egysear)
+        private void TermekAdatModositasa(int index, string nev, int afa, string mennyisegiEgyseg, int egysear)
         {
             ListOfTermekek[index].Nev = nev;
             ListOfTermekek[index].AFA = afa;
@@ -197,7 +200,7 @@ namespace vizsgaMunka
         /// <summary>
         /// A táblázatba hozzáad egy sort, a beállított argumentumok alapján
         /// </summary>
-        private void ujAdatHozzaadasaTermekez(int index, string nev, string afa, string mennyisegiEgyseg, string egysear)
+        private void ujAdatHozzaadasaTermekez(int index, string nev, int afa, string mennyisegiEgyseg, int egysear)
         {
             Termek r = new Termek(index, nev, afa, mennyisegiEgyseg, egysear);
             ListOfTermekek.Add(r);

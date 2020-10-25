@@ -150,7 +150,13 @@ namespace vizsgaMunka
         private void szinkronizalasRaktarak()
         {
             spRaktartTabla.Children.Clear();
-            for (int i = 0; i < ListOfRaktarak.Count; i++) tablazatKialakitasaRaktarak(ListOfRaktarak[i].ID, ListOfRaktarak[i].Nev, ListOfRaktarak[i].Hely, ListOfRaktarak[i].Telefon, ListOfRaktarak[i].Email, (i % 2 == 0) ? Brushes.WhiteSmoke : Brushes.White);
+            for (int i = 0; i < ListOfRaktarak.Count; i++) tablazatKialakitasaRaktarak
+                    (ListOfRaktarak[i].ID, 
+                    ListOfRaktarak[i].Nev, 
+                    ListOfRaktarak[i].Hely, 
+                    ListOfRaktarak[i].Telefon, 
+                    ListOfRaktarak[i].Email, 
+                    (i % 2 == 0) ? Brushes.WhiteSmoke : Brushes.White);
             ((ScrollViewer)spRaktartTabla.Parent).ScrollToEnd();
         }
 
