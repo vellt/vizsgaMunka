@@ -33,11 +33,12 @@ namespace vizsgaMunka
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             ujAdatHozzaadasaRaktarhoz(0, "berettyobolt", "Berettyoujfalu Piac u 12", "06 30 84 63 175", "berettyo@bolt.hu");
+            ujAdatHozzaadasaRaktarhoz(1, "Derecske", "Berettyoujfalu Piac u 12", "06 30 84 63 175", "berettyo@bolt.hu");
             ujErtesitesHozzaadasaAktivitas("Szántó", "@vel", "szállítót", DateTime.Now);
             ujAdatHozzaadasaTermekez(0, "Sertés Karaj", 5, "kg", 1299);
             ujAdatHozzaadasaTermekez(1, "Sertés Comb", 5, "kg", 1299);
-            ujAdatHozzaadasaAtadasokhoz(0, DateTime.Now, 0, 0, 700000, "megjegyzes");
-            ujAdatHozzaadasaAtadasokhoz(0, DateTime.Now, 0, 0, 700000, "megjegyzes");
+            //ujAdatHozzaadasaAtadasokhoz(0, DateTime.Now, 0, 0, 700000, "megjegyzes");
+            //ujAdatHozzaadasaAtadasokhoz(0, DateTime.Now, 0, 0, 700000, "megjegyzes");
         }
 
         #region Oldalsáv
@@ -141,14 +142,28 @@ namespace vizsgaMunka
         //Raktarak
         partial void BtnRaktarakraVonatkozoInterakciok(object sender, RoutedEventArgs e);
         partial void BtnRaktarEsemenyek(object sender, RoutedEventArgs e);
+        partial void tablazatKialakitasaRaktarak(int id, string nev, string hely, string telefonszam, string email, SolidColorBrush hatterSzin);
+        partial void szinkronizalasRaktarak();
+        partial void ujAdatHozzaadasaRaktarhoz(int index, string nev, string hely, string telefon, string email);
+        partial void RaktarAdatModositasa(int index, string nev, string hely, string telefon, string email);
+        partial void RaktarAdatTorlese(int index);
 
+       
         //Termekek
         partial void BtnTermekekreVonatkozoInterakciok(object sender, RoutedEventArgs e);
         partial void BtnTermekEsemenyek(object sender, RoutedEventArgs e);
+        partial void szinkronizalasTermekek();
+        partial void tablazatKialakitasaTermekek(int id, string nev, int afa, string mennyisegiEgyseg, int egysegar, SolidColorBrush hatterSzin);
+        partial void TermekAdatTorlese(int index);
+        partial void TermekAdatModositasa(int index, string nev, int afa, string mennyisegiEgyseg, int egysear);
+        partial void ujAdatHozzaadasaTermekez(int index, string nev, int afa, string mennyisegiEgyseg, int egysear);
 
         //Arukuldesek
         partial void BtnRaktarkoziAtadasraVonatkozoInterakciok(object sender, RoutedEventArgs e);
         partial void tablazatKialakitasaArukukldesek(int id, DateTime datum, int arukiadoRaktar_id, int bevetelezoRaktar_id, int aruertek, string megjegyzes, SolidColorBrush hatterSzin);
+        partial void BtnArukuldesTorlesEsemenyek(object sender, RoutedEventArgs e);
+        partial void szinkronizalasArukuldes();
+        partial void ujAdatHozzaadasaAtadasokhoz(int id, DateTime datum, int arukiadoRaktar, int bevetelezoRaktar, int aruertek, string megjegyzes);
 
         #region Raktarak Termekek Arukuldesek
 
@@ -188,95 +203,14 @@ namespace vizsgaMunka
 
 
         //ArukuldesTartalma
-
         partial void btnArukuldesTartalmaToolTip(object sender, RoutedEventArgs e);
         partial void btnArukuldesTartalmaContent(object sender, RoutedEventArgs e);
-
-        private void txbTermekTallozoTextChanged(object sender, TextChangedEventArgs e)
-        {
-            spnlRaktarakKozottiAtadasTermekekSzurtLista.Children.Clear();
-            szurtLista = new List<Termek>();
-            if (txbTermekTallozo.Text != "Keresés..." && !string.IsNullOrWhiteSpace(txbTermekTallozo.Text))
-            {
-                for (int i = 0; i < ListOfTermekek.Count; i++)
-                {
-                    if (ListOfTermekek[i].Nev.ToUpper().StartsWith(txbTermekTallozo.Text.ToUpper()))
-                    {
-                        szurtLista.Add(new Termek(
-                            ListOfTermekek[i].ID,
-                            ListOfTermekek[i].Nev,
-                            ListOfTermekek[i].AFA,
-                            ListOfTermekek[i].MennyisegiEgyseg,
-                            ListOfTermekek[i].Egysegar));
-                    }
-                }
-                TermekTallozoFeltolteseSzurtListaval(szurtLista);
-            }
-            
-        }
-
-        private void TermekTallozoFeltolteseSzurtListaval(List<Termek> szurtLista)
-        {
-            //létre hozni a listában elem sablont és feltolteni a szurtlista elemeivel
-
-            for (int i = 0; i < szurtLista.Count; i++)
-            {
-                Grid gr1 = new Grid();
-                gr1.Margin = new Thickness(5);
-                gr1.Height = 30;
-                gr1.Background = Brushes.White;
-
-                Label lb = new Label();
-                lb.HorizontalAlignment = HorizontalAlignment.Left;
-                lb.Content = szurtLista[i].Nev;
-                lb.Tag = i;
-                lb.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#707070"));
-                lb.FontFamily = new FontFamily("Segoe UI");
-                lb.FontSize = 12;
-                lb.VerticalContentAlignment = VerticalAlignment.Center;
-
-                Button btn = new Button();
-                btn.VerticalAlignment = VerticalAlignment.Center;
-                btn.Width = 28;
-                btn.Height = 28;
-                btn.HorizontalAlignment = HorizontalAlignment.Right;
-                btn.Padding = new Thickness(-1);
-                btn.BorderThickness = new Thickness(0);
-                btn.Cursor = Cursors.Hand;
-                btn.HorizontalContentAlignment = HorizontalAlignment.Stretch;
-                btn.Margin = new Thickness(1, 0, 1, 0);
-                btn.ToolTip = "Elem hozzáadáasa a táblázathoz";
-                btn.Click += btnArukuldesTartalmaToolTip;
-
-                Grid gr2 = new Grid();
-                gr2.Width = 30;
-                gr2.Height = 30;
-                gr2.Background = Brushes.White;
-                gr2.Children.Add(new Add());
-
-                btn.Content = gr2;
-                gr1.Children.Add(lb);
-                gr1.Children.Add(btn);
-
-                spnlRaktarakKozottiAtadasTermekekSzurtLista.Children.Add(gr1);
-                ;
-            }
-        }
-
-        private void RemoveText(object sender, RoutedEventArgs e)
-        {
-            if (txbTermekTallozo.Text == "Keresés...")
-            {
-                txbTermekTallozo.Text = "";
-            }
-        }
-
-        private void AddText(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txbTermekTallozo.Text))
-                txbTermekTallozo.Text = "Keresés...";
-        }
-
-        
+        partial void AddText(object sender, RoutedEventArgs e);
+        partial void RemoveText(object sender, RoutedEventArgs e);
+        partial void TermekTallozoFeltolteseSzurtListaval(List<Classes.Termek> szurtLista);
+        partial void txbTermekTallozoTextChanged(object sender, TextChangedEventArgs e);
+        partial void tablazatKialakitasaArukuldesTartalma(int iD, string nev, double mennyiseg, string mennyisegiEgyseg, int egysegar, int aFA, int bruttoAr, SolidColorBrush hatterSzin);
+        partial void szinkronizalasArukuldesTartalma();
+        partial void ujAdatHozzaadasaArukuldesTartalma(int index, string nev, double mennyiseg, string mennyisegiEgyseg, int egysegar, int aFA, int bruttoAr);
     }
 }

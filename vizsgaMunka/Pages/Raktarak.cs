@@ -20,12 +20,26 @@ namespace vizsgaMunka
 {
     public partial class MainWindow : Window
     {
-        List<Raktar> ListOfRaktarak = new List<Raktar>();
+        List<Classes.Raktar> ListOfRaktarak = new List<Classes.Raktar>();
+
+        /// <summary>
+        /// Megkeresi az indexét a kijeleölt sornak
+        /// </summary>
+        private int indexOfSelectedRowRaktarak()
+        {
+            var background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF05B422"));
+            for (int i = 0; i < spRaktartTabla.Children.Count; i++)
+            {
+                var background2 = ((Grid)((Grid)spRaktartTabla.Children[i]).Children[0]).Background;
+                if (background2.ToString() == background.ToString())
+                    return i;
+            }
+            return -1;
+        }
+
         /// <summary>
         /// Törli a kijelölt sort a táblázatból
         /// </summary>
-
-
         partial void BtnRaktarakraVonatkozoInterakciok(object sender, RoutedEventArgs e)
         {
             switch (((Button)sender).ToolTip.ToString())
@@ -101,7 +115,7 @@ namespace vizsgaMunka
 
         }
 
-        private void RaktarAdatTorlese(int index)
+        partial void RaktarAdatTorlese(int index)
         {
             ListOfRaktarak.RemoveAt(index);
             szinkronizalasRaktarak();
@@ -110,7 +124,7 @@ namespace vizsgaMunka
         /// <summary>
         /// A meglévő táblázat egy kijelölt sorának adatát módódítja
         /// </summary>
-        private void RaktarAdatModositasa(int index, string nev, string hely, string telefon, string email)
+        partial void RaktarAdatModositasa(int index, string nev, string hely, string telefon, string email)
         {
             ListOfRaktarak[index].Nev = nev;
             ListOfRaktarak[index].Hely = hely;
@@ -120,26 +134,11 @@ namespace vizsgaMunka
         }
 
         /// <summary>
-        /// Megkeresi az indexét a kijeleölt sornak
-        /// </summary>
-        private int indexOfSelectedRowRaktarak()
-        {
-            var background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF05B422"));
-            for (int i = 0; i < spRaktartTabla.Children.Count; i++)
-            {
-                var background2 = ((Grid)((Grid)spRaktartTabla.Children[i]).Children[0]).Background;
-                if (background2.ToString() == background.ToString())
-                    return i;
-            }
-            return -1;
-        }
-
-        /// <summary>
         /// A táblázatba hozzáad egy sort, a beállított argumentumok alapján
         /// </summary>
-        private void ujAdatHozzaadasaRaktarhoz(int index, string nev, string hely, string telefon, string email)
+        partial void ujAdatHozzaadasaRaktarhoz(int index, string nev, string hely, string telefon, string email)
         {
-            Raktar r = new Raktar(index, nev, hely, telefon, email);
+            Classes.Raktar r = new Classes.Raktar(index, nev, hely, telefon, email);
             ListOfRaktarak.Add(r);
             szinkronizalasRaktarak();
         }
@@ -147,7 +146,7 @@ namespace vizsgaMunka
         /// <summary>
         /// Szinkronizálja a táblát
         /// </summary>
-        private void szinkronizalasRaktarak()
+        partial void szinkronizalasRaktarak()
         {
             spRaktartTabla.Children.Clear();
             for (int i = 0; i < ListOfRaktarak.Count; i++) tablazatKialakitasaRaktarak
@@ -163,7 +162,7 @@ namespace vizsgaMunka
         /// <summary>
         /// Beszúrja a sorokat
         /// </summary>
-        private void tablazatKialakitasaRaktarak(int id, string nev, string hely, string telefonszam, string email, SolidColorBrush hatterSzin)
+        partial void tablazatKialakitasaRaktarak(int id, string nev, string hely, string telefonszam, string email, SolidColorBrush hatterSzin)
         {
             Button btn = new Button();
             btn.Padding = new Thickness(-2);

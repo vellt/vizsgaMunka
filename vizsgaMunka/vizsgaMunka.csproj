@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\Aktivitas.cs" />
     <Compile Include="Classes\ArukuldesTartalma.cs" />
     <Compile Include="Classes\Ceg.cs" />
     <Compile Include="DesignPatterns\ActivityRowForList.xaml.cs">
@@ -129,7 +130,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Root.xaml">
+    <Page Include="View\Root.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -137,7 +138,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Root.xaml.cs">
+    <Compile Include="View\Root.xaml.cs">
       <DependentUpon>Root.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>

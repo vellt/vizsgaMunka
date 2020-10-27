@@ -20,7 +20,7 @@ namespace vizsgaMunka
 {
     public partial class MainWindow : Window
     {
-        List<Termek> ListOfTermekek = new List<Termek>();
+        List<Classes.Termek> ListOfTermekek = new List<Classes.Termek>();
 
         partial void BtnTermekekreVonatkozoInterakciok(object sender, RoutedEventArgs e)
         {
@@ -104,7 +104,7 @@ namespace vizsgaMunka
         /// <summary>
         /// Szinkronizálja a táblát
         /// </summary>
-        private void szinkronizalasTermekek()
+        partial void szinkronizalasTermekek()
         {
             spTermekekTabla.Children.Clear();
             for (int i = 0; i < ListOfTermekek.Count; i++) tablazatKialakitasaTermekek(ListOfTermekek[i].ID, ListOfTermekek[i].Nev, ListOfTermekek[i].AFA, ListOfTermekek[i].MennyisegiEgyseg, ListOfTermekek[i].Egysegar, (i % 2 == 0) ? Brushes.WhiteSmoke : Brushes.White);
@@ -114,7 +114,7 @@ namespace vizsgaMunka
         /// <summary>
         /// Beszúrja a sorokat
         /// </summary>
-        private void tablazatKialakitasaTermekek(int id, string nev, int afa, string mennyisegiEgyseg, int egysegar, SolidColorBrush hatterSzin)
+        partial void tablazatKialakitasaTermekek(int id, string nev, int afa, string mennyisegiEgyseg, int egysegar, SolidColorBrush hatterSzin)
         {
             Button btn = new Button();
             btn.Padding = new Thickness(-2);
@@ -179,7 +179,7 @@ namespace vizsgaMunka
         /// <summary>
         /// Törli a kijelölt sort a táblázatból
         /// </summary>
-        private void TermekAdatTorlese(int index)
+        partial void TermekAdatTorlese(int index)
         {
             ListOfTermekek.RemoveAt(index);
             szinkronizalasTermekek();
@@ -188,7 +188,7 @@ namespace vizsgaMunka
         /// <summary>
         /// A meglévő táblázat egy kijelölt sorának adatát módódítja
         /// </summary>
-        private void TermekAdatModositasa(int index, string nev, int afa, string mennyisegiEgyseg, int egysear)
+        partial void TermekAdatModositasa(int index, string nev, int afa, string mennyisegiEgyseg, int egysear)
         {
             ListOfTermekek[index].Nev = nev;
             ListOfTermekek[index].AFA = afa;
@@ -200,9 +200,9 @@ namespace vizsgaMunka
         /// <summary>
         /// A táblázatba hozzáad egy sort, a beállított argumentumok alapján
         /// </summary>
-        private void ujAdatHozzaadasaTermekez(int index, string nev, int afa, string mennyisegiEgyseg, int egysear)
+        partial void ujAdatHozzaadasaTermekez(int index, string nev, int afa, string mennyisegiEgyseg, int egysear)
         {
-            Termek r = new Termek(index, nev, afa, mennyisegiEgyseg, egysear);
+            Classes.Termek r = new Classes.Termek(index, nev, afa, mennyisegiEgyseg, egysear);
             ListOfTermekek.Add(r);
             szinkronizalasTermekek();
         }

@@ -14,8 +14,6 @@ C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\vizsgaMunka.pdb
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\App.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ResourcesDictionaries\SiteNavBarButtonDictionary.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\ResourcesDictionaries\TopNavbarButtonDictionary.baml
-C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\Root.g.cs
-C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\Root.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\Add.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\Add.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -51,3 +49,5 @@ C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\DesignPatterns\Acti
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\DesignPatterns\TableRowWith7Column.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\DesignPatterns\TableRowWith5Column.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\DesignPatterns\TableRowWith5Column.baml
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\View\Root.g.cs
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\View\Root.baml

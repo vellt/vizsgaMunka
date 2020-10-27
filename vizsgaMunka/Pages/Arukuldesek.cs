@@ -21,7 +21,7 @@ namespace vizsgaMunka
 {
     public partial class MainWindow : Window
     {
-        List<Szallitolevelek> ListOfArukuldesek = new List<Szallitolevelek>();
+        List<Classes.Szallitolevelek> ListOfArukuldesek = new List<Classes.Szallitolevelek>();
 
         private void AtadasAdatTorlese(int index)
         {
@@ -39,9 +39,9 @@ namespace vizsgaMunka
             szinkronizalasArukuldes();
         }
 
-        private void ujAdatHozzaadasaAtadasokhoz(int id, DateTime datum, int arukiadoRaktar, int bevetelezoRaktar, int aruertek, string megjegyzes)
+        partial void ujAdatHozzaadasaAtadasokhoz(int id, DateTime datum, int arukiadoRaktar, int bevetelezoRaktar, int aruertek, string megjegyzes)
         {
-            Szallitolevelek r = new Szallitolevelek(id, datum, arukiadoRaktar, bevetelezoRaktar, aruertek, megjegyzes);
+            Classes.Szallitolevelek r = new Classes.Szallitolevelek(id, datum, arukiadoRaktar, bevetelezoRaktar, aruertek, megjegyzes);
             ListOfArukuldesek.Add(r);
             szinkronizalasArukuldes();
         }
@@ -53,19 +53,44 @@ namespace vizsgaMunka
                 case "új áruküldés":
                     RaktarkoziAtadasAblak.Visibility = Visibility.Visible;
                     //kezdő értékek beállítása
-                    cmbxArukiadoRaktarak.SelectedIndex = 0; //arukiado raktar kezdő ertek beallitása
-                    cmbxBevetelezoRaktarak.SelectedIndex = 0; //bevetelezo raktar kezdő ertek beallitása
+
                     dprDatum.SelectedDate = DateTime.Now; //datum beállítása
                     txbTermekTallozo.Text = "Keresés..."; //törli a termék tallozo kereséi mezőértékét
                     spnlRaktarakKozottiAtadasTermekekSzurtLista.Children.Clear(); //törli a termék tallozo ered enyeit
                     spArukuldesTartalma.Children.Clear(); //törli a belső táblát
-                    lbArukuldesTartalmaSorszam.Content =$"#{ListOfArukuldesek.Count}";
+                    lbArukuldesTartalmaSorszam.Content =SzamFormazasaSorszam(ListOfArukuldesek.Count);
                     lbArukuldesTartalmaVegosszeg.Content = SzamFormazasaFt(0);
+                    TermekTallozo.Visibility = Visibility.Collapsed;
+                    cmbxArukiadoRaktarak.Items.Clear();
+                    cmbxBevetelezoRaktarak.Items.Clear();
+                    for (int i = 0; i < ListOfRaktarak.Count; i++)
+                    {
+                        cmbxArukiadoRaktarak.Items.Add(ListOfRaktarak[i].Nev);
+                        cmbxBevetelezoRaktarak.Items.Add(ListOfRaktarak[i].Nev);
+                    }
+                    cmbxArukiadoRaktarak.SelectedIndex = 0; //arukiado raktar kezdő ertek beallitása
+                    cmbxBevetelezoRaktarak.SelectedIndex = 0; //bevetelezo raktar kezdő ertek beallitása
+                    ArukuldesTartalmaMentesModostasIcon.ToolTip = "Mentés";
+                    tbxMegjegyzes.Text = String.Empty;
+                    ListOfArukuldesTartalmaTemp = new List<Classes.ArukuldesTartalma>();
                     break;
                 case "elem módosítása":
-                    //RaktarkoziAtadasAblak.Visibility = Visibility.Visible;
+                    RaktarkoziAtadasAblak.Visibility = Visibility.Visible;
                     //kezdő értékek beállítása
-
+                    int index = indexOfSelectedRowArukiadas();
+                    dprDatum.SelectedDate = ListOfArukuldesek[index].Datum;
+                    txbTermekTallozo.Text = "Keresés..."; //törli a termék tallozo kereséi mezőértékét
+                    spnlRaktarakKozottiAtadasTermekekSzurtLista.Children.Clear(); //törli a termék tallozo ered enyeit
+                    spArukuldesTartalma.Children.Clear(); //törli a belső táblát
+                    lbArukuldesTartalmaSorszam.Content =SzamFormazasaSorszam(ListOfArukuldesek[index].ID);
+                    TermekTallozo.Visibility = Visibility.Collapsed;
+                    cmbxArukiadoRaktarak.SelectedIndex = ListOfArukuldesek[index].ArukiadoRaktar_Raktar_ID;
+                    cmbxBevetelezoRaktarak.SelectedIndex = ListOfArukuldesek[index].BevetelezoRaktar_Raktar_ID;
+                    ListOfArukuldesTartalmaTemp = new List<Classes.ArukuldesTartalma>();
+                    ListOfArukuldesTartalmaTempFeltoltese(index);
+                    szinkronizalasArukuldesTartalma();
+                    ArukuldesTartalmaMentesModostasIcon.ToolTip = "Módosítás";
+                    tbxMegjegyzes.Text = ListOfArukuldesek[index].Megjegyzes;
                     break;
                 case "elem törlése":
                     spArukuldesTartalma.Visibility = Visibility.Visible; //az elem törlő ablak megjelenik
@@ -123,7 +148,7 @@ namespace vizsgaMunka
             btnArukuldesekTablaTorles.Visibility = Visibility.Collapsed;
         }
 
-        private void szinkronizalasArukuldes()
+        partial void szinkronizalasArukuldes()
         {
             spArukuldesekTabla.Children.Clear();
             for (int i = 0; i < ListOfArukuldesek.Count; i++)
@@ -150,7 +175,7 @@ namespace vizsgaMunka
             return -1;
         }
 
-        private void BtnArukuldesTorlesEsemenyek(object sender, RoutedEventArgs e)
+        partial void BtnArukuldesTorlesEsemenyek(object sender, RoutedEventArgs e)
         {
             int index = indexOfSelectedRowArukiadas();
             if (((Button)sender).ToolTip != null)

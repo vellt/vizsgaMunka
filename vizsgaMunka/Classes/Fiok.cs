@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace vizsgaMunka
+namespace vizsgaMunka.Classes
 {
     public class Fiok
     {
