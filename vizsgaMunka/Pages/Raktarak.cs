@@ -87,7 +87,7 @@ namespace vizsgaMunka
                     case "Mentés":
                         //Mentés gomb eseménye
                         raktarHozzaadasa.Visibility = Visibility.Collapsed;
-                        ujAdatHozzaadasaRaktarhoz(spRaktartTabla.Children.Count,
+                        ujAdatHozzaadasaRaktarhoz((ListOfRaktarak.Count == 0) ? 0 : ListOfRaktarak[ListOfRaktarak.Count - 1].ID + 1,
                                                   txbRaktarNevHozzaadasa.Text,
                                                   txbRaktarHelyHozzaadasa.Text,
                                                   txbRaktarTelefonHozzaadasa.Text, txbRaktarEmailHozzaadasa.Text);

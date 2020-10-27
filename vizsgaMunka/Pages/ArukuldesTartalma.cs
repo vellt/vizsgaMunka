@@ -78,7 +78,7 @@ namespace vizsgaMunka
                     //A hozzáadás kisablak gombja: rögzíti a tételt
                     int index2 = int.Parse(txbArukuldesTartalmaTermeknev.Tag.ToString());
                     ujAdatHozzaadasaArukuldesTartalma(
-                        spArukuldesTartalma.Children.Count,
+                        (ListOfArukuldesTartalmaTemp.Count==0)?0: ListOfArukuldesTartalmaTemp[ListOfArukuldesTartalmaTemp.Count-1].ID+1,
                         ListOfTermekTallozo[index2].Nev,
                        Convert.ToDouble(tbxArukuldesTartalmaMennyiseg.Text.Replace(',', '.')),
                         ListOfTermekTallozo[index2].MennyisegiEgyseg,
@@ -127,7 +127,7 @@ namespace vizsgaMunka
         {
             RaktarkoziAtadasAblak.Visibility = Visibility.Collapsed;
             ListOfArukuldesek.Add(new Classes.Szallitolevelek(
-                ListOfArukuldesek.Count,
+                (ListOfArukuldesek.Count == 0) ? 0 : ListOfArukuldesek[ListOfArukuldesek.Count - 1].ID + 1,
                 dprDatum.SelectedDate.Value,
                 cmbxArukiadoRaktarak.SelectedIndex,
                 cmbxBevetelezoRaktarak.SelectedIndex,

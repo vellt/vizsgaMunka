@@ -29,16 +29,6 @@ namespace vizsgaMunka
             szinkronizalasArukuldes();
         }
 
-        private void AtadasAdatModositasa(int index, DateTime datum, int arukiadoRaktar, int bevetelezoRaktar, int aruertek, string megjegyzes)
-        {
-            ListOfArukuldesek[index].Datum = datum;
-            ListOfArukuldesek[index].ArukiadoRaktar_Raktar_ID = arukiadoRaktar;
-            ListOfArukuldesek[index].BevetelezoRaktar_Raktar_ID = bevetelezoRaktar;
-            ListOfArukuldesek[index].Aruertek = aruertek;
-            ListOfArukuldesek[index].Megjegyzes = megjegyzes;
-            szinkronizalasArukuldes();
-        }
-
         partial void ujAdatHozzaadasaAtadasokhoz(int id, DateTime datum, int arukiadoRaktar, int bevetelezoRaktar, int aruertek, string megjegyzes)
         {
             Classes.Szallitolevelek r = new Classes.Szallitolevelek(id, datum, arukiadoRaktar, bevetelezoRaktar, aruertek, megjegyzes);
@@ -93,7 +83,7 @@ namespace vizsgaMunka
                     tbxMegjegyzes.Text = ListOfArukuldesek[index].Megjegyzes;
                     break;
                 case "elem törlése":
-                    spArukuldesTartalma.Visibility = Visibility.Visible; //az elem törlő ablak megjelenik
+                    ArukuldesElemTorlese.Visibility = Visibility.Visible; //az elem törlő ablak megjelenik
                     break;
                 case "szinkronizálás":
                     szinkronizalasArukuldes();
@@ -181,7 +171,7 @@ namespace vizsgaMunka
             if (((Button)sender).ToolTip != null)
             {
                 //Ablak bezarasa gomb eseménye
-                spArukuldesTartalma.Visibility = Visibility.Collapsed;
+                ArukuldesElemTorlese.Visibility = Visibility.Collapsed;
             }
             else
             {
@@ -189,12 +179,12 @@ namespace vizsgaMunka
                 {
                     case "Igen":
                         //meglévő termék törlése "igen"
-                        spArukuldesTartalma.Visibility = Visibility.Collapsed;
+                        ArukuldesElemTorlese.Visibility = Visibility.Collapsed;
                         AtadasAdatTorlese(index);
                         break;
                     default:
                         //meglévő termék törlése "nem"
-                        spArukuldesTartalma.Visibility = Visibility.Collapsed;
+                        ArukuldesElemTorlese.Visibility = Visibility.Collapsed;
                         break;
                 }
             }

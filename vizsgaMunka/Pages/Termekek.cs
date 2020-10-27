@@ -70,7 +70,7 @@ namespace vizsgaMunka
                         //Mentés gomb eseménye
                         termekHozzaadasa.Visibility = Visibility.Collapsed;
                         ujAdatHozzaadasaTermekez(
-                            spTermekekTabla.Children.Count,
+                            (ListOfTermekek.Count == 0) ? 0 : ListOfTermekek[ListOfTermekek.Count - 1].ID + 1,
                             txbTermekNevHozzaadasa.Text,
                             Convert.ToInt32( txbTermekAFAHozzaadasa.Text),
                             txbTermekMEHozzaadasa.Text, 

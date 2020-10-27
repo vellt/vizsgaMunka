@@ -1846,6 +1846,112 @@
                                     </Button>
                                 </StackPanel>
                             </Grid>
+                            <!--Átadás törlése a táblázatból-->
+                            <Grid
+                                x:Name="ArukuldesElemTorlese"
+                                Grid.Row="1"
+                                Visibility="Collapsed">
+                                <Grid.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0.5"/>
+                                </Grid.Background>
+                                <Grid
+                                    Height="110"
+                                    Width="254">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid
+                                        Width="254"
+                                        Grid.Row="0"
+                                        Background="#707070"
+                                        HorizontalAlignment="Right">
+                                        <Label HorizontalAlignment="Left"
+                                               Content="Raktárközi átadás törlése"
+                                               Foreground="White"
+                                               FontSize="14"
+                                               FontFamily="Segoe UI"
+                                               Margin="5 0"/>
+                                        <Button 
+                                            Width="29"
+                                            Height="29"
+                                            Padding="-1"
+                                            HorizontalContentAlignment="Stretch"
+                                            VerticalContentAlignment="Stretch"
+                                            HorizontalAlignment="Right"
+                                            Cursor="Hand"
+                                            Click="BtnArukuldesTorlesEsemenyek"
+                                            ToolTip="Vissza">
+                                            <Grid
+                                                Width="29"
+                                                Height="29"
+                                                Background="#707070">
+                                                <icon:Close Height="17"
+                                                            Width="17"/>
+                                            </Grid>
+                                        </Button>
+                                    </Grid>
+                                    <Grid Grid.Row="1"
+                                          Background="White">
+                                        <Grid.RowDefinitions >
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="34"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0"
+                                              >
+                                            <Label Content="Biztos törli az elemet?"
+                                                   VerticalContentAlignment="Center"
+                                                   HorizontalContentAlignment="Center"
+                                                   Foreground="#616161"
+                                                   FontFamily="Segoe UI"
+                                                   FontSize="14"/>
+
+                                        </Grid>
+                                        <Grid Grid.Row="1">
+                                            <Button
+                                                Margin="5 0"
+                                                HorizontalAlignment="Left"
+                                                Height="26"
+                                                Width="120"
+                                                Padding="-1"
+                                                BorderThickness="0"
+                                                VerticalContentAlignment="Stretch"
+                                                HorizontalContentAlignment="Stretch"
+                                                Click="BtnArukuldesTorlesEsemenyek"
+                                                Cursor="Hand">
+                                                <Grid Background="#E0E0E0">
+                                                    <Label Content="Igen"
+                                                           VerticalContentAlignment="Center"
+                                                           HorizontalContentAlignment="Center"
+                                                           Foreground="#707070"
+                                                           FontFamily="Segoe UI"
+                                                           FontSize="14"/>
+                                                </Grid>
+                                            </Button>
+                                            <Button
+                                                Margin="5 0"
+                                                HorizontalAlignment="Right"
+                                                Height="26"
+                                                Width="120"
+                                                Padding="-1"
+                                                BorderThickness="0"
+                                                VerticalContentAlignment="Stretch"
+                                                HorizontalContentAlignment="Stretch"
+                                                Click="BtnArukuldesTorlesEsemenyek"
+                                                Cursor="Hand">
+                                                <Grid Background="#E0E0E0">
+                                                    <Label Content="Nem"
+                                                           VerticalContentAlignment="Center"
+                                                           HorizontalContentAlignment="Center"
+                                                           Foreground="#707070"
+                                                           FontFamily="Segoe UI"
+                                                           FontSize="14"/>
+                                                </Grid>
+                                            </Button>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
                             <!--Új áruküldés ablak-->
                             <!--termekModositasa kisablak-->
                             <Grid
