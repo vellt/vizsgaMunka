@@ -67,6 +67,8 @@ namespace vizsgaMunka
                 switch (((Label)((Grid)((Button)sender).Content).Children[0]).Content)
                 {
                     case "Mentés":
+                        //értesitest kreal az esemenyről
+                        ujAdatHozzaadasaAktivitasok((ListOfTermekek.Count == 0) ? 0 : ListOfTermekek[ListOfTermekek.Count - 1].ID + 1, 3);
                         //Mentés gomb eseménye
                         termekHozzaadasa.Visibility = Visibility.Collapsed;
                         ujAdatHozzaadasaTermekez(
@@ -78,6 +80,8 @@ namespace vizsgaMunka
                         break;
                     case "Módosítás":
                         //Módosítás gomb eseménye
+                        //értesitest kreal az esemenyről
+                        ujAdatHozzaadasaAktivitasok(index, 4);
                         termekModositasa.Visibility = Visibility.Collapsed;
                         TermekAdatModositasa(
                             index,
@@ -88,6 +92,8 @@ namespace vizsgaMunka
                         break;
                     case "Igen":
                         //meglévő termék törlése "igen"
+                        //értesitest kreal az esemenyről
+                        ujAdatHozzaadasaAktivitasok(index, 5);
                         termekTorlese.Visibility = Visibility.Collapsed;
                         TermekAdatTorlese(index);
                         break;

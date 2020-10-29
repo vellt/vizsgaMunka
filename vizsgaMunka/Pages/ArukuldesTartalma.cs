@@ -59,19 +59,23 @@ namespace vizsgaMunka
                     ArukuldesTartalmaElemTorlese.Visibility = Visibility.Visible;
                     break;
                 case "Nyomtatás":
-                //az átadást mentse
-                //mutassa meg a nyomtatási nézetet
-                //nyomtatas utan zarja be az ablakot
+                    //az átadást mentse
+                    //mutassa meg a nyomtatási nézetet
+                    //nyomtatas utan zarja be az ablakot
+                    
                 case "Mentés":
                     //menti az átadást
+                    ujAdatHozzaadasaAktivitasok((ListOfArukuldesek.Count == 0) ? 0 : ListOfArukuldesek[ListOfArukuldesek.Count - 1].ID + 1, 6);
                     AtadasRogziteseUjAtadas();
                     break;
                 case "Módosítás":
                     //menti az átadást
+                    ujAdatHozzaadasaAktivitasok(indexOfSelectedRowArukiadas(), 7);
                     AtadasRogziteseModositas();
                     break;
                 case "Bezár":
                     //termektallozó eltüntetése
+                    
                     TermekTallozo.Visibility = Visibility.Collapsed;
                     break;
                 case "Rögzítés":

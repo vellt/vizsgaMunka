@@ -178,12 +178,13 @@ namespace vizsgaMunka
                 switch (((Label)((Grid)((Button)sender).Content).Children[0]).Content)
                 {
                     case "Igen":
-                        //meglévő termék törlése "igen"
+                        //meglévő arukuldes törlése "igen"
+                        ujAdatHozzaadasaAktivitasok(index, 8);
                         ArukuldesElemTorlese.Visibility = Visibility.Collapsed;
                         AtadasAdatTorlese(index);
                         break;
                     default:
-                        //meglévő termék törlése "nem"
+                        //meglévő arukuldes törlése "nem"
                         ArukuldesElemTorlese.Visibility = Visibility.Collapsed;
                         break;
                 }

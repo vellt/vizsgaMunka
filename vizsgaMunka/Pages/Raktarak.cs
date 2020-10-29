@@ -85,6 +85,8 @@ namespace vizsgaMunka
                 switch (((Label)((Grid)((Button)sender).Content).Children[0]).Content)
                 {
                     case "Mentés":
+                        //értesitest kreal az esemenyről
+                        ujAdatHozzaadasaAktivitasok((ListOfRaktarak.Count == 0) ? 0 : ListOfRaktarak[ListOfRaktarak.Count - 1].ID + 1, 0);
                         //Mentés gomb eseménye
                         raktarHozzaadasa.Visibility = Visibility.Collapsed;
                         ujAdatHozzaadasaRaktarhoz((ListOfRaktarak.Count == 0) ? 0 : ListOfRaktarak[ListOfRaktarak.Count - 1].ID + 1,
@@ -94,6 +96,8 @@ namespace vizsgaMunka
                         break;
                     case "Módosítás":
                         //Módosítás gomb eseménye
+                        //értesitest kreal az esemenyről
+                        ujAdatHozzaadasaAktivitasok(index, 1);
                         raktarModositasa.Visibility = Visibility.Collapsed;
                         RaktarAdatModositasa(index,
                                              txbRaktarNevModositasa.Text,
@@ -103,6 +107,7 @@ namespace vizsgaMunka
                         break;
                     case "Igen":
                         //meglévő raktar törlése "igen"
+                        ujAdatHozzaadasaAktivitasok(index, 2);
                         raktarTorlese.Visibility = Visibility.Collapsed;
                         RaktarAdatTorlese(index);
                         break;

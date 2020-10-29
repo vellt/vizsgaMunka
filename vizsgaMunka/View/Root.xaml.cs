@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using vizsgaMunka.VectorIcons;
 using vizsgaMunka.DesignPatterns;
 using System.Globalization;
+using vizsgaMunka.Classes;
 
 namespace vizsgaMunka
 {
@@ -24,7 +25,8 @@ namespace vizsgaMunka
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        List<Aktivitas> ListOfAktivitas = new List<Aktivitas>();
+        List<Fiok> ListOfFiok = new List<Fiok>();
         public MainWindow()
         {
             InitializeComponent();
@@ -34,11 +36,17 @@ namespace vizsgaMunka
         {
             ujAdatHozzaadasaRaktarhoz(0, "berettyobolt", "Berettyoujfalu Piac u 12", "06 30 84 63 175", "berettyo@bolt.hu");
             ujAdatHozzaadasaRaktarhoz(1, "Derecske", "Berettyoujfalu Piac u 12", "06 30 84 63 175", "berettyo@bolt.hu");
-            ujErtesitesHozzaadasaAktivitas("Szántó", "@vel", "szállítót", DateTime.Now);
             ujAdatHozzaadasaTermekez(0, "Sertés Karaj", 5, "kg", 1299);
             ujAdatHozzaadasaTermekez(1, "Sertés Comb", 5, "kg", 1299);
             //ujAdatHozzaadasaAtadasokhoz(0, DateTime.Now, 0, 0, 700000, "megjegyzes");
             //ujAdatHozzaadasaAtadasokhoz(0, DateTime.Now, 0, 0, 700000, "megjegyzes");
+            
+            //testfiok
+            ListOfFiok.Add(new Fiok(0, "vellt", "Szántó Benjámin", "jelszo123"));
+
+            //aktualis felhasznalo
+            lbAktualUser.Content = ListOfFiok[0].TeljesNev;
+            lbAktualUser.Tag = ListOfFiok[0].ID;
         }
 
         #region Oldalsáv

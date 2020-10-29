@@ -54,15 +54,31 @@
                 Foreground="Gray"
                 FontSize="14" />
         </Grid>
-        <Label 
-            x:Name="lbAktivitasLeirasa"
-            Grid.Row="1"
-            Background="WhiteSmoke"
-            Content="Rövid leírás a végeztt tevékenységről"
-            VerticalContentAlignment="Center"
-            FontFamily="Segoe UI"
-            Foreground="Gray"
-            FontSize="14"
-            Padding="12 0"/>
+        <Grid Grid.Row="1"
+              Background="WhiteSmoke">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label 
+                x:Name="lbAktivitasLeirasa"
+                Grid.Column="0"
+                Content="Rövid leírás a végeztt tevékenységről"
+                VerticalContentAlignment="Center"
+                FontFamily="Segoe UI"
+                Foreground="Gray"
+                FontSize="14"
+                Padding="12 0"/>
+            <Label 
+                x:Name="lbAktivitasRefID"
+                Grid.Column="1"
+                Content="#0"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Right"
+                FontFamily="Segoe UI"
+                Foreground="Gray"
+                FontSize="14"
+                Padding="12 0"/>
+        </Grid>
     </Grid>
 </UserControl>
