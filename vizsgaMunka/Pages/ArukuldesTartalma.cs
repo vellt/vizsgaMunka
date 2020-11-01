@@ -188,7 +188,7 @@ namespace vizsgaMunka
                 vegosszeg += ListOfArukuldesTartalmaTemp[i].BruttoAr;
             }
            
-            ((ScrollViewer)spRaktartTabla.Parent).ScrollToEnd();
+            ((ScrollViewer)spRaktarTabla.Parent).ScrollToEnd();
             lbArukuldesTartalmaVegosszeg.Content = SzamFormazasaFt(vegosszeg);
         }
 
@@ -250,7 +250,7 @@ namespace vizsgaMunka
             gr0.Children.Add(btn);
             spArukuldesTartalma.Children.Add(gr0);
             //törlés módosítűás gomb eltüntetése
-            btnTablaTorles.Visibility = Visibility.Collapsed;
+            //btnTablaTorles.Visibility = Visibility.Collapsed;
             btnArukuldesTartalmaTorles.Visibility = Visibility.Collapsed;
         }
 
@@ -372,7 +372,9 @@ namespace vizsgaMunka
                 gr2.Width = 30;
                 gr2.Height = 30;
                 gr2.Background = Brushes.White;
-                gr2.Children.Add(new Add());
+                Add icon = new Add();
+                icon.Fill= (Brush)(new BrushConverter().ConvertFrom("#707070"));
+                gr2.Children.Add(icon);
 
                 btn.Content = gr2;
                 gr1.Children.Add(lb);

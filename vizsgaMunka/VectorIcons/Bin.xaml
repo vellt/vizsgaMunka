@@ -4,14 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:vizsgaMunka.VectorIcons"
-             mc:Ignorable="d" >
+             mc:Ignorable="d" 
+             Name="binWindow">
     <Viewbox Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
         <Canvas  Width="12" Height="18">
             <Canvas.RenderTransform>
                 <TranslateTransform X="0" Y="0"/>
             </Canvas.RenderTransform>
             <Canvas.Resources/>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#707070">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="{Binding Fill, ElementName=binWindow}">
                 <Path.Data>
                     <PathGeometry Figures="M425.5 1047v2h-14v-2H415l1-1h5l1 1Zm-12.9 15v-12h12v12a2.051 2.051 0 0 1-2 2h-8a2.051 2.051 0 0 1-2-2Z" FillRule="NonZero"/>
                 </Path.Data>

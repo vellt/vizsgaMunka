@@ -15,201 +15,204 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using vizsgaMunka.VectorIcons;
 using vizsgaMunka.DesignPatterns;
+using vizsgaMunka.Classes;
 
 namespace vizsgaMunka
 {
     public partial class MainWindow : Window
     {
-        List<Classes.Raktar> ListOfRaktarak = new List<Classes.Raktar>();
+        List<Raktar> ListOfRaktarak = new List<Raktar>();
 
         /// <summary>
-        /// Megkeresi az indexét a kijeleölt sornak
+        /// Raktár Dispatcher - szétosztja az eseményket, a bejövő esemenykódok alapján /ToolTip-Content/
         /// </summary>
-        private int indexOfSelectedRowRaktarak()
+        private void RaktarakBtn(object sender, MouseButtonEventArgs e)
         {
-            var background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF05B422"));
-            for (int i = 0; i < spRaktartTabla.Children.Count; i++)
+            switch ((((Grid)sender).ToolTip == null) ? ((ContentControl)((Grid)sender).Children[0]).Content.ToString() : ((Grid)sender).ToolTip.ToString())
             {
-                var background2 = ((Grid)((Grid)spRaktartTabla.Children[i]).Children[0]).Background;
-                if (background2.ToString() == background.ToString())
-                    return i;
+                case "Raktár hozzáadása":
+                    //tooltip
+                    raktarHozzaadasaShow();
+                    break;
+                case "Raktár módosítása":
+                    //tooltip
+                    raktarModositasaShow();
+                    break;
+                case "Raktár törlése":
+                    //tooltip
+                    raktarTorleseShow();
+                    break;
+                case "Szinkronizálás":
+                    //tooltip
+                    raktarSzinkronizalas();
+                    break;
+                case "Vissza":
+                    //tooltip
+                    raktarVissza();
+                    break;
+                case "Mentés":
+                    //content
+                    raktarMentes();
+                    break;
+                case "Módosítás":
+                    //content
+                    raktarModositas();
+                    break;
+                case "Igen":
+                    //content
+                    raktarIgen();
+                    break;
+                case "Nem":
+                    //content
+                    raktarNem();
+                    break;
             }
-            return -1;
         }
 
         /// <summary>
-        /// Törli a kijelölt sort a táblázatból
+        /// A törlés ablakot "bezárja"
         /// </summary>
-        partial void BtnRaktarakraVonatkozoInterakciok(object sender, RoutedEventArgs e)
+        private void raktarNem()
         {
-            switch (((Button)sender).ToolTip.ToString())
-            {
-                case "raktár hozzáadása":
-                    raktarHozzaadasa.Visibility = Visibility.Visible;
-                    //kezdő értékek beállítása
-                    txbRaktarNevHozzaadasa.Text = String.Empty;
-                    txbRaktarHelyHozzaadasa.Text = String.Empty;
-                    txbRaktarTelefonHozzaadasa.Text = String.Empty;
-                    txbRaktarEmailHozzaadasa.Text = String.Empty;
-                    break;
-                case "raktár módosítása":
-                    raktarModositasa.Visibility = Visibility.Visible;
-                    //kezdő értékek beállítása
-                    int index = indexOfSelectedRowRaktarak();
-                    txbRaktarNevModositasa.Text = ListOfRaktarak[index].Nev;
-                    txbRaktarHelyModositasa.Text = ListOfRaktarak[index].Hely;
-                    txbRaktarTelefonModositasa.Text = ListOfRaktarak[index].Telefon;
-                    txbRaktarEmailModositasa.Text = ListOfRaktarak[index].Email;
-                    break;
-                case "raktár törlése":
-                    raktarTorlese.Visibility = Visibility.Visible;
-                    break;
-                case "szinkronizálás":
-                    szinkronizalasRaktarak();
-                    break;
-            }
+            raktarVissza();
         }
 
-        partial void BtnRaktarEsemenyek(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Törli a kijelölt elemet a táblából
+        /// </summary>
+        private void raktarIgen()
         {
-            int index = indexOfSelectedRowRaktarak();
-            if (((Button)sender).ToolTip != null)
-            {
-                //Ablak bezarasa gomb eseménye
-                raktarHozzaadasa.Visibility = Visibility.Collapsed;
-                raktarModositasa.Visibility = Visibility.Collapsed;
-                raktarTorlese.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                switch (((Label)((Grid)((Button)sender).Content).Children[0]).Content)
-                {
-                    case "Mentés":
-                        //értesitest kreal az esemenyről
-                        ujAdatHozzaadasaAktivitasok((ListOfRaktarak.Count == 0) ? 0 : ListOfRaktarak[ListOfRaktarak.Count - 1].ID + 1, 0);
-                        //Mentés gomb eseménye
-                        raktarHozzaadasa.Visibility = Visibility.Collapsed;
-                        ujAdatHozzaadasaRaktarhoz((ListOfRaktarak.Count == 0) ? 0 : ListOfRaktarak[ListOfRaktarak.Count - 1].ID + 1,
-                                                  txbRaktarNevHozzaadasa.Text,
-                                                  txbRaktarHelyHozzaadasa.Text,
-                                                  txbRaktarTelefonHozzaadasa.Text, txbRaktarEmailHozzaadasa.Text);
-                        break;
-                    case "Módosítás":
-                        //Módosítás gomb eseménye
-                        //értesitest kreal az esemenyről
-                        ujAdatHozzaadasaAktivitasok(index, 1);
-                        raktarModositasa.Visibility = Visibility.Collapsed;
-                        RaktarAdatModositasa(index,
-                                             txbRaktarNevModositasa.Text,
-                                             txbRaktarHelyModositasa.Text,
-                                             txbRaktarTelefonModositasa.Text,
-                                             txbRaktarEmailModositasa.Text);
-                        break;
-                    case "Igen":
-                        //meglévő raktar törlése "igen"
-                        ujAdatHozzaadasaAktivitasok(index, 2);
-                        raktarTorlese.Visibility = Visibility.Collapsed;
-                        RaktarAdatTorlese(index);
-                        break;
-                    default:
-                        //meglévő raktar törlése "nem"
-                        raktarTorlese.Visibility = Visibility.Collapsed;
-                        break;
-                }
-            }
-
-        }
-
-        partial void RaktarAdatTorlese(int index)
-        {
+            int index = new Seged().indexOfSelectedRow(spRaktarTabla);
+            //reportot küldünk az esemenyről
+            ujAdatHozzaadasaAktivitasok(index, 2);
+            //töröljük a listából a kijelölt elemet majd szinkronizáljuk a táblát a listával és bezárjuk az ablakot
+            raktarVissza();
             ListOfRaktarak.RemoveAt(index);
-            szinkronizalasRaktarak();
+            raktarSzinkronizalas();
         }
 
         /// <summary>
-        /// A meglévő táblázat egy kijelölt sorának adatát módódítja
+        /// Módosítja a kijelölt elemet táblázatban
         /// </summary>
-        partial void RaktarAdatModositasa(int index, string nev, string hely, string telefon, string email)
+        private void raktarModositas()
         {
-            ListOfRaktarak[index].Nev = nev;
-            ListOfRaktarak[index].Hely = hely;
-            ListOfRaktarak[index].Telefon = telefon;
-            ListOfRaktarak[index].Email = email;
-            szinkronizalasRaktarak();
+            int index = new Seged().indexOfSelectedRow(spRaktarTabla);
+            //reportot küldünk az esemenyről
+            ujAdatHozzaadasaAktivitasok(index, 1);
+            //beállítjuk a módosított értékeket a listában majd szinkronizáljuk a táblát a listával és bezárjuk az ablakot
+            raktarVissza();
+            ListOfRaktarak[index].Nev = raktarSS1Nev.txbtartalom.Text;
+            ListOfRaktarak[index].Hely = raktarSS1Hely.txbtartalom.Text;
+            ListOfRaktarak[index].Telefon = raktarSS1Telefon.txbtartalom.Text;
+            ListOfRaktarak[index].Email = raktarSS1Email.txbtartalom.Text;
+            raktarSzinkronizalas();
         }
 
         /// <summary>
-        /// A táblázatba hozzáad egy sort, a beállított argumentumok alapján
+        /// Hozzáad egy új elemet a táblázathoz
         /// </summary>
-        partial void ujAdatHozzaadasaRaktarhoz(int index, string nev, string hely, string telefon, string email)
+        private void raktarMentes()
         {
-            Classes.Raktar r = new Classes.Raktar(index, nev, hely, telefon, email);
-            ListOfRaktarak.Add(r);
-            szinkronizalasRaktarak();
+            //ha a raktarlistában nincs elem: 0, ellenkező esetben az utolsó tag id-jehez adunk hozzá egyet
+            int index = (ListOfRaktarak.Count == 0) ? 0 : ListOfRaktarak[ListOfRaktarak.Count - 1].ID + 1;
+            //reportot küldünk az esemenyről
+            ujAdatHozzaadasaAktivitasok(index, 0);
+            //Hozzáadjuk az ój elemet a listához majd aszinkronizáljuk a táblát a listával és bezárjuk az ablakot
+            raktarVissza();
+            ListOfRaktarak.Add(
+                new Raktar(
+                    id: index,
+                    nev: raktarSS1Nev.txbtartalom.Text,
+                    hely: raktarSS1Hely.txbtartalom.Text,
+                    telefon: raktarSS1Telefon.txbtartalom.Text,
+                    email: raktarSS1Email.txbtartalom.Text));
+            raktarSzinkronizalas();
         }
 
         /// <summary>
-        /// Szinkronizálja a táblát
+        /// A segédablakokat "bezárja"
         /// </summary>
-        partial void szinkronizalasRaktarak()
+        private void raktarVissza()
         {
-            spRaktartTabla.Children.Clear();
-            for (int i = 0; i < ListOfRaktarak.Count; i++) tablazatKialakitasaRaktarak
-                    (ListOfRaktarak[i].ID, 
-                    ListOfRaktarak[i].Nev, 
-                    ListOfRaktarak[i].Hely, 
-                    ListOfRaktarak[i].Telefon, 
-                    ListOfRaktarak[i].Email, 
-                    (i % 2 == 0) ? Brushes.WhiteSmoke : Brushes.White);
-            ((ScrollViewer)spRaktartTabla.Parent).ScrollToEnd();
+            raktarSS1.Visibility = Visibility.Collapsed;
+            raktarTorlese.Visibility = Visibility.Collapsed;
         }
 
         /// <summary>
-        /// Beszúrja a sorokat
+        /// Szinkronizálja a táblázatot
         /// </summary>
-        partial void tablazatKialakitasaRaktarak(int id, string nev, string hely, string telefonszam, string email, SolidColorBrush hatterSzin)
+        private void raktarSzinkronizalas()
         {
-            Button btn = new Button();
-            btn.Padding = new Thickness(-2);
-            btn.HorizontalContentAlignment = HorizontalAlignment.Stretch;
-            btn.VerticalContentAlignment = VerticalAlignment.Stretch;
-            btn.BorderThickness = new Thickness(0);
-            btn.Cursor = Cursors.Hand;
+            spRaktarTabla.Children.Clear();
+            for (int i = 0; i < ListOfRaktarak.Count; i++)
+            {
+                TableRow5Column row = new TableRow5Column(
+                    id: ListOfRaktarak[i].ID.ToString(),
+                    egy: ListOfRaktarak[i].Nev,
+                    ketto: ListOfRaktarak[i].Hely,
+                    harom: ListOfRaktarak[i].Telefon,
+                    negy: ListOfRaktarak[i].Email,
+                    hatterSzin: (i % 2 == 0) ? Brushes.WhiteSmoke : Brushes.White);
+                row.egy.HorizontalAlignment = HorizontalAlignment.Left;
+                row.MouseDown += SorKattintasEsemeny;
+                spRaktarTabla.Children.Add(row);
+            }   
+            ((ScrollViewer)spRaktarTabla.Parent).ScrollToEnd();
 
-            TableRowWith5Column tableROW = new TableRowWith5Column();
-            tableROW.egy.Content = id;
-            tableROW.ketto.Content = nev;
-            tableROW.ketto.HorizontalContentAlignment = HorizontalAlignment.Left;
-            tableROW.harom.Content = hely;
-            tableROW.negy.Content = telefonszam;
-            tableROW.ot.Content = email;
-            tableROW.hatter.Background = hatterSzin;
+            //törlés módosítás gomb eltüntetése
+            spRaktarButtons = new Seged().GombokLathatosaga(spRaktarButtons, false);
+        }
 
-            btn.Content = tableROW;
-            btn.Click += SorokKijeloleseKattintasera;
+        /// <summary>
+        /// Megjelebiti a Raktár Törlés ablakot
+        /// </summary>
+        private void raktarTorleseShow()
+        {
+            raktarTorlese.Visibility = Visibility.Visible;
+        }
 
-            Grid gr0 = new Grid();
-            ColumnDefinition colDef1 = new ColumnDefinition();
-            colDef1.Width = new GridLength(7);
-            ColumnDefinition colDef2 = new ColumnDefinition();
-            gr0.ColumnDefinitions.Add(colDef1);
-            gr0.ColumnDefinitions.Add(colDef2);
+        /// <summary>
+        /// Megjeleníti a Raktár Módosítás ablakot
+        /// </summary>
+        private void raktarModositasaShow()
+        {
+            raktarSS1.Visibility = Visibility.Visible;
+            //kezdő értékek beállítása
+            int index = new Seged().indexOfSelectedRow(spRaktarTabla);
+            raktarSS1Fejlec.Content = "Raktár módosítása";
+            raktarSS1Nev.txbtartalom.Text = ListOfRaktarak[index].Nev;
+            raktarSS1Hely.txbtartalom.Text = ListOfRaktarak[index].Hely;
+            raktarSS1Telefon.txbtartalom.Text = ListOfRaktarak[index].Telefon;
+            raktarSS1Email.txbtartalom.Text = ListOfRaktarak[index].Email;
+            raktarSS1Button.Content = "Módosítás";
+        }
 
-            Grid gr = new Grid();
-            gr.Height = 30;
-            gr.Background = hatterSzin;
+        /// <summary>
+        /// Megjeleníti a Raktár Hozzáadás ablakot
+        /// </summary>
+        private void raktarHozzaadasaShow()
+        {
+            raktarSS1.Visibility = Visibility.Visible;
+            //kezdő értkek beállítása
+            raktarSS1Fejlec.Content = "Raktár hozzáadása";
+            raktarSS1Nev.txbtartalom.Text = String.Empty;
+            raktarSS1Hely.txbtartalom.Text = String.Empty;
+            raktarSS1Telefon.txbtartalom.Text = String.Empty;
+            raktarSS1Email.txbtartalom.Text = String.Empty;
+            raktarSS1Button.Content = "Mentés";
+        }
 
-            Grid.SetColumn(gr, 0);
-            Grid.SetColumn(btn, 1);
-
-
-            gr0.Children.Add(gr);
-            gr0.Children.Add(btn);
-            spRaktartTabla.Children.Add(gr0);
-            //törlés módosítűás gomb eltüntetése
-            btnTablaTorles.Visibility = Visibility.Collapsed;
-            btnTablaModositas.Visibility = Visibility.Collapsed;
-            ;
+        /// <summary>
+        /// Kijelöli az aktuális sort, megjeleníti a törlés módosítás button-t.
+        /// </summary>
+        private void SorKattintasEsemeny(object sender, MouseButtonEventArgs e)
+        {
+            //reset
+            spRaktarTabla = new Seged().TablaSorokKijelolesenekEltuntese(spRaktarTabla);
+            //akt. elem kijelolese
+            ((TableRow5Column)sender).Indikator.Visibility = Visibility.Visible;
+            //gomok: modosit törlöl láthatóvá tétele
+            spRaktarButtons = new Seged().GombokLathatosaga(spRaktarButtons, true);
         }
     }
 }

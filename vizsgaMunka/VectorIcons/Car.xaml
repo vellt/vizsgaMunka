@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="vizsgaMunka.VectorIcons.Car"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:vizsgaMunka.VectorIcons"
+             mc:Ignorable="d" 
+             Name="carWindow">
+    <Canvas Width="16.1" Height="14">
+        <Path  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="{Binding Fill, ElementName=carWindow}">
+            <Path.Data>
+                <PathGeometry Figures="M57.125 807.426l3.02 4.026v5.033H58.132a3.02 3.02 0 0 1-6.04 0h-6.04a3.02 3.02 0 0 1-6.04 0H38V805.413a2.064 2.064 0 0 1 2.013-2.013H54.106v4.026Zm-15.2 10.167a1.724 1.724 0 1 0-.4-1.107A1.375 1.375 0 0 0 41.926 817.593Zm12.079 0a1.724 1.724 0 1 0-.4-1.107A1.375 1.375 0 0 0 54 817.593Zm2.617-8.657H54.106v2.516h4.53Z" FillRule="NonZero"/>
+            </Path.Data>
+            <Path.RenderTransform>
+                <TranslateTransform X="-39.5" Y="-803.4"/>
+            </Path.RenderTransform>
+        </Path>
+    </Canvas>
+</UserControl>

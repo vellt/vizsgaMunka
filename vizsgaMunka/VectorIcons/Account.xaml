@@ -4,13 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:vizsgaMunka.VectorIcons"
-             mc:Ignorable="d" >
+             mc:Ignorable="d" 
+             Name="accountWindow">
     <Canvas  Width="11.072" Height="11.072">
         <Canvas.RenderTransform>
             <TranslateTransform X="0" Y="0"/>
         </Canvas.RenderTransform>
         <Canvas.Resources/>
-        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#FF616161">
+        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="{Binding Fill, ElementName=accountWindow}">
             <Path.Data>
                 <PathGeometry Figures="M524.783 983.9a9.556 9.556 0 0 1 4.567 0 8.409 8.409 0 0 1 2.284.969 1.845 1.845 0 0 1 1.038 1.522v2.076H521.6V986.4a1.938 1.938 0 0 1 1.038-1.522A6.029 6.029 0 0 1 524.783 983.9Zm5.052 1.592a7.959 7.959 0 0 0-2.837-.554 8.262 8.262 0 0 0-2.837.554c-.969.346-1.384.692-1.384.9v.761h8.443V986.4C531.219 986.188 530.8 985.842 529.835 985.5Zm-4.775-7.266a2.676 2.676 0 1 1-.83 1.938A2.619 2.619 0 0 1 525.06 978.23Zm2.976.9a1.505 1.505 0 1 0 .415 1.038A1.408 1.408 0 0 0 528.036 979.13Z" FillRule="NonZero"/>
             </Path.Data>

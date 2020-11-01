@@ -6,7 +6,6 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="ResourcesDictionaries/SiteNavbarButtonDictionary.xaml"/>
                 <ResourceDictionary Source="ResourcesDictionaries/TopNavbarButtonDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

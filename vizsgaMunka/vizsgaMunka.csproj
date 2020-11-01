@@ -58,8 +58,12 @@
     <Compile Include="Classes\Aktivitas.cs" />
     <Compile Include="Classes\ArukuldesTartalma.cs" />
     <Compile Include="Classes\Ceg.cs" />
+    <Compile Include="Classes\Seged.cs" />
     <Compile Include="DesignPatterns\ActivityRowForList.xaml.cs">
       <DependentUpon>ActivityRowForList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DesignPatterns\TableRow5Column.xaml.cs">
+      <DependentUpon>TableRow5Column.xaml</DependentUpon>
     </Compile>
     <Compile Include="DesignPatterns\TableRowWith5Column.xaml.cs">
       <DependentUpon>TableRowWith5Column.xaml</DependentUpon>
@@ -68,6 +72,27 @@
       <DependentUpon>TableRowWith7Column.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Fiok.cs" />
+    <Compile Include="DesignPatterns\TextBox.xaml.cs">
+      <DependentUpon>TextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavButtons\Activity.xaml.cs">
+      <DependentUpon>Activity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavButtons\Car.xaml.cs">
+      <DependentUpon>Car.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavButtons\Product.xaml.cs">
+      <DependentUpon>Product.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavButtons\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavButtons\Statistics.xaml.cs">
+      <DependentUpon>Statistics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavButtons\Store.xaml.cs">
+      <DependentUpon>Store.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Aktivitasok.cs" />
     <Compile Include="Pages\Arukuldesek.cs" />
     <Compile Include="Pages\ArukuldesTartalma.cs" />
@@ -76,8 +101,14 @@
     <Compile Include="Classes\Raktar.cs" />
     <Compile Include="Classes\Termek.cs" />
     <Compile Include="Classes\Szallitolevelek.cs" />
+    <Compile Include="TableHeaders\Raktar.xaml.cs">
+      <DependentUpon>Raktar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VectorIcons\Account.xaml.cs">
       <DependentUpon>Account.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\Activity.xaml.cs">
+      <DependentUpon>Activity.xaml</DependentUpon>
     </Compile>
     <Compile Include="VectorIcons\Add.xaml.cs">
       <DependentUpon>Add.xaml</DependentUpon>
@@ -91,17 +122,23 @@
     <Compile Include="VectorIcons\Bin.xaml.cs">
       <DependentUpon>Bin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VectorIcons\Car.xaml.cs">
+      <DependentUpon>Car.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VectorIcons\Close.xaml.cs">
       <DependentUpon>Close.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VectorIcons\CloseBlack.xaml.cs">
-      <DependentUpon>CloseBlack.xaml</DependentUpon>
+    <Compile Include="VectorIcons\CloseBlac.xaml.cs">
+      <DependentUpon>CloseBlac.xaml</DependentUpon>
     </Compile>
     <Compile Include="VectorIcons\Edit.xaml.cs">
       <DependentUpon>Edit.xaml</DependentUpon>
     </Compile>
     <Compile Include="VectorIcons\Finder.xaml.cs">
       <DependentUpon>Finder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\Logo.xaml.cs">
+      <DependentUpon>Logo.xaml</DependentUpon>
     </Compile>
     <Compile Include="VectorIcons\Logout.xaml.cs">
       <DependentUpon>Logout.xaml</DependentUpon>
@@ -112,8 +149,20 @@
     <Compile Include="VectorIcons\Printer.xaml.cs">
       <DependentUpon>Printer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VectorIcons\Product.xaml.cs">
+      <DependentUpon>Product.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VectorIcons\ProfilPic.xaml.cs">
       <DependentUpon>ProfilPic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\Statistics.xaml.cs">
+      <DependentUpon>Statistics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorIcons\Store.xaml.cs">
+      <DependentUpon>Store.xaml</DependentUpon>
     </Compile>
     <Compile Include="VectorIcons\Synch.xaml.cs">
       <DependentUpon>Synch.xaml</DependentUpon>
@@ -122,11 +171,75 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DesignPatterns\TableRow5Column.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DesignPatterns\TableRowWith5Column.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DesignPatterns\TableRowWith7Column.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DesignPatterns\TextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavButtons\Activity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavButtons\Car.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavButtons\Product.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavButtons\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavButtons\Statistics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavButtons\Store.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TableHeaders\Raktar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Activity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Car.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Logo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Product.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Statistics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VectorIcons\Store.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -142,10 +255,6 @@
       <DependentUpon>Root.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ResourcesDictionaries\SiteNavbarButtonDictionary.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="ResourcesDictionaries\TopNavbarButtonDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -174,7 +283,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="VectorIcons\CloseBlack.xaml">
+    <Page Include="VectorIcons\CloseBlac.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

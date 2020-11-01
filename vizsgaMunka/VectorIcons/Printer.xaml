@@ -4,13 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:vizsgaMunka.VectorIcons"
-             mc:Ignorable="d" >
+             mc:Ignorable="d" 
+             Name="printerWindow">
     <Canvas Width="22.222" Height="20">
         <Canvas.RenderTransform>
             <TranslateTransform X="0" Y="0"/>
         </Canvas.RenderTransform>
         <Canvas.Resources/>
-        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#FF707070">
+        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="{Binding Fill, ElementName=printerWindow}">
             <Path.Data>
                 <PathGeometry Figures="M944.889 773.156a3.418 3.418 0 0 1 3.334 3.333v6.667h-4.445V787.6H930.444v-4.444H926v-6.667a3.418 3.418 0 0 1 3.333-3.333Zm-1.111-5.556v4.444H930.444V767.6Zm-2.222 17.778v-5.556h-8.889v5.556Zm2.556-8.111a1.074 1.074 0 1 0-.333-.778A1.009 1.009 0 0 0 944.111 777.267Z" FillRule="NonZero"/>
             </Path.Data>

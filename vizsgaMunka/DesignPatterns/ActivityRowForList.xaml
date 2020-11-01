@@ -17,7 +17,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="130"/>
             </Grid.ColumnDefinitions>
-            <icon:ProfilPic Grid.Column="0"/>
+            <icon:ProfilPic Grid.Column="0" Fill="LightGray"/>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>

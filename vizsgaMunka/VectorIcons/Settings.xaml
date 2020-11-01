@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="vizsgaMunka.VectorIcons.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:vizsgaMunka.VectorIcons"
+             mc:Ignorable="d" 
+             Name="settingsWindow">
+    <Canvas Height="14" Width="16.1">
+        <Path  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="{Binding Fill, ElementName=settingsWindow}">
+            <Path.Data>
+                <PathGeometry Figures="M56.4 1160.4l2.1 1.6a.592.592 0 0 1 .1.7l-2 3.5a.445.445 0 0 1-.6.2l-2.5-1a8.152 8.152 0 0 1-1.7 1l-.4 2.6c-.1.3-.2.4-.5.4h-4a.51.51 0 0 1-.5-.4l-.4-2.6a5.855 5.855 0 0 1-1.7-1l-2.5 1a.445.445 0 0 1-.6-.2l-2-3.5a.483.483 0 0 1 .1-.7l2.1-1.6v-2l-2.1-1.6a.592.592 0 0 1-.1-.7l2-3.5a.445.445 0 0 1 .6-.2l2.5 1a8.152 8.152 0 0 1 1.7-1l.4-2.6c.1-.3.2-.4.5-.4h4a.51.51 0 0 1 .5.4l.4 2.6a5.855 5.855 0 0 1 1.7 1l2.5-1a.445.445 0 0 1 .6.2l2 3.5a.483.483 0 0 1-.1.7l-2.1 1.6v2Zm-9.9 1.5a3.625 3.625 0 1 0-1-2.5A3.317 3.317 0 0 0 46.5 1161.9Z" FillRule="NonZero"/>
+            </Path.Data>
+            <Path.RenderTransform>
+                <TranslateTransform X="-39.091" Y="-1151.4"/>
+            </Path.RenderTransform>
+        </Path>
+    </Canvas>
+</UserControl>

@@ -4,13 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:vizsgaMunka.VectorIcons"
-             mc:Ignorable="d" >
+             mc:Ignorable="d" 
+             Name="okWindow">
     <Canvas Width="20" Height="20">
         <Canvas.RenderTransform>
             <TranslateTransform X="0" Y="0"/>
         </Canvas.RenderTransform>
         <Canvas.Resources/>
-        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Fill="#FF707070">
+        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="{Binding Fill, ElementName=okWindow}">
             <Path.Data>
                 <PathGeometry Figures="M189.7 1048a9.506 9.506 0 0 1 7.1-2.9 9.9 9.9 0 0 1 7.1 2.9 9.356 9.356 0 0 1 2.9 7.1 9.9 9.9 0 0 1-2.9 7.1 9.356 9.356 0 0 1-7.1 2.9 9.9 9.9 0 0 1-7.1-2.9 9.356 9.356 0 0 1-2.9-7.1A9.733 9.733 0 0 1 189.7 1048Zm5.1 12 9-9-1.4-1.5-7.6 7.6-3.6-3.6-1.4 1.4Z" FillRule="NonZero"/>
             </Path.Data>

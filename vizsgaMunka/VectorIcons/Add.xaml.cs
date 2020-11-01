@@ -24,5 +24,14 @@ namespace vizsgaMunka.VectorIcons
         {
             InitializeComponent();
         }
+        public Brush Fill
+        {
+            get { return (Brush)GetValue(FillProperty); }
+            set { SetValue(FillProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Fill.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty FillProperty =
+            DependencyProperty.Register("Fill", typeof(Brush), typeof(Add), new PropertyMetadata(Brushes.Black));
     }
 }
