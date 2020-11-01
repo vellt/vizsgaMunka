@@ -36,9 +36,10 @@ namespace vizsgaMunka
         {
             ListOfRaktarak.Add(new Raktar(0, "berettyobolt", "Berettyoujfalu Piac u 12", "06 30 84 63 175", "berettyo@bolt.hu"));
             ListOfRaktarak.Add(new Raktar(1, "Derecske", "Berettyoujfalu Piac u 12", "06 30 84 63 175", "berettyo@bolt.hu"));
+            ListOfTermekek.Add(new Termek(0, "Sertés Karaj", 5, "kg", 1299));
+            ListOfTermekek.Add(new Termek(1, "Sertés Comb", 5, "kg", 1299));
             raktarSzinkronizalas();
-            ujAdatHozzaadasaTermekez(0, "Sertés Karaj", 5, "kg", 1299);
-            ujAdatHozzaadasaTermekez(1, "Sertés Comb", 5, "kg", 1299);
+            termekSzinkronizalas();
             
             //testfiok
             ListOfFiok.Add(new Fiok(0, "vellt", "Szántó Benjámin", "jelszo123"));
@@ -82,18 +83,6 @@ namespace vizsgaMunka
         }
         #endregion
 
-        //Raktarak
-
-
-        
-        //Termekek
-        partial void BtnTermekekreVonatkozoInterakciok(object sender, RoutedEventArgs e);
-        partial void BtnTermekEsemenyek(object sender, RoutedEventArgs e);
-        partial void szinkronizalasTermekek();
-        partial void tablazatKialakitasaTermekek(int id, string nev, int afa, string mennyisegiEgyseg, int egysegar, SolidColorBrush hatterSzin);
-        partial void TermekAdatTorlese(int index);
-        partial void TermekAdatModositasa(int index, string nev, int afa, string mennyisegiEgyseg, int egysear);
-        partial void ujAdatHozzaadasaTermekez(int index, string nev, int afa, string mennyisegiEgyseg, int egysear);
 
         //Arukuldesek
         partial void BtnRaktarkoziAtadasraVonatkozoInterakciok(object sender, RoutedEventArgs e);
@@ -120,8 +109,8 @@ namespace vizsgaMunka
                     btnArukuldesekTablaTorles.Visibility = Visibility.Visible;
                     break;
                 case "spTermekekTabla":
-                    btnTermekekTablaTorles.Visibility = Visibility.Visible;
-                    btnTermekekTablaModositas.Visibility = Visibility.Visible;
+                    //btnTermekekTablaTorles.Visibility = Visibility.Visible;
+                    //btnTermekekTablaModositas.Visibility = Visibility.Visible;
                     break;
                 case "spRaktarTabla":
                     //btnTablaTorles.Visibility = Visibility.Visible;

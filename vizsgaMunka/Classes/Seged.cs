@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,6 +72,35 @@ namespace vizsgaMunka.Classes
             }
 
             return rows;
+        }
+
+        /// <summary>
+        /// <br>Formázza a számot:</br>
+        /// <br>1000 --> 1 000 FT</br>
+        /// </summary>
+        public string ToHUF(int Szam)
+        {
+            var nfi = (NumberFormatInfo)CultureInfo.InvariantCulture.NumberFormat.Clone();
+            nfi.NumberGroupSeparator = " ";
+            return Szam.ToString("#,0 Ft", nfi);
+        }
+
+        /// <summary>
+        /// <br>Formázza a számot:</br>
+        /// <br>27 --> 27 %</br>
+        /// </summary>
+        public string ToAFA(int Szam)
+        {
+            return $"{Szam} %";
+        }
+
+        /// <summary>
+        /// <br>Formázza a számot:</br>
+        /// <br>110 --> #110</br>
+        /// </summary>
+        public string ToSorszam(int Szam)
+        {
+            return $"#{Szam}";
         }
     }
 }

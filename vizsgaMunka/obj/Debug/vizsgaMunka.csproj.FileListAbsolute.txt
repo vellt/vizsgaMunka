@@ -82,3 +82,7 @@ C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\DesignPatterns\Text
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\DesignPatterns\TextBox.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\DesignPatterns\TableRow5Column.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\DesignPatterns\TableRow5Column.baml
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\TableHeaders\Termek.g.cs
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\TableHeaders\Termek.baml
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\TableHeaders\Arukuldes.g.cs
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\TableHeaders\Arukuldes.baml

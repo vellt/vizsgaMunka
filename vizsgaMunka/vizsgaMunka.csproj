@@ -101,8 +101,14 @@
     <Compile Include="Classes\Raktar.cs" />
     <Compile Include="Classes\Termek.cs" />
     <Compile Include="Classes\Szallitolevelek.cs" />
+    <Compile Include="TableHeaders\Arukuldes.xaml.cs">
+      <DependentUpon>Arukuldes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TableHeaders\Raktar.xaml.cs">
       <DependentUpon>Raktar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TableHeaders\Termek.xaml.cs">
+      <DependentUpon>Termek.xaml</DependentUpon>
     </Compile>
     <Compile Include="VectorIcons\Account.xaml.cs">
       <DependentUpon>Account.xaml</DependentUpon>
@@ -211,7 +217,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TableHeaders\Arukuldes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TableHeaders\Raktar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TableHeaders\Termek.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

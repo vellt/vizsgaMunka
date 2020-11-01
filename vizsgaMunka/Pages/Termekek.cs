@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using vizsgaMunka.VectorIcons;
 using vizsgaMunka.DesignPatterns;
+using vizsgaMunka.Classes;
 
 namespace vizsgaMunka
 {
@@ -22,195 +23,201 @@ namespace vizsgaMunka
     {
         List<Classes.Termek> ListOfTermekek = new List<Classes.Termek>();
 
-        partial void BtnTermekekreVonatkozoInterakciok(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Termék Dispatcher - szétosztja az eseményket, a bejövő esemenykódok alapján /ToolTip-Content/
+        /// </summary>
+        private void TermekekBtn(object sender, MouseButtonEventArgs e)
         {
-            switch (((Button) sender).ToolTip.ToString())
+            switch ((((Grid)sender).ToolTip == null) ? ((ContentControl)((Grid)sender).Children[0]).Content.ToString() : ((Grid)sender).ToolTip.ToString())
             {
-                case "termék hozzáadása":
-                    termekHozzaadasa.Visibility = Visibility.Visible;
-                    //kezdő értékek beállítása
-                    txbTermekNevHozzaadasa.Text = String.Empty;
-                    txbTermekAFAHozzaadasa.Text = String.Empty;
-                    txbTermekMEHozzaadasa.Text = String.Empty;
-                    txbTermekArHozzaadasa.Text = String.Empty;
+                case "Termék hozzáadása":
+                    //tooltip
+                    termekHozzaadasaShow();
                     break;
-                case "termék módosítása":
-                    termekModositasa.Visibility = Visibility.Visible;
-                    //kezdő értékek beállítása
-                    int index = indexOfSelectedRowTermekek();
-                    txbTermekNevModositasa.Text = ListOfTermekek[index].Nev;
-                    txbTermekAFAModositasa.Text = ListOfTermekek[index].AFA.ToString();
-                    txbTermekMEModositasa.Text = ListOfTermekek[index].MennyisegiEgyseg;
-                    txbTermekArModositasa.Text = ListOfTermekek[index].Egysegar.ToString();
+                case "Termék módosítása":
+                    //tooltip
+                    termekModositasaShow();
                     break;
-                case "termék törlése":
-                    termekTorlese.Visibility = Visibility.Visible;
+                case "Termék törlése":
+                    //tooltip
+                    termekTorleseShow();
                     break;
-                case "szinkronizálás":
-                    szinkronizalasTermekek();
+                case "Szinkronizálás":
+                    //tooltip
+                    termekSzinkronizalas();
+                    break;
+                case "Vissza":
+                    //tooltip
+                    termekVissza();
+                    break;
+                case "Mentés":
+                    //content
+                    termekMentes();
+                    break;
+                case "Módosítás":
+                    //content
+                    termekModositas();
+                    break;
+                case "Igen":
+                    //content
+                    termekIgen();
+                    break;
+                case "Nem":
+                    //content
+                    termekNem();
                     break;
             }
         }
 
-        partial void BtnTermekEsemenyek(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// A törlés ablakot "bezárja"
+        /// </summary>
+        private void termekNem()
         {
-            int index = indexOfSelectedRowTermekek();
-            if (((Button)sender).ToolTip != null)
-            {
-                //Ablak bezarasa gomb eseménye
-                termekHozzaadasa.Visibility = Visibility.Collapsed;
-                termekModositasa.Visibility = Visibility.Collapsed;
-                termekTorlese.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                switch (((Label)((Grid)((Button)sender).Content).Children[0]).Content)
-                {
-                    case "Mentés":
-                        //értesitest kreal az esemenyről
-                        ujAdatHozzaadasaAktivitasok((ListOfTermekek.Count == 0) ? 0 : ListOfTermekek[ListOfTermekek.Count - 1].ID + 1, 3);
-                        //Mentés gomb eseménye
-                        termekHozzaadasa.Visibility = Visibility.Collapsed;
-                        ujAdatHozzaadasaTermekez(
-                            (ListOfTermekek.Count == 0) ? 0 : ListOfTermekek[ListOfTermekek.Count - 1].ID + 1,
-                            txbTermekNevHozzaadasa.Text,
-                            Convert.ToInt32( txbTermekAFAHozzaadasa.Text),
-                            txbTermekMEHozzaadasa.Text, 
-                            Convert.ToInt32( txbTermekArHozzaadasa.Text));
-                        break;
-                    case "Módosítás":
-                        //Módosítás gomb eseménye
-                        //értesitest kreal az esemenyről
-                        ujAdatHozzaadasaAktivitasok(index, 4);
-                        termekModositasa.Visibility = Visibility.Collapsed;
-                        TermekAdatModositasa(
-                            index,
-                            txbTermekNevModositasa.Text,
-                            Convert.ToInt32( txbTermekAFAModositasa.Text),
-                            txbTermekMEModositasa.Text,
-                            Convert.ToInt32( txbTermekArModositasa.Text));
-                        break;
-                    case "Igen":
-                        //meglévő termék törlése "igen"
-                        //értesitest kreal az esemenyről
-                        ujAdatHozzaadasaAktivitasok(index, 5);
-                        termekTorlese.Visibility = Visibility.Collapsed;
-                        TermekAdatTorlese(index);
-                        break;
-                    default:
-                        //meglévő termék törlése "nem"
-                        termekTorlese.Visibility = Visibility.Collapsed;
-                        break;
-                }
-            }
-
-
+            termekVissza();
         }
 
         /// <summary>
-        /// Szinkronizálja a táblát
+        /// Törli a kijelölt elemet a táblázatból
         /// </summary>
-        partial void szinkronizalasTermekek()
+        private void termekIgen()
         {
-            spTermekekTabla.Children.Clear();
-            for (int i = 0; i < ListOfTermekek.Count; i++) tablazatKialakitasaTermekek(ListOfTermekek[i].ID, ListOfTermekek[i].Nev, ListOfTermekek[i].AFA, ListOfTermekek[i].MennyisegiEgyseg, ListOfTermekek[i].Egysegar, (i % 2 == 0) ? Brushes.WhiteSmoke : Brushes.White);
-            ((ScrollViewer)spTermekekTabla.Parent).ScrollToEnd();
-        }
-
-        /// <summary>
-        /// Beszúrja a sorokat
-        /// </summary>
-        partial void tablazatKialakitasaTermekek(int id, string nev, int afa, string mennyisegiEgyseg, int egysegar, SolidColorBrush hatterSzin)
-        {
-            Button btn = new Button();
-            btn.Padding = new Thickness(-2);
-            btn.HorizontalContentAlignment = HorizontalAlignment.Stretch;
-            btn.VerticalContentAlignment = VerticalAlignment.Stretch;
-            btn.BorderThickness = new Thickness(0);
-            btn.Cursor = Cursors.Hand;
-
-            TableRowWith5Column tableROW = new TableRowWith5Column();
-            tableROW.egy.Content = id;
-            tableROW.ketto.Content = nev;
-            tableROW.ketto.HorizontalContentAlignment = HorizontalAlignment.Left;
-            tableROW.harom.Content =SzamFormazasaAFA(afa);
-            tableROW.negy.Content = mennyisegiEgyseg;
-            tableROW.ot.Content =SzamFormazasaFt(egysegar);
-            tableROW.ot.Padding = new Thickness(0, 0, 45, 0);
-            tableROW.ot.HorizontalContentAlignment = HorizontalAlignment.Right;
-            tableROW.hatter.Background = hatterSzin;
-
-            btn.Content = tableROW;
-            btn.Click += SorokKijeloleseKattintasera;
-
-            Grid gr0 = new Grid();
-            ColumnDefinition colDef1 = new ColumnDefinition();
-            colDef1.Width = new GridLength(7);
-            ColumnDefinition colDef2 = new ColumnDefinition();
-            gr0.ColumnDefinitions.Add(colDef1);
-            gr0.ColumnDefinitions.Add(colDef2);
-
-            Grid gr = new Grid();
-            gr.Height = 30;
-            gr.Background = hatterSzin;
-
-            Grid.SetColumn(gr, 0);
-            Grid.SetColumn(btn, 1);
-
-
-            gr0.Children.Add(gr);
-            gr0.Children.Add(btn);
-            spTermekekTabla.Children.Add(gr0);
-            //törlés módosítás gomb eltüntetése
-            btnTermekekTablaTorles.Visibility = Visibility.Collapsed;
-            btnTermekekTablaModositas.Visibility = Visibility.Collapsed;
-        }
-
-
-        /// <summary>
-        /// Megkeresi az indexét a kijeleölt sornak
-        /// </summary>
-        private int indexOfSelectedRowTermekek()
-        {
-            var background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF05B422"));
-            for (int i = 0; i < spTermekekTabla.Children.Count; i++)
-            {
-                var background2 = ((Grid)((Grid)spTermekekTabla.Children[i]).Children[0]).Background;
-                if (background2.ToString() == background.ToString())
-                    return i;
-            }
-            return -1;
-        }
-
-        /// <summary>
-        /// Törli a kijelölt sort a táblázatból
-        /// </summary>
-        partial void TermekAdatTorlese(int index)
-        {
+            int index = new Seged().indexOfSelectedRow(spTermekTabla);
+            //reportot küldünk az esemenyről
+            ujAdatHozzaadasaAktivitasok(index, 5);
+            //töröljük a listából a kijelölt elemet majd szinkronizáljuk a táblát a listával és bezárjuk az ablakot
+            termekVissza();
             ListOfTermekek.RemoveAt(index);
-            szinkronizalasTermekek();
+            termekSzinkronizalas();
         }
 
         /// <summary>
-        /// A meglévő táblázat egy kijelölt sorának adatát módódítja
+        /// Módosítja a kijelölt elemet a táblázatban
         /// </summary>
-        partial void TermekAdatModositasa(int index, string nev, int afa, string mennyisegiEgyseg, int egysear)
+        private void termekModositas()
         {
-            ListOfTermekek[index].Nev = nev;
-            ListOfTermekek[index].AFA = afa;
-            ListOfTermekek[index].MennyisegiEgyseg = mennyisegiEgyseg;
-            ListOfTermekek[index].Egysegar = egysear;
-            szinkronizalasTermekek();
+            int index = new Seged().indexOfSelectedRow(spTermekTabla);
+            //reportot küldünk az esemenyről
+            ujAdatHozzaadasaAktivitasok(index, 4);
+            //beállítjuk a módosított értékeket a listában majd szinkronizáljuk a táblát a listával és bezárjuk az ablakot
+            termekVissza();
+            ListOfTermekek[index].Nev = termekSS1Nev.txbtartalom.Text;
+            ListOfTermekek[index].AFA =Convert.ToInt32(termekSS1AFA.txbtartalom.Text);
+            ListOfTermekek[index].MennyisegiEgyseg = termekSS1ME.txbtartalom.Text;
+            ListOfTermekek[index].Egysegar =Convert.ToInt32( termekSS1Ar.txbtartalom.Text);
+            termekSzinkronizalas();
         }
 
         /// <summary>
-        /// A táblázatba hozzáad egy sort, a beállított argumentumok alapján
+        /// Hozzáad egy új elemet a táblázathoz
         /// </summary>
-        partial void ujAdatHozzaadasaTermekez(int index, string nev, int afa, string mennyisegiEgyseg, int egysear)
+        private void termekMentes()
         {
-            Classes.Termek r = new Classes.Termek(index, nev, afa, mennyisegiEgyseg, egysear);
-            ListOfTermekek.Add(r);
-            szinkronizalasTermekek();
+            //ha a rterméklistában nincs elem: 0, ellenkező esetben az utolsó tag id-jehez adunk hozzá egyet
+            int index = (ListOfTermekek.Count == 0) ? 0 : ListOfTermekek[ListOfTermekek.Count - 1].ID + 1;
+            //reportot küldünk az esemenyről
+            ujAdatHozzaadasaAktivitasok(index, 3);
+            //Hozzáadjuk az új elemet a listához majd aszinkronizáljuk a táblát a listával és bezárjuk az ablakot
+            termekVissza();
+            ListOfTermekek.Add(
+                new Termek(
+                    id: index,
+                    nev: termekSS1Nev.txbtartalom.Text,
+                    afa:Convert.ToInt32(termekSS1AFA.txbtartalom.Text),
+                    mennyisegiEgyseg:termekSS1ME.txbtartalom.Text,
+                    egysegar: Convert.ToInt32(termekSS1Ar.txbtartalom.Text)));
+            termekSzinkronizalas();
         }
+
+        /// <summary>
+        /// A segédablakokat "bezárja"
+        /// </summary>
+        private void termekVissza()
+        {
+            termekSS1.Visibility = Visibility.Collapsed;
+            termekSS2.Visibility = Visibility.Collapsed;
+        }
+
+        /// <summary>
+        /// Szinkronizálja a táblázatot
+        /// </summary>
+        private void termekSzinkronizalas()
+        {
+            spTermekTabla.Children.Clear();
+            for (int i = 0; i < ListOfTermekek.Count; i++)
+            {
+                TableRow5Column row = new TableRow5Column(
+                    id: ListOfTermekek[i].ID.ToString(),
+                    egy: ListOfTermekek[i].Nev,
+                    ketto: new Seged().ToAFA(ListOfTermekek[i].AFA),
+                    harom: ListOfTermekek[i].MennyisegiEgyseg,
+                    negy: new Seged().ToHUF(ListOfTermekek[i].Egysegar),
+                    hatterSzin: (i % 2 == 0) ? Brushes.WhiteSmoke : Brushes.White);
+                row.egy.HorizontalAlignment = HorizontalAlignment.Left;
+                row.negy.Margin = new Thickness(0, 0, 40, 0);
+                row.negy.HorizontalAlignment = HorizontalAlignment.Right;
+                row.MouseDown += termekSorKattintasEsemeny;
+                spTermekTabla.Children.Add(row);
+            } 
+            ((ScrollViewer)spTermekTabla.Parent).ScrollToEnd();
+
+            //törlés módosítás gomb eltüntetése
+            spTermekButtons = new Seged().GombokLathatosaga(spTermekButtons, false);
+        }
+
+        /// <summary>
+        /// Megjeleníti a Termék Törlés ablakot
+        /// </summary>
+        private void termekTorleseShow()
+        {
+            termekSS2.Visibility = Visibility.Visible;
+        }
+
+        /// <summary>
+        /// Megjeleníti a Termék Módosítás ablakot
+        /// </summary>
+        private void termekModositasaShow()
+        {
+            termekSS1.Visibility = Visibility.Visible;
+            //kezdő értékek beállítása
+            int index = new Seged().indexOfSelectedRow(spTermekTabla);
+            termekSS1Fejlec.Content = "Termék módosítása";
+            termekSS1Nev.txbtartalom.Text = ListOfTermekek[index].Nev;
+            termekSS1AFA.txbtartalom.Text = ListOfTermekek[index].AFA.ToString();
+            termekSS1ME.txbtartalom.Text = ListOfTermekek[index].MennyisegiEgyseg;
+            termekSS1Ar.txbtartalom.Text = ListOfTermekek[index].Egysegar.ToString();
+            termekSS1Button.Content = "Módosítás";
+        }
+
+        /// <summary>
+        /// Megjeleníti a Termék Hozzáadás ablakot
+        /// </summary>
+        private void termekHozzaadasaShow()
+        {
+            termekSS1.Visibility = Visibility.Visible;
+            //kezdő értékek beállítása
+            termekSS1Fejlec.Content = "Termkék hozzáadása";
+            termekSS1Nev.txbtartalom.Text = String.Empty;
+            termekSS1AFA.txbtartalom.Text = String.Empty;
+            termekSS1ME.txbtartalom.Text = String.Empty;
+            termekSS1Ar.txbtartalom.Text = String.Empty;
+            termekSS1Button.Content = "Mentés";
+        }
+
+        /// <summary>
+        /// Kijelöli az aktuális sort, megjeleníti a törlés módosítás button-t.
+        /// </summary>
+        private void termekSorKattintasEsemeny(object sender, MouseButtonEventArgs e)
+        {
+            //reset
+            spTermekTabla = new Seged().TablaSorokKijelolesenekEltuntese(spTermekTabla);
+            //akt. elem kijelolese
+            ((TableRow5Column)sender).Indikator.Visibility = Visibility.Visible;
+            //gomok: modosit törlöl láthatóvá tétele
+            spTermekButtons = new Seged().GombokLathatosaga(spTermekButtons, true);
+        }
+
+        
+
     }
 }

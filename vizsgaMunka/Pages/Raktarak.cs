@@ -78,7 +78,7 @@ namespace vizsgaMunka
         }
 
         /// <summary>
-        /// Törli a kijelölt elemet a táblából
+        /// Törli a kijelölt elemet a táblázatból
         /// </summary>
         private void raktarIgen()
         {
@@ -92,7 +92,7 @@ namespace vizsgaMunka
         }
 
         /// <summary>
-        /// Módosítja a kijelölt elemet táblázatban
+        /// Módosítja a kijelölt elemet a táblázatban
         /// </summary>
         private void raktarModositas()
         {
@@ -117,7 +117,7 @@ namespace vizsgaMunka
             int index = (ListOfRaktarak.Count == 0) ? 0 : ListOfRaktarak[ListOfRaktarak.Count - 1].ID + 1;
             //reportot küldünk az esemenyről
             ujAdatHozzaadasaAktivitasok(index, 0);
-            //Hozzáadjuk az ój elemet a listához majd aszinkronizáljuk a táblát a listával és bezárjuk az ablakot
+            //Hozzáadjuk az új elemet a listához majd aszinkronizáljuk a táblát a listával és bezárjuk az ablakot
             raktarVissza();
             ListOfRaktarak.Add(
                 new Raktar(
@@ -135,7 +135,7 @@ namespace vizsgaMunka
         private void raktarVissza()
         {
             raktarSS1.Visibility = Visibility.Collapsed;
-            raktarTorlese.Visibility = Visibility.Collapsed;
+            raktarSS2.Visibility = Visibility.Collapsed;
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace vizsgaMunka
                     negy: ListOfRaktarak[i].Email,
                     hatterSzin: (i % 2 == 0) ? Brushes.WhiteSmoke : Brushes.White);
                 row.egy.HorizontalAlignment = HorizontalAlignment.Left;
-                row.MouseDown += SorKattintasEsemeny;
+                row.MouseDown += raktarSorKattintasEsemeny;
                 spRaktarTabla.Children.Add(row);
             }   
             ((ScrollViewer)spRaktarTabla.Parent).ScrollToEnd();
@@ -164,11 +164,11 @@ namespace vizsgaMunka
         }
 
         /// <summary>
-        /// Megjelebiti a Raktár Törlés ablakot
+        /// Megjeleníti a Raktár Törlés ablakot
         /// </summary>
         private void raktarTorleseShow()
         {
-            raktarTorlese.Visibility = Visibility.Visible;
+            raktarSS2.Visibility = Visibility.Visible;
         }
 
         /// <summary>
@@ -205,7 +205,7 @@ namespace vizsgaMunka
         /// <summary>
         /// Kijelöli az aktuális sort, megjeleníti a törlés módosítás button-t.
         /// </summary>
-        private void SorKattintasEsemeny(object sender, MouseButtonEventArgs e)
+        private void raktarSorKattintasEsemeny(object sender, MouseButtonEventArgs e)
         {
             //reset
             spRaktarTabla = new Seged().TablaSorokKijelolesenekEltuntese(spRaktarTabla);
