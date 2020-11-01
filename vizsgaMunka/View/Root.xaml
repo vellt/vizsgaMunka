@@ -226,10 +226,10 @@
                                     <Grid Width="40" Height="40" Cursor="Hand" Tag="Secret" ToolTip="Raktár módosítása" Visibility="Collapsed" MouseDown="RaktarakBtn" Background="#E0E0E0"  >
                                         <icon:Edit Fill="#707070"/>
                                     </Grid>
-                                    <Grid Height="39" Width="39" Cursor="Hand" Tag="Secret" ToolTip="Raktár törlése" Visibility="Collapsed" MouseDown="RaktarakBtn" Background="#E0E0E0" >
+                                    <Grid Height="40" Width="40" Cursor="Hand" Tag="Secret" ToolTip="Raktár törlése" Visibility="Collapsed" MouseDown="RaktarakBtn" Background="#E0E0E0" >
                                         <icon:Bin Fill="#707070"/>
                                     </Grid>
-                                    <Grid Height="39" Width="39" Cursor="Hand" ToolTip="Szinkronizálás" MouseDown="RaktarakBtn" Background="#E0E0E0" >
+                                    <Grid Height="40" Width="40" Cursor="Hand" ToolTip="Szinkronizálás" MouseDown="RaktarakBtn" Background="#E0E0E0" >
                                         <icon:Synch Fill="#707070"/>
                                     </Grid>
                                 </StackPanel>
@@ -351,10 +351,10 @@
                                     <Grid Width="40" Height="40" Cursor="Hand" Tag="Secret" ToolTip="Termék módosítása" Visibility="Collapsed" MouseDown="TermekekBtn" Background="#E0E0E0"  >
                                         <icon:Edit Fill="#707070"/>
                                     </Grid>
-                                    <Grid Height="39" Width="39" Cursor="Hand" Tag="Secret" ToolTip="Termék törlése" Visibility="Collapsed" MouseDown="TermekekBtn" Background="#E0E0E0" >
+                                    <Grid Height="40" Width="40" Cursor="Hand" Tag="Secret" ToolTip="Termék törlése" Visibility="Collapsed" MouseDown="TermekekBtn" Background="#E0E0E0" >
                                         <icon:Bin Fill="#707070"/>
                                     </Grid>
-                                    <Grid Height="39" Width="39" Cursor="Hand" ToolTip="Szinkronizálás" MouseDown="TermekekBtn" Background="#E0E0E0" >
+                                    <Grid Height="40" Width="40" Cursor="Hand" ToolTip="Szinkronizálás" MouseDown="TermekekBtn" Background="#E0E0E0" >
                                         <icon:Synch Fill="#707070"/>
                                     </Grid>
                                 </StackPanel>
@@ -414,7 +414,7 @@
                             </Grid>
 
 
-                            <Grid x:Name="termekSS2" Visibility="Collapsed" Tag="Termék SubScreen">
+                            <Grid x:Name="termekSS2" Visibility="Collapsed" Grid.Row="1" Tag="Termék SubScreen: Törlés">
                                 <Grid.Background>
                                     <SolidColorBrush Color="Black" Opacity="0.5"/>
                                 </Grid.Background>
@@ -456,278 +456,81 @@
                         </Grid>
 
                     </TabItem>
-                    <!--RAKTARKÖZÖTTI ÁTADÁS-->
-                    <TabItem 
-                        x:Name="tbiRaktarkoziAtadas"
-                        Visibility="Visible">
+                    <!--ÁRUKULDES LAP-->
+                    <TabItem  x:Name="tbiRaktarkoziAtadas" Visibility="Visible">
                         <Grid>
-                            <Grid
-                            Margin="20"
-                            Background="White">
+                            <Grid Margin="20" Background="White">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="40"/>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="40"/>
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Row="0"
-                                  Background="White"
-                                  >
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="5"/>
-                                        <ColumnDefinition Width="80"/>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="17"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label 
-                                    Grid.Column="1"
-                                    Content="#" 
-                                    Foreground="#707070"
-                                    FontFamily="Segoe UI"
-                                    FontSize="16"
-                                    HorizontalContentAlignment="Center"
-                                    VerticalContentAlignment="Center"/>
-                                    <Label 
-                                    Grid.Column="2"
-                                    Content="Dátum" 
-                                    Foreground="#707070"
-                                    FontFamily="Segoe UI"
-                                    FontSize="16"
-                                    HorizontalContentAlignment="Center"
-                                    VerticalContentAlignment="Center"/>
-                                    <Label 
-                                    Grid.Column="3"
-                                    Content="Árukiadó Raktár" 
-                                    Foreground="#707070"
-                                    FontFamily="Segoe UI"
-                                    FontSize="16"
-                                    HorizontalContentAlignment="Left"
-                                    VerticalContentAlignment="Center"/>
-                                    <Label 
-                                    Grid.Column="4"
-                                    Content="Bevételező Raktár" 
-                                    Foreground="#707070"
-                                    FontFamily="Segoe UI"
-                                    FontSize="16"
-                                    HorizontalContentAlignment="Left"
-                                    VerticalContentAlignment="Center"/>
-                                    <Label 
-                                    Grid.Column="5"
-                                    Content="Áruérték" 
-                                    Foreground="#707070"
-                                    FontFamily="Segoe UI"
-                                    FontSize="16"
-                                    HorizontalContentAlignment="Right"
-                                    Padding="40 0"
-                                    VerticalContentAlignment="Center"/>
-                                </Grid>
-                                <ScrollViewer
-                                Grid.Row="1"
-                                HorizontalScrollBarVisibility="Disabled">
-                                    <StackPanel
-                                    x:Name="spArukuldesekTabla"
-                                    Orientation="Vertical">
-                                        <!--tartalom: Arukuldesek-->
-
-                                    </StackPanel>
+                                <!--table header-->
+                                <header:Arukuldes Grid.Row="0"/>
+                                <!--table body-->
+                                <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled">
+                                    <StackPanel x:Name="spArukuldesekTabla" Orientation="Vertical"/>
                                 </ScrollViewer>
-                                <StackPanel Grid.Row="3"
-                                  Background="#E0E0E0"
-                                  Orientation="Horizontal">
-                                    <Button 
-                                    Width="39"
-                                    Height="39"
-                                    Padding="-1"
-                                    Cursor="Hand"
-                                    BorderThickness="0"
-                                    VerticalContentAlignment="Stretch"
-                                    HorizontalContentAlignment="Stretch"
-                                    Click="BtnRaktarkoziAtadasraVonatkozoInterakciok"
-                                    ToolTip="új áruküldés" >
-                                        <Grid
-                                         Width="39"
-                                        Height="39"
-                                        Background="#E0E0E0">
-                                            <icon:Add1 Fill="#707070"/>
-                                        </Grid>
-                                    </Button>
-                                    <Button 
-                                        Click="BtnRaktarkoziAtadasraVonatkozoInterakciok"
-                                        Grid.Column="5"
-                                        Grid.Row="0"
-                                        Width="39"
-                                        Height="39"
-                                        Padding="-1"
-                                        Cursor="Hand"
-                                        BorderThickness="0"
-                                        VerticalContentAlignment="Stretch"
-                                        HorizontalContentAlignment="Stretch"
-                                        ToolTip="elem módosítása"
-                                        Name="btnRaktarkoziAtadasModositas"
-                                        Visibility="Collapsed">
-                                        <Grid
-                                            Height="39"
-                                             Width="39"
-                                            Background="#E0E0E0">
-                                            <icon:Edit Fill="#707070"/>
-                                        </Grid>
-                                    </Button>
-                                    <Button 
-                                        Click="BtnRaktarkoziAtadasraVonatkozoInterakciok"
-                                        HorizontalAlignment="Left"
-                                        Grid.Column="6"
-                                        Width="39"
-                                        Height="39"
-                                        Padding="-1"
-                                        Cursor="Hand"
-                                        BorderThickness="0"
-                                        VerticalContentAlignment="Stretch"
-                                        HorizontalContentAlignment="Stretch"
-                                        ToolTip="elem törlése"
-                                        Name="btnArukuldesekTablaTorles"
-                                        Visibility="Collapsed">
-                                        <Grid
-                                            Height="39"
-                                             Width="39"
-                                            Background="#E0E0E0">
-                                            <icon:Bin Fill="#707070"/>
-                                        </Grid>
-                                    </Button>
-                                    <Button 
-                                        Width="39"
-                                        Height="39"
-                                        Padding="-1"
-                                        Cursor="Hand"
-                                        BorderThickness="0"
-                                        VerticalContentAlignment="Stretch"
-                                        HorizontalContentAlignment="Stretch"
-                                        Click="BtnRaktarkoziAtadasraVonatkozoInterakciok"
-                                        ToolTip="szinkronizálás">
-                                        <Grid
-                                            Height="39"
-                                             Width="39"
-                                            Background="#E0E0E0">
-                                            <icon:Synch Fill="#707070"/>
-                                        </Grid>
-                                    </Button>
+                                <!--buttons-->
+                                <StackPanel x:Name="spArukuldesButtons" Grid.Row="3" Background="#E0E0E0" Orientation="Horizontal">
+                                    <Grid Width="40" Height="40" Cursor="Hand" ToolTip="Új áruküldés" MouseDown="ArukuldesekBtn" Background="#E0E0E0" >
+                                        <icon:Add1 Fill="#707070"/>
+                                    </Grid>
+                                    <Grid Width="40" Height="40" Cursor="Hand" Tag="Secret" ToolTip="Áruküldés módosítása" Visibility="Collapsed" MouseDown="ArukuldesekBtn" Background="#E0E0E0"  >
+                                        <icon:Edit Fill="#707070"/>
+                                    </Grid>
+                                    <Grid Height="40" Width="40" Cursor="Hand" Tag="Secret" ToolTip="Áruküldés törlése" Visibility="Collapsed" MouseDown="ArukuldesekBtn" Background="#E0E0E0" >
+                                        <icon:Bin Fill="#707070"/>
+                                    </Grid>
+                                    <Grid Height="40" Width="40" Cursor="Hand" ToolTip="Szinkronizálás" MouseDown="ArukuldesekBtn" Background="#E0E0E0" >
+                                        <icon:Synch Fill="#707070"/>
+                                    </Grid>
                                 </StackPanel>
                             </Grid>
-                            <!--Átadás törlése a táblázatból-->
-                            <Grid
-                                x:Name="ArukuldesElemTorlese"
-                                Grid.Row="1"
-                                Visibility="Collapsed">
+
+
+                            <Grid x:Name="ArukuldesSS2" Grid.Row="1" Visibility="Collapsed" Tag="Arukuldés SubScreen: Törlés">
                                 <Grid.Background>
                                     <SolidColorBrush Color="Black" Opacity="0.5"/>
                                 </Grid.Background>
-                                <Grid
-                                    Height="110"
-                                    Width="254">
+                                <Grid Height="110" Width="254">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="30"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
-                                    <Grid
-                                        Width="254"
-                                        Grid.Row="0"
-                                        Background="#707070"
-                                        HorizontalAlignment="Right">
-                                        <Label HorizontalAlignment="Left"
-                                               Content="Raktárközi átadás törlése"
-                                               Foreground="White"
-                                               FontSize="14"
-                                               FontFamily="Segoe UI"
-                                               Margin="5 0"/>
-                                        <Button 
-                                            Width="29"
-                                            Height="29"
-                                            Padding="-1"
-                                            HorizontalContentAlignment="Stretch"
-                                            VerticalContentAlignment="Stretch"
-                                            HorizontalAlignment="Right"
-                                            Cursor="Hand"
-                                            Click="BtnArukuldesTorlesEsemenyek"
-                                            ToolTip="Vissza">
-                                            <Grid
-                                                Width="29"
-                                                Height="29"
-                                                Background="#707070">
-                                                <icon:Close Height="17"
-                                                            Width="17" Fill="#FFFFFFFF"/>
-                                            </Grid>
-                                        </Button>
+                                    <Grid Width="254" Grid.Row="0" Background="#707070" HorizontalAlignment="Right">
+                                        <Label HorizontalAlignment="Left" Content="Raktárközi átadás törlése" Foreground="White" FontSize="14" FontFamily="Segoe UI" Margin="5 0"/>
+                                        <!--button-->
+                                        <Grid Width="30" Height="30" ToolTip="Vissza" Cursor="Hand" HorizontalAlignment="Right" MouseDown="ArukuldesekBtn" Background="#707070">
+                                            <icon:Close Fill="#FFFFFFFF"/>
+                                        </Grid>
                                     </Grid>
-                                    <Grid Grid.Row="1"
-                                          Background="White">
+                                    <Grid Grid.Row="1" Background="White">
                                         <Grid.RowDefinitions >
                                             <RowDefinition Height="*"/>
                                             <RowDefinition Height="34"/>
                                         </Grid.RowDefinitions>
-                                        <Grid Grid.Row="0"
-                                              >
-                                            <Label Content="Biztos törli az elemet?"
-                                                   VerticalContentAlignment="Center"
-                                                   HorizontalContentAlignment="Center"
-                                                   Foreground="#616161"
-                                                   FontFamily="Segoe UI"
-                                                   FontSize="14"/>
-
-                                        </Grid>
+                                        <!--arukuldesSubscreen content-->
+                                        <Label Content="Biztos törli az elemet?" Grid.Row="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#616161" FontFamily="Segoe UI" FontSize="14"/>
                                         <Grid Grid.Row="1">
-                                            <Button
-                                                Margin="5 0"
-                                                HorizontalAlignment="Left"
-                                                Height="26"
-                                                Width="120"
-                                                Padding="-1"
-                                                BorderThickness="0"
-                                                VerticalContentAlignment="Stretch"
-                                                HorizontalContentAlignment="Stretch"
-                                                Click="BtnArukuldesTorlesEsemenyek"
-                                                Cursor="Hand">
-                                                <Grid Background="#E0E0E0">
-                                                    <Label Content="Igen"
-                                                           VerticalContentAlignment="Center"
-                                                           HorizontalContentAlignment="Center"
-                                                           Foreground="#707070"
-                                                           FontFamily="Segoe UI"
-                                                           FontSize="14"/>
-                                                </Grid>
-                                            </Button>
-                                            <Button
-                                                Margin="5 0"
-                                                HorizontalAlignment="Right"
-                                                Height="26"
-                                                Width="120"
-                                                Padding="-1"
-                                                BorderThickness="0"
-                                                VerticalContentAlignment="Stretch"
-                                                HorizontalContentAlignment="Stretch"
-                                                Click="BtnArukuldesTorlesEsemenyek"
-                                                Cursor="Hand">
-                                                <Grid Background="#E0E0E0">
-                                                    <Label Content="Nem"
-                                                           VerticalContentAlignment="Center"
-                                                           HorizontalContentAlignment="Center"
-                                                           Foreground="#707070"
-                                                           FontFamily="Segoe UI"
-                                                           FontSize="14"/>
-                                                </Grid>
-                                            </Button>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <!--buttons-->
+                                            <Grid Grid.Column="0" Background="#E0E0E0" Cursor="Hand" Margin="3 3 1.5 3" MouseDown="ArukuldesekBtn">
+                                                <ContentControl Content="Igen" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#707070" FontFamily="Segoe UI" FontSize="14"/>
+                                            </Grid>
+                                            <Grid Grid.Column="1" Background="#E0E0E0" Cursor="Hand" Margin="1.5 3 3 3" MouseDown="ArukuldesekBtn">
+                                                <ContentControl Content="Nem" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#707070" FontFamily="Segoe UI" FontSize="14"/>
+                                            </Grid>
                                         </Grid>
                                     </Grid>
                                 </Grid>
                             </Grid>
                             <!--Új áruküldés ablak-->
                             <!--termekModositasa kisablak-->
-                            <Grid
-                                x:Name="RaktarkoziAtadasAblak"
-                                Grid.Row="1"
-                                Visibility="Collapsed"
-                                Margin="20"
-                                Background="#E0E0E0">
+                            <Grid x:Name="RaktarkoziAtadasAblak" Grid.Row="1" Visibility="Collapsed" Margin="20" Background="#E0E0E0">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="30"/>
                                     <RowDefinition Height="175"/>
@@ -735,8 +538,7 @@
                                     <RowDefinition Height="25"/>
                                     <RowDefinition Height="40"/>
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Row="0"
-                                      Background="#FFF1F1F1">
+                                <Grid Grid.Row="0" Background="#FFF1F1F1">
                                     <Button Click="btnArukuldesTartalmaContent"
                                             Width="99"
                                             Height="28"

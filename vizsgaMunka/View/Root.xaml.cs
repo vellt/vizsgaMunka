@@ -17,6 +17,7 @@ using vizsgaMunka.VectorIcons;
 using vizsgaMunka.DesignPatterns;
 using System.Globalization;
 using vizsgaMunka.Classes;
+using vizsgaMunka.TableHeaders;
 
 namespace vizsgaMunka
 {
@@ -34,12 +35,16 @@ namespace vizsgaMunka
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            ListOfRaktarak.Add(new Raktar(0, "berettyobolt", "Berettyoujfalu Piac u 12", "06 30 84 63 175", "berettyo@bolt.hu"));
-            ListOfRaktarak.Add(new Raktar(1, "Derecske", "Berettyoujfalu Piac u 12", "06 30 84 63 175", "berettyo@bolt.hu"));
-            ListOfTermekek.Add(new Termek(0, "Sertés Karaj", 5, "kg", 1299));
-            ListOfTermekek.Add(new Termek(1, "Sertés Comb", 5, "kg", 1299));
+            ListOfRaktarak.Add(new Classes.Raktar(0, "berettyobolt", "Berettyoujfalu Piac u 12", "06 30 84 63 175", "berettyo@bolt.hu"));
+            ListOfRaktarak.Add(new Classes.Raktar(1, "Derecske", "Berettyoujfalu Piac u 12", "06 30 84 63 175", "berettyo@bolt.hu"));
+            ListOfTermekek.Add(new Classes.Termek(0, "Sertés Karaj", 5, "kg", 1299));
+            ListOfTermekek.Add(new Classes.Termek(1, "Sertés Comb", 5, "kg", 1299));
+            ListOfArukuldesek.Add(new Szallitolevelek(0, DateTime.Now, 0, 0, 0, ""));
+            ListOfArukuldesek.Add(new Szallitolevelek(1, DateTime.Now, 0, 0, 0, ""));
+
             raktarSzinkronizalas();
             termekSzinkronizalas();
+            arukuldesSzinkronizalas();
             
             //testfiok
             ListOfFiok.Add(new Fiok(0, "vellt", "Szántó Benjámin", "jelszo123"));
@@ -85,11 +90,8 @@ namespace vizsgaMunka
 
 
         //Arukuldesek
-        partial void BtnRaktarkoziAtadasraVonatkozoInterakciok(object sender, RoutedEventArgs e);
-        partial void tablazatKialakitasaArukukldesek(int id, DateTime datum, int arukiadoRaktar_id, int bevetelezoRaktar_id, int aruertek, string megjegyzes, SolidColorBrush hatterSzin);
         partial void BtnArukuldesTorlesEsemenyek(object sender, RoutedEventArgs e);
         partial void szinkronizalasArukuldes();
-        partial void ujAdatHozzaadasaAtadasokhoz(int id, DateTime datum, int arukiadoRaktar, int bevetelezoRaktar, int aruertek, string megjegyzes);
 
         #region Raktarak Termekek Arukuldesek
 
@@ -105,8 +107,8 @@ namespace vizsgaMunka
             switch (((StackPanel)((Grid)((Button)sender).Parent).Parent).Name.ToString())
             {
                 case "spArukuldesekTabla":
-                    btnRaktarkoziAtadasModositas.Visibility = Visibility.Visible;
-                    btnArukuldesekTablaTorles.Visibility = Visibility.Visible;
+                    //btnRaktarkoziAtadasModositas.Visibility = Visibility.Visible;
+                    //btnArukuldesekTablaTorles.Visibility = Visibility.Visible;
                     break;
                 case "spTermekekTabla":
                     //btnTermekekTablaTorles.Visibility = Visibility.Visible;

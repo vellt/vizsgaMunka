@@ -86,3 +86,5 @@ C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\TableHeaders\Termek
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\TableHeaders\Termek.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\TableHeaders\Arukuldes.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\TableHeaders\Arukuldes.baml
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\TableHeaders\ArukuldesTartalma.g.cs
+C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\TableHeaders\ArukuldesTartalma.baml

@@ -154,6 +154,7 @@ namespace vizsgaMunka
                     negy: new Seged().ToHUF(ListOfTermekek[i].Egysegar),
                     hatterSzin: (i % 2 == 0) ? Brushes.WhiteSmoke : Brushes.White);
                 row.egy.HorizontalAlignment = HorizontalAlignment.Left;
+                row.egy.Margin = new Thickness(5, 0, 0, 0);
                 row.negy.Margin = new Thickness(0, 0, 40, 0);
                 row.negy.HorizontalAlignment = HorizontalAlignment.Right;
                 row.MouseDown += termekSorKattintasEsemeny;

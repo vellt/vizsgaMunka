@@ -104,6 +104,9 @@
     <Compile Include="TableHeaders\Arukuldes.xaml.cs">
       <DependentUpon>Arukuldes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TableHeaders\ArukuldesTartalma.xaml.cs">
+      <DependentUpon>ArukuldesTartalma.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TableHeaders\Raktar.xaml.cs">
       <DependentUpon>Raktar.xaml</DependentUpon>
     </Compile>
@@ -218,6 +221,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TableHeaders\Arukuldes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TableHeaders\ArukuldesTartalma.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

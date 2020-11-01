@@ -154,6 +154,7 @@ namespace vizsgaMunka
                     negy: ListOfRaktarak[i].Email,
                     hatterSzin: (i % 2 == 0) ? Brushes.WhiteSmoke : Brushes.White);
                 row.egy.HorizontalAlignment = HorizontalAlignment.Left;
+                row.egy.Margin = new Thickness(5, 0, 0, 0);
                 row.MouseDown += raktarSorKattintasEsemeny;
                 spRaktarTabla.Children.Add(row);
             }   

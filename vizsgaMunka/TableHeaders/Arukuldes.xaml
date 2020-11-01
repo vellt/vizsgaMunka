@@ -4,9 +4,49 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:vizsgaMunka.TableHeaders"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             mc:Ignorable="d" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="#707070"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="17"/>
+        </Grid.ColumnDefinitions>
+        <Label 
+            Grid.Column="1"
+            Content="#" 
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"/>
+        <Label 
+            Grid.Column="2"
+            Content="Dátum" 
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"/>
+        <Label 
+            Grid.Column="3"
+            Content="Árukiadó Raktár" 
+            HorizontalContentAlignment="Left"
+            VerticalContentAlignment="Center"/>
+        <Label 
+            Grid.Column="4"
+            Content="Bevételező Raktár" 
+            HorizontalContentAlignment="Left"
+            VerticalContentAlignment="Center"/>
+        <Label 
+            Grid.Column="5"
+            Content="Áruérték" 
+            Padding="40 0"
+            HorizontalContentAlignment="Right"
+            VerticalContentAlignment="Center"/>
     </Grid>
 </UserControl>

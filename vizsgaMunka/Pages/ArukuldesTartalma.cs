@@ -102,6 +102,18 @@ namespace vizsgaMunka
             }
         }
 
+        private int indexOfSelectedRowArukiadas()
+        {
+            var background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF05B422"));
+            for (int i = 0; i < spArukuldesekTabla.Children.Count; i++)
+            {
+                var background2 = ((Grid)((Grid)spArukuldesekTabla.Children[i]).Children[0]).Background;
+                if (background2.ToString() == background.ToString())
+                    return i;
+            }
+            return -1;
+        }
+
         private void AtadasRogziteseModositas()
         {
             int index = indexOfSelectedRowArukiadas();
@@ -112,7 +124,7 @@ namespace vizsgaMunka
             ListOfArukuldesek[index].Datum = dprDatum.SelectedDate.Value;
             ListOfArukuldesek[index].Aruertek = Convert.ToInt32(lbArukuldesTartalmaVegosszeg.Content.ToString().Trim("Ft".ToCharArray()).Replace(" ", ""));
             ListOfArukuldesTartalmaTempHozzaadasListOfArukuldesTartalmaMODOSITASKOR();
-            szinkronizalasArukuldes();
+            arukuldesSzinkronizalas();
         }
 
         private void ListOfArukuldesTartalmaTempHozzaadasListOfArukuldesTartalmaMODOSITASKOR()
@@ -139,7 +151,7 @@ namespace vizsgaMunka
                 tbxMegjegyzes.Text
                 ));
             ListOfArukuldesTartalmaTempHozzaadasListOfArukuldesTartalma();
-            szinkronizalasArukuldes();
+            arukuldesSzinkronizalas();
         }
 
         private void ListOfArukuldesTartalmaTempHozzaadasListOfArukuldesTartalma()
