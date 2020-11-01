@@ -60,8 +60,6 @@ C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\Product
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\Settings.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\Statistics.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\Store.baml
-C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\CloseBlac.g.cs
-C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\VectorIcons\CloseBlac.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\NavButtons\Activity.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\NavButtons\Activity.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\NavButtons\Statistics.g.cs
@@ -86,5 +84,3 @@ C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\TableHeaders\Arukul
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\TableHeaders\Arukuldes.baml
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\TableHeaders\ArukuldesTartalma.g.cs
 C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\TableHeaders\ArukuldesTartalma.baml
-C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\DesignPatterns\TableRowWith5Colum.g.cs
-C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\DesignPatterns\TableRowWith5Colum.baml

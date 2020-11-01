@@ -65,9 +65,6 @@
     <Compile Include="DesignPatterns\TableRow5Column.xaml.cs">
       <DependentUpon>TableRow5Column.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DesignPatterns\TableRowWith5Colum.xaml.cs">
-      <DependentUpon>TableRowWith5Colum.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DesignPatterns\TableRowWith7Column.xaml.cs">
       <DependentUpon>TableRowWith7Column.xaml</DependentUpon>
     </Compile>
@@ -137,9 +134,6 @@
     <Compile Include="VectorIcons\Close.xaml.cs">
       <DependentUpon>Close.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VectorIcons\CloseBlac.xaml.cs">
-      <DependentUpon>CloseBlac.xaml</DependentUpon>
-    </Compile>
     <Compile Include="VectorIcons\Edit.xaml.cs">
       <DependentUpon>Edit.xaml</DependentUpon>
     </Compile>
@@ -181,10 +175,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DesignPatterns\TableRow5Column.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DesignPatterns\TableRowWith5Colum.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -301,10 +291,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VectorIcons\Close.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="VectorIcons\CloseBlac.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
