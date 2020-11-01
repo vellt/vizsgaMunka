@@ -1,8 +1,8 @@
-﻿
+﻿C:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\obj\Debug\GeneratedInternalTypeHelper.g.cs
 FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\App.xaml;;
 FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\DesignPatterns\ActivityRowForList.xaml;;
 FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\DesignPatterns\TableRow5Column.xaml;;
-FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\DesignPatterns\TableRowWith5Column.xaml;;
+FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\DesignPatterns\TableRowWith5Colum.xaml;;
 FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\DesignPatterns\TableRowWith7Column.xaml;;
 FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\DesignPatterns\TextBox.xaml;;
 FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\NavButtons\Activity.xaml;;
@@ -11,7 +11,10 @@ FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\NavButtons\Product.xaml;;
 FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\NavButtons\Settings.xaml;;
 FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\NavButtons\Statistics.xaml;;
 FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\NavButtons\Store.xaml;;
+FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\TableHeaders\Arukuldes.xaml;;
+FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\TableHeaders\ArukuldesTartalma.xaml;;
 FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\TableHeaders\Raktar.xaml;;
+FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\TableHeaders\Termek.xaml;;
 FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\VectorIcons\Activity.xaml;;
 FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\VectorIcons\Car.xaml;;
 FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\VectorIcons\Logo.xaml;;
@@ -35,7 +38,4 @@ FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\VectorIcons\Ok.xaml;;
 FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\VectorIcons\Printer.xaml;;
 FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\VectorIcons\ProfilPic.xaml;;
 FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\VectorIcons\Synch.xaml;;
-FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\TableHeaders\Termek.xaml;;
-FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\TableHeaders\Arukuldes.xaml;;
-FC:\Users\redy\source\repos\vizsgaMunka\vizsgaMunka\TableHeaders\ArukuldesTartalma.xaml;;
 

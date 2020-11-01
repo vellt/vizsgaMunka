@@ -65,8 +65,8 @@
     <Compile Include="DesignPatterns\TableRow5Column.xaml.cs">
       <DependentUpon>TableRow5Column.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DesignPatterns\TableRowWith5Column.xaml.cs">
-      <DependentUpon>TableRowWith5Column.xaml</DependentUpon>
+    <Compile Include="DesignPatterns\TableRowWith5Colum.xaml.cs">
+      <DependentUpon>TableRowWith5Colum.xaml</DependentUpon>
     </Compile>
     <Compile Include="DesignPatterns\TableRowWith7Column.xaml.cs">
       <DependentUpon>TableRowWith7Column.xaml</DependentUpon>
@@ -184,7 +184,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DesignPatterns\TableRowWith5Column.xaml">
+    <Page Include="DesignPatterns\TableRowWith5Colum.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
