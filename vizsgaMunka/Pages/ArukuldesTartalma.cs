@@ -26,6 +26,24 @@ namespace vizsgaMunka
         List<Classes.ArukuldesTartalma> ListOfArukuldesTartalma = new List<Classes.ArukuldesTartalma>();
         List<Classes.ArukuldesTartalma> ListOfArukuldesTartalmaTemp = new List<Classes.ArukuldesTartalma>();
 
+        private void ArukuldesTartalmaBtn(object sender, MouseButtonEventArgs e)
+        {
+            switch (switch_on)
+            {
+                case "Vissza":
+                    break;
+                case "Termék tallózó bezárása":
+                    break;
+                case "Elem hozzáadáasa a táblázathoz":
+                    break;
+                case "Termék tallózó megjelenítése":
+                    break;
+                case "Elem módosítása":
+                    break;
+                case "Elem törlése":
+                    break;
+            }
+        }
 
         partial void btnArukuldesTartalmaToolTip(object sender, RoutedEventArgs e)
         {

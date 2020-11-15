@@ -48,17 +48,12 @@ namespace vizsgaMunka
             
             //testfiok
             ListOfFiok.Add(new Fiok(0, "vellt", "Szántó Benjámin", "jelszo123"));
-
             //aktualis felhasznalo
             lbAktualUser.Content = ListOfFiok[0].TeljesNev;
             lbAktualUser.Tag = ListOfFiok[0].ID;
         }
 
-        #region Oldalsáv
         
-        
-
-        #endregion
 
         #region Felsősáv
         private void BtnKereses(object sender, RoutedEventArgs e)
@@ -90,8 +85,6 @@ namespace vizsgaMunka
 
 
         //Arukuldesek
-        partial void BtnArukuldesTorlesEsemenyek(object sender, RoutedEventArgs e);
-        partial void szinkronizalasArukuldes();
 
         #region Raktarak Termekek Arukuldesek
 
@@ -141,74 +134,9 @@ namespace vizsgaMunka
         partial void szinkronizalasArukuldesTartalma();
         partial void ujAdatHozzaadasaArukuldesTartalma(int index, string nev, double mennyiseg, string mennyisegiEgyseg, int egysegar, int aFA, int bruttoAr);
 
-        private void btnAktivitasok_MouseDown(object sender, MouseButtonEventArgs e)
+        private void visszaToolTipArukuldesTartalma(object sender, MouseButtonEventArgs e)
         {
-            navButtonReset();
-            btnAktivitasok.Indikator.Background = Brushes.Green;
-            btnAktivitasok.MainColor.Background = Brushes.Green;
-            tbcrlTartalom.SelectedIndex = 0;
-        }
-
-        private void btnStatisztikak_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            navButtonReset();
-            btnStatisztikak.Indikator.Background = Brushes.Green;
-            btnStatisztikak.MainColor.Background = Brushes.Green;
-            tbcrlTartalom.SelectedIndex = 1;
-        }
-
-        private void btnRaktarak_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            navButtonReset();
-            btnRaktarak.Indikator.Background = Brushes.Green;
-            btnRaktarak.MainColor.Background = Brushes.Green;
-            tbcrlTartalom.SelectedIndex = 2;
-        }
-
-        private void btnTermekek_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            navButtonReset();
-            btnTermekek.Indikator.Background = Brushes.Green;
-            btnTermekek.MainColor.Background = Brushes.Green;
-            tbcrlTartalom.SelectedIndex = 3;
-        }
-
-        private void btnAtadas_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            navButtonReset();
-            btnAtadas.Indikator.Background = Brushes.Green;
-            btnAtadas.MainColor.Background = Brushes.Green;
-            tbcrlTartalom.SelectedIndex = 4;
-        }
-
-        private void btnBeallitasok_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            navButtonReset();
-            btnBeallitasok.Indikator.Background = Brushes.Green;
-            btnBeallitasok.MainColor.Background = Brushes.Green;
-            tbcrlTartalom.SelectedIndex = 5;
-        }
-
-        private void navButtonReset()
-        {
-            legorduloMenusavEltuntetese();
-            btnAktivitasok.Indikator.Background = Brushes.White;
-            btnAktivitasok.MainColor.Background = (Brush)(new BrushConverter().ConvertFrom("#707070"));
-
-            btnStatisztikak.Indikator.Background = Brushes.White;
-            btnStatisztikak.MainColor.Background = (Brush)(new BrushConverter().ConvertFrom("#707070"));
-
-            btnRaktarak.Indikator.Background = Brushes.White;
-            btnRaktarak.MainColor.Background = (Brush)(new BrushConverter().ConvertFrom("#707070"));
-
-            btnTermekek.Indikator.Background = Brushes.White;
-            btnTermekek.MainColor.Background = (Brush)(new BrushConverter().ConvertFrom("#707070"));
-
-            btnAtadas.Indikator.Background = Brushes.White;
-            btnAtadas.MainColor.Background = (Brush)(new BrushConverter().ConvertFrom("#707070"));
-
-            btnBeallitasok.Indikator.Background = Brushes.White;
-            btnBeallitasok.MainColor.Background = (Brush)(new BrushConverter().ConvertFrom("#707070"));
+            RaktarkoziAtadasAblak.Visibility = Visibility.Collapsed;
         }
 
         

@@ -75,6 +75,7 @@
     <Compile Include="NavButtons\Activity.xaml.cs">
       <DependentUpon>Activity.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NavButtons\ButtonFunc.cs" />
     <Compile Include="NavButtons\Car.xaml.cs">
       <DependentUpon>Car.xaml</DependentUpon>
     </Compile>

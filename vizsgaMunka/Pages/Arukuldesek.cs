@@ -63,7 +63,7 @@ namespace vizsgaMunka
         /// </summary>
         private void arukuldesNem()
         {
-            ArukuldesSS2.Visibility = Visibility.Collapsed;
+            ArukuldesSS1.Visibility = Visibility.Collapsed;
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace vizsgaMunka
         /// </summary>
         private void arukuldesTorleseShow()
         {
-            ArukuldesSS2.Visibility = Visibility.Visible; //az elem törlő ablak megjelenik
+            ArukuldesSS1.Visibility = Visibility.Visible; //az elem törlő ablak megjelenik
         }
 
         /// <summary>
