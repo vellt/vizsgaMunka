@@ -1,24 +1,24 @@
-﻿<UserControl x:Class="vizsgaMunka.DesignPatterns.TableRowWith7Column"
+﻿<UserControl x:Class="vizsgaMunka.DesignPatterns.TableRow7Column"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:vizsgaMunka.DesignPatterns"
-             mc:Ignorable="d">
-
+             mc:Ignorable="d" d:DesignWidth="600">
     <UserControl.Resources>
-        <Style TargetType="Label">
+        <Style TargetType="ContentControl">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="#707070"/>
             <Setter Property="FontFamily" Value="Segoe UI"/>
             <Setter Property="FontSize" Value="13"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
     </UserControl.Resources>
 
-    <Grid x:Name="hatter" Background="White" Height="30">
+    <Grid x:Name="hatter" Background="White" Height="30" Cursor="Hand">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"/>
             <ColumnDefinition Width="50"/>
             <ColumnDefinition Width="140"/>
             <ColumnDefinition Width="*"/>
@@ -27,13 +27,13 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Column="0" Content="index" x:Name="egy" />
-        <Label Grid.Column="1" Content="tartalom" x:Name="ketto"/>
-        <Label Grid.Column="2" Content="tartalom" x:Name="harom"/>
-        <Label Grid.Column="3" Content="tartalom" x:Name="negy"/>
-        <Label Grid.Column="4" Content="tartalom" x:Name="ot"/>
-        <Label Grid.Column="5" Content="tartalom" x:Name="hat"/>
-        <Label Grid.Column="6" Content="tartalom" x:Name="het"/>
+        <Grid Grid.Column="0" x:Name="Indikator" Background="Green" Visibility="Collapsed" />
+        <ContentControl Grid.Column="1" Content="index" x:Name="id" />
+        <ContentControl Grid.Column="2" Content="tartalom" x:Name="egy"/>
+        <ContentControl Grid.Column="3" Content="tartalom" x:Name="ketto"/>
+        <ContentControl Grid.Column="4" Content="tartalom" x:Name="harom"/>
+        <ContentControl Grid.Column="5" Content="tartalom" x:Name="negy"/>
+        <ContentControl Grid.Column="6" Content="tartalom" x:Name="ot"/>
+        <ContentControl Grid.Column="7" Content="tartalom" x:Name="hat"/>
     </Grid>
-    
 </UserControl>

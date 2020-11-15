@@ -30,7 +30,7 @@
         <Label 
             Grid.Column="2"
             Content="Dátum" 
-            HorizontalContentAlignment="Center"
+            HorizontalContentAlignment="Left"
             VerticalContentAlignment="Center"/>
         <Label 
             Grid.Column="3"

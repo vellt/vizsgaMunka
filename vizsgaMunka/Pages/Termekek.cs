@@ -83,8 +83,8 @@ namespace vizsgaMunka
         private void termekIgen()
         {
             int index = new Seged().indexOfSelectedRow(spTermekTabla);
-            //reportot küldünk az esemenyről
-            ujAdatHozzaadasaAktivitasok(index, 5);
+            //reportot küldünk az esemenyről:5
+            ujAdatHozzaadasaAktivitasok(index, Esemeny.TermekDeleted);
             //töröljük a listából a kijelölt elemet majd szinkronizáljuk a táblát a listával és bezárjuk az ablakot
             termekVissza();
             ListOfTermekek.RemoveAt(index);
@@ -97,8 +97,8 @@ namespace vizsgaMunka
         private void termekModositas()
         {
             int index = new Seged().indexOfSelectedRow(spTermekTabla);
-            //reportot küldünk az esemenyről
-            ujAdatHozzaadasaAktivitasok(index, 4);
+            //reportot küldünk az esemenyről:4
+            ujAdatHozzaadasaAktivitasok(index, Esemeny.TermekModified);
             //beállítjuk a módosított értékeket a listában majd szinkronizáljuk a táblát a listával és bezárjuk az ablakot
             termekVissza();
             ListOfTermekek[index].Nev = termekSS1Nev.txbtartalom.Text;
@@ -115,8 +115,8 @@ namespace vizsgaMunka
         {
             //ha a rterméklistában nincs elem: 0, ellenkező esetben az utolsó tag id-jehez adunk hozzá egyet
             int index = (ListOfTermekek.Count == 0) ? 0 : ListOfTermekek[ListOfTermekek.Count - 1].ID + 1;
-            //reportot küldünk az esemenyről
-            ujAdatHozzaadasaAktivitasok(index, 3);
+            //reportot küldünk az esemenyről:3
+            ujAdatHozzaadasaAktivitasok(index, Esemeny.TermekCreated);
             //Hozzáadjuk az új elemet a listához majd aszinkronizáljuk a táblát a listával és bezárjuk az ablakot
             termekVissza();
             ListOfTermekek.Add(

@@ -65,8 +65,8 @@
     <Compile Include="DesignPatterns\TableRow5Column.xaml.cs">
       <DependentUpon>TableRow5Column.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DesignPatterns\TableRowWith7Column.xaml.cs">
-      <DependentUpon>TableRowWith7Column.xaml</DependentUpon>
+    <Compile Include="DesignPatterns\TableRow7Column.xaml.cs">
+      <DependentUpon>TableRow7Column.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Fiok.cs" />
     <Compile Include="DesignPatterns\TextBox.xaml.cs">
@@ -179,7 +179,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DesignPatterns\TableRowWith7Column.xaml">
+    <Page Include="DesignPatterns\TableRow7Column.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

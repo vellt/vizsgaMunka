@@ -18,7 +18,53 @@ using vizsgaMunka.DesignPatterns;
 using vizsgaMunka.Classes;
 
 namespace vizsgaMunka
-{
+{    
+    /// <summary>
+    /// Megadja az elem esemenyállapotát
+    /// </summary>
+    public enum Esemeny
+    {
+        /// <summary>
+        /// Létrehozott egy raktárat.
+        /// </summary>
+        RaktarCreated = 0,
+        /// <summary>
+        ///  Módosított egy raktárat.
+        /// </summary>
+        RaktarModified = 1,
+        /// <summary>
+        /// Törölt egy raktárat.
+        /// </summary>
+        RaktarDeleted = 2,
+        /// <summary>
+        /// Létrehozott egy terméket.
+        /// </summary>
+        TermekCreated = 3,
+        /// <summary>
+        /// Módoított egy terméket.
+        /// </summary>
+        TermekModified = 4,
+        /// <summary>
+        /// Törölt egy terméket.
+        /// </summary>
+        TermekDeleted = 5,
+        /// <summary>
+        /// Létrehozott egy átadást
+        /// </summary>
+        AtadasCreated = 6,
+        /// <summary>
+        /// Módosított egy átadást
+        /// </summary>
+        AtadasModified = 7,
+        /// <summary>
+        /// Törölt egy átadást
+        /// </summary>
+        AtadasDeleted = 8,
+        /// <summary>
+        /// Kinyomtatott egy átadást.
+        /// </summary>
+        AtadasPrinted = 9
+    }
     public partial class MainWindow : Window
     {
         /// <summary>
@@ -31,7 +77,7 @@ namespace vizsgaMunka
             a.lbFelhasznaloNev.Content =SzamFromazasaFelhNev(FelhasznaloNev);
             a.datum.Content = datum.ToString("yyyy.MM.dd. HH:mm");
             a.lbAktivitasLeirasa.Content = Tartalom;
-            a.lbAktivitasRefID.Content =SzamFormazasaSorszam(refId);
+            a.lbAktivitasRefID.Content = new Seged().ToSorszam(refId);
 
             ertesitesekSP.Children.Add(a);
         }
@@ -42,30 +88,17 @@ namespace vizsgaMunka
         }
 
         //itt lép be a programba
-        /// <summary>
-        ///<para>ESEMÉNY KÓDOK</para> 
-        ///<para> 0: Raktárt hozott létre </para> 
-        ///<para> 1: Raktárt módosított</para> 
-        ///<para> 2: Raktárt törölt</para>
-        ///<para> - </para>
-        ///<para> 3: Terméket hozott létre</para>
-        ///<para> 4: Terméket módosított</para>
-        ///<para> 5: Terméket törölt</para>
-        ///<para> - </para>
-        ///<para> 6: Átadást állított ki</para>
-        ///<para> 7: Átadást módosított</para>
-        ///<para> 8: Átadást törölt</para>
-        ///<para> 9: Átadást nyomtatott</para>
-        /// </summary>
-        private void ujAdatHozzaadasaAktivitasok(int refId, int esemenyCode)
+        private void ujAdatHozzaadasaAktivitasok(int refId, Esemeny esemeny)
         {
+            int index = (ListOfAktivitas.Count == 0) ? 0 : ListOfAktivitas[ListOfAktivitas.Count - 1].ID + 1;
+
             Aktivitas akt = new Aktivitas(
-                (ListOfAktivitas.Count == 0) ? 0 : ListOfAktivitas[ListOfAktivitas.Count - 1].ID + 1,
-                Convert.ToInt32(lbAktualUser.Tag),
-                refId,
-                esemenyCode,
-                DateTime.Now
-            );
+                id: index,
+                felhasznaloId: (int)lbAktualUser.Tag,
+                refId: refId,
+                esemeny: esemeny,
+                datum: DateTime.Now);
+
             ListOfAktivitas.Add(akt);
             szinkronizalasAktivitasok();
         }
@@ -76,11 +109,11 @@ namespace vizsgaMunka
             for (int i = ListOfAktivitas.Count-1; i >= 0; i--)
             {
                 ErtesitesElemLegeneralasa(
-                    ListOfFiok[ListOfAktivitas[i].Felhasznalo_ID].TeljesNev, 
-                    ListOfFiok[ListOfAktivitas[i].Felhasznalo_ID].FelhasznaloNev, 
-                    ListOfAktivitas[i].Esemeny,
-                    ListOfAktivitas[i].Ref_ID,
-                    ListOfAktivitas[i].Datum);
+                    Nev: ListOfFiok[ListOfAktivitas[i].Felhasznalo_ID].TeljesNev,
+                    FelhasznaloNev: ListOfFiok[ListOfAktivitas[i].Felhasznalo_ID].FelhasznaloNev,
+                    Tartalom: ListOfAktivitas[i].Esemeny,
+                    refId: ListOfAktivitas[i].Ref_ID,
+                    datum: ListOfAktivitas[i].Datum);
             }
         }
     }

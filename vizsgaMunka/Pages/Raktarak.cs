@@ -83,8 +83,8 @@ namespace vizsgaMunka
         private void raktarIgen()
         {
             int index = new Seged().indexOfSelectedRow(spRaktarTabla);
-            //reportot küldünk az esemenyről
-            ujAdatHozzaadasaAktivitasok(index, 2);
+            //reportot küldünk az esemenyről:2
+            ujAdatHozzaadasaAktivitasok(index, Esemeny.RaktarDeleted);
             //töröljük a listából a kijelölt elemet majd szinkronizáljuk a táblát a listával és bezárjuk az ablakot
             raktarVissza();
             ListOfRaktarak.RemoveAt(index);
@@ -97,8 +97,8 @@ namespace vizsgaMunka
         private void raktarModositas()
         {
             int index = new Seged().indexOfSelectedRow(spRaktarTabla);
-            //reportot küldünk az esemenyről
-            ujAdatHozzaadasaAktivitasok(index, 1);
+            //reportot küldünk az esemenyről:1
+            ujAdatHozzaadasaAktivitasok(index, Esemeny.RaktarModified);
             //beállítjuk a módosított értékeket a listában majd szinkronizáljuk a táblát a listával és bezárjuk az ablakot
             raktarVissza();
             ListOfRaktarak[index].Nev = raktarSS1Nev.txbtartalom.Text;

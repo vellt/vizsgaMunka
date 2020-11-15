@@ -60,7 +60,7 @@ namespace vizsgaMunka
             navButtonReset();
             btnAtadas.Indikator.Background = Brushes.Green;
             btnAtadas.MainColor.Background = Brushes.Green;
-            tbcrlTartalom.SelectedIndex = 4;
+            tbcrlTartalom.SelectedIndex =(atadasTartalma.Visibility==Visibility.Visible)?6:4;
         }
 
         private void btnBeallitasok_MouseDown(object sender, MouseButtonEventArgs e)

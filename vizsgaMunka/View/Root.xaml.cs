@@ -70,7 +70,6 @@ namespace vizsgaMunka
             {
                 menu.Visibility = Visibility.Visible;
                 GrFiokBeall.Background = new SolidColorBrush(Color.FromRgb(241, 241, 241));
-                AktivMenuszalaghozHatter.Visibility = Visibility.Visible;
             }
             else legorduloMenusavEltuntetese();
         }
@@ -79,65 +78,11 @@ namespace vizsgaMunka
         {
             menu.Visibility = Visibility.Collapsed;
             GrFiokBeall.Background = new SolidColorBrush(Color.FromRgb(246, 246, 246));
-            AktivMenuszalaghozHatter.Visibility = Visibility.Collapsed;
         }
         #endregion
 
 
-        //Arukuldesek
 
-        #region Raktarak Termekek Arukuldesek
-
-        /// <summary>
-        /// A tablazatban a sor elejét mező kijelölésekor zöldre szinezi
-        /// </summary>
-        private void SorokKijeloleseKattintasera(object sender, RoutedEventArgs e)
-        {
-            //aktiv mező kijelölése
-            for (int i = 0; i < ((StackPanel)((Grid)((Button)sender).Parent).Parent).Children.Count; i++) ((Grid)((Grid)((StackPanel)((Grid)((Button)sender).Parent).Parent).Children[i]).Children[0]).Background = (i % 2 == 0) ? Brushes.WhiteSmoke : Brushes.White;
-            ((Grid)((Grid)((Button)sender).Parent).Children[0]).Background = new SolidColorBrush(Color.FromRgb(5, 180, 34));
-
-            switch (((StackPanel)((Grid)((Button)sender).Parent).Parent).Name.ToString())
-            {
-                case "spArukuldesekTabla":
-                    //btnRaktarkoziAtadasModositas.Visibility = Visibility.Visible;
-                    //btnArukuldesekTablaTorles.Visibility = Visibility.Visible;
-                    break;
-                case "spTermekekTabla":
-                    //btnTermekekTablaTorles.Visibility = Visibility.Visible;
-                    //btnTermekekTablaModositas.Visibility = Visibility.Visible;
-                    break;
-                case "spRaktarTabla":
-                    //btnTablaTorles.Visibility = Visibility.Visible;
-                    //btnTablaModositas.Visibility = Visibility.Visible;
-                    break;
-                case "spArukuldesTartalma":
-                    btnArukuldesTartalmaModositas.Visibility = Visibility.Visible;
-                    btnArukuldesTartalmaTorles.Visibility = Visibility.Visible;
-                    break;
-            }
-
-        }
-
-        #endregion
-
-
-
-        //ArukuldesTartalma
-        partial void btnArukuldesTartalmaToolTip(object sender, RoutedEventArgs e);
-        partial void btnArukuldesTartalmaContent(object sender, RoutedEventArgs e);
-        partial void AddText(object sender, RoutedEventArgs e);
-        partial void RemoveText(object sender, RoutedEventArgs e);
-        partial void TermekTallozoFeltolteseSzurtListaval(List<Classes.Termek> szurtLista);
-        partial void txbTermekTallozoTextChanged(object sender, TextChangedEventArgs e);
-        partial void tablazatKialakitasaArukuldesTartalma(int iD, string nev, double mennyiseg, string mennyisegiEgyseg, int egysegar, int aFA, int bruttoAr, SolidColorBrush hatterSzin);
-        partial void szinkronizalasArukuldesTartalma();
-        partial void ujAdatHozzaadasaArukuldesTartalma(int index, string nev, double mennyiseg, string mennyisegiEgyseg, int egysegar, int aFA, int bruttoAr);
-
-        private void visszaToolTipArukuldesTartalma(object sender, MouseButtonEventArgs e)
-        {
-            RaktarkoziAtadasAblak.Visibility = Visibility.Collapsed;
-        }
 
         
     }

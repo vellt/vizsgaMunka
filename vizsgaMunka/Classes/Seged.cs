@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -29,7 +30,6 @@ namespace vizsgaMunka.Classes
                     return i;
                 }
             }
-
             return -1;
         }
 
@@ -70,7 +70,6 @@ namespace vizsgaMunka.Classes
             {
                 ((TableRow5Column)rows.Children[i]).Indikator.Visibility = Visibility.Collapsed;
             }
-
             return rows;
         }
 
@@ -101,6 +100,30 @@ namespace vizsgaMunka.Classes
         public string ToSorszam(int Szam)
         {
             return $"#{Szam}";
+        }
+
+        /// <summary>
+        /// Az esemeny sender alapján kinyeri a "gomb" tooltipjét, vagy a contentjét, és annak értékét visszaadja
+        /// </summary>
+        public string getEsemenyKod(object sender)
+        {
+            return ((((Grid)sender).ToolTip == null) ? ((ContentControl)((Grid)sender).Children[0]).Content : ((Grid)sender).ToolTip).ToString();
+        }
+
+        /// <summary>
+        /// Az eseményt előidéző control tag-eleméből kinyerjük az annak megfelelő ArukuldesTartlmaEnum megfeleöjét
+        /// </summary>
+        public ArukuldesTartalmaEnum getIndexFromTag(object tag)
+        {
+            return (ArukuldesTartalmaEnum)(Convert.ToInt32(tag));
+        }
+
+        /// <summary>
+        /// A formázott string számból int-típusú számot képez.
+        /// </summary>
+        public int removeFt(object formazottSzam)
+        {
+            return Convert.ToInt32(formazottSzam.ToString().Trim("Ft".ToCharArray()).Replace(" ", ""));
         }
     }
 }

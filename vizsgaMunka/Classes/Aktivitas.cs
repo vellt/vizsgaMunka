@@ -14,10 +14,10 @@ namespace vizsgaMunka.Classes
         public int Ref_ID { get; set; }
         public DateTime Datum { get; set; }
 
-        private string EsemenySetByeCode(int Code)
+        private string EsemenySetByeCode(Esemeny Code)
         {
             string result = String.Empty;
-            switch (Code)
+            switch ((int)Code)
             {
                 case 0: result = "Raktárt hozott létre"; break;
                 case 1: result = "Raktárt módosított"; break;
@@ -35,11 +35,11 @@ namespace vizsgaMunka.Classes
             return result;
         }
 
-        public Aktivitas(int id, int felhasznaloId, int refId, int esemenyCode, DateTime datum)
+        public Aktivitas(int id, int felhasznaloId, int refId, Esemeny esemeny, DateTime datum)
         {
             this.ID = id;
             this.Felhasznalo_ID = felhasznaloId;
-            this.Esemeny = EsemenySetByeCode(esemenyCode);
+            this.Esemeny = EsemenySetByeCode(esemeny);
             this.Ref_ID = refId;
             this.Datum = datum;
         }
